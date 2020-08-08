@@ -1,5 +1,8 @@
 # README
 
+<!-- X副對員工這麼壞= =，那公司的產品我還不用爆!  
+把資源用到大爆炸的那一種XDD~   -->
+
 記得 VM 剛啟動的時候，建議最好 `sudo reboot` 一下，之前的經驗是有一些檔案好像還處於 lock 狀態。  <br>
 跟著目錄(content)慢慢學習，大概可以一步步學習使用 TWCC 的資源。  <br>
 docker 的部分就十分建議看官方的 tutorial!!
@@ -9,9 +12,9 @@ docker 的部分就十分建議看官方的 tutorial!!
 <!-- TOC -->
 
 - [README](#readme)
-  - [gitbook設定](#gitbook設定)
-  - [專案目標](#專案目標)
-  - [END](#end)
+    - [gitbook設定](#gitbook設定)
+    - [專案目標](#專案目標)
+    - [END](#end)
 
 <!-- /TOC -->
 
@@ -19,9 +22,17 @@ docker 的部分就十分建議看官方的 tutorial!!
 
 ## gitbook設定
 
-抓取專案請用 `git clone https://github.com/littlefish0331/TWCC_tutorial.git --branch share_note`
+抓取專案請用 `https://github.com/littlefish0331/TWCC_VCS_note.git`
 
-> --branch 可以用 -b。
+> 舊的 repository。
+> 抓取專案請用 `git clone https://github.com/littlefish0331/TWCC_tutorial.git --branch share_note`。--branch 可以用 -b。
+
+基本上除非專案很大，不然不必為了 gitbook 而特別一個分支，將其他不必要文件刪除。  
+這樣太耗費工夫，因為基本上專案應該就是以文件為主的專案。
+
+如果真的專案很大，文件說明只是其中一小項，  
+那在針對文件資料夾的部分做一個 git repository 的版本管理就好。  
+類似外層一個 repository，內部還有自己的 repositroy。
 
 **結尾設定(end-of-line marker):**
 
