@@ -1,12 +1,12 @@
 # Self Command History
 
-<!-- X副對員工這麼壞= =，那公司的產品我還不用爆!  
+<!-- X副對員工這麼壞= =，那公司的產品我還不用爆!  <br>
 把資源用到大爆炸的那一種XDD~   -->
 
-這裡存放自己操作成功，並整理過後的指令(包括 bash 和 docker)。  
-基本上照著做就可以到達同樣效果。  
+這裡存放自己操作成功，並整理過後的指令(包括 bash 和 docker)。  <br>
+基本上照著做就可以到達同樣效果。  <br>
 
-簡單來說就是我的指令記事本啦XD~  
+簡單來說就是我的指令記事本啦XD~  <br>
 所以這邊都是從其他的 .md 檔複製過來之後，再做一點排版和補充。
 
 <!-- TOC -->
@@ -139,8 +139,8 @@ sudo -i
 
 ### Others
 
-- `whoami`: 顯示使用者名稱。  
-- `hostname`: 顯示主機名稱。  
+- `whoami`: 顯示使用者名稱。  <br>
+- `hostname`: 顯示主機名稱。  <br>
 - `ifconfig`: 查詢、設定網路卡與 IP 網域等相關參數。觀察所有的網路介面。用來獲取網路介面配置資訊並對此進行修改。。
 
 --
@@ -163,7 +163,7 @@ sudo -i
 
 ### 掛載狀況
 
-- 磁碟使用的初始狀況。  
+- 磁碟使用的初始狀況。  <br>
 - -h, --human-readable: print sizes in powers of 1024 (e.g., 1023M)
 
 ```{bash}
@@ -172,7 +172,7 @@ df -h
 
 - 列出所有(掛載中)磁碟
 
-> 利用 blkid 這個指令，它可以列出所有掛載中磁碟的 UUID。  
+> 利用 blkid 這個指令，它可以列出所有掛載中磁碟的 UUID。  <br>
 > blk: 是指 block device，即儲存裝置。
 
 ```{bash}
@@ -207,7 +207,7 @@ df -h
 
 ### 設定開機自動掛載
 
-各欄說明：`<file system> <mount point>   <type> <options> <dump> <pass>`  
+各欄說明：`<file system> <mount point>   <type> <options> <dump> <pass>`  <br>
 
 - file system：磁碟裝置代號或該裝置的 Label。
 - mount point：掛載點。
@@ -293,9 +293,9 @@ sh get-docker.sh
 
 #### 加入 docker 帳號到群組
 
-因為 Docker 安裝後，會建立一個 docker 帳號和群組。  
-如果沒有把 docker 帳號加入群組，就會每次使用 docker 指令都需要 sudo，  
-為了者直接使用 docker 指令，所以要把 docker 加入 ubuntu 群組中。  
+因為 Docker 安裝後，會建立一個 docker 帳號和群組。  <br>
+如果沒有把 docker 帳號加入群組，就會每次使用 docker 指令都需要 sudo，  <br>
+為了者直接使用 docker 指令，所以要把 docker 加入 ubuntu 群組中。  <br>
 
 - 當使用 "-G" 參數時, usermod 會將帳號從原來加入了的群組退出, 所以在 "-G" 參數前加入 "-a" 參數, 會保留原來的群組設定。
 - 記得要重新登入。
@@ -507,17 +507,17 @@ mysql -u root -p
 
 **修改 Configuration file 與結果:**
 
-即連動資料夾下，新增 my.cnf，修改裡面內容。  
+即連動資料夾下，新增 my.cnf，修改裡面內容。  <br>
 修改之後要重啟 container。
 
-![mariadb_setting00_mycnf](./image/mariadb_setting00_mycnf.jpg)  
-![mariadb_setting01](./image/mariadb_setting01.jpg)  
-![mariadb_setting02](./image/mariadb_setting02.jpg)  
+![mariadb_setting00_mycnf](./image/mariadb_setting00_mycnf.jpg)  <br>
+![mariadb_setting01](./image/mariadb_setting01.jpg)  <br>
+![mariadb_setting02](./image/mariadb_setting02.jpg)  <br>
 
 #### 下載 MySQL
 
 - [mysql - Docker Hub](https://hub.docker.com/_/mysql?tab=description)
-- 連動的資料夾會自動建立。  
+- 連動的資料夾會自動建立。  <br>
 
 ```{bash}
 docker run --name some-mysql \
@@ -538,7 +538,7 @@ docker run --name some-mysql --env MYSQL_ROOT_PASSWORD=MYSQL@2020 -v /datamount/
 **docker run:**
 
 到連動資料夾 /datamount/mysql/conf 底下，建立 my.cnf，
-在 my.cnf 加上下列資訊，然後重啟 container。  
+在 my.cnf 加上下列資訊，然後重啟 container。  <br>
 
 ```{my.cnf}
 [mysqld]
@@ -577,11 +577,11 @@ command: --default-authentication-plugin=mysql_native_password
 ```
 
 > 以下是舊的做法，依舊可用，指示步驟比較多一點。
->  
+>  <br>
 > **Step01:**
 >
-> 去 /DBdata/mysql/conf 新增 my.cnf。  
-> 新增與修改檔案要用 sudo su 權限。  
+> 去 /DBdata/mysql/conf 新增 my.cnf。  <br>
+> 新增與修改檔案要用 sudo su 權限。  <br>
 >
 >
 > ```{my.cnf}
@@ -595,7 +595,7 @@ command: --default-authentication-plugin=mysql_native_password
 >
 > **Step02:**
 >
-> 登入 container  
+> 登入 container  <br>
 > 登入 mysql，密碼 DAS@mysql2020
 >
 > ```{bash}
@@ -712,7 +712,7 @@ mysql -u root -p
 
 **修改 Configuration file 與結果:**
 
-即連動資料夾下，新增 my.cnf，修改裡面內容。  
+即連動資料夾下，新增 my.cnf，修改裡面內容。  <br>
 修改之後要重啟 container。
 
 - mysqld 是服務端程序 = 作為 MYSQL Server 的操作指令。
@@ -798,7 +798,7 @@ docker run --name elasticsearch -e "discovery.type=single-node" -v /datamount/el
 - [rocker/rstudio Tags - Docker Hub](https://hub.docker.com/r/rocker/rstudio/tags)
 
 建議下載 tag 有 ubuntu 的版本。
-因為有嘗試過 tag: 3.6.3，結果啟動 container 失敗。  
+因為有嘗試過 tag: 3.6.3，結果啟動 container 失敗。  <br>
 
 ```{bash}
 // 下載 tag: 3.6.3-ubuntu18.04
@@ -827,7 +827,7 @@ docker run --name rstudio_latest \
 
 **安裝R套件:**
 
-目前套件可以直接安裝。  
+目前套件可以直接安裝。  <br>
 如果以後遇到失敗的狀況，可以嘗試下列方法:
 
 - install.packages(pkgs = "package_name", lib = "your_path)

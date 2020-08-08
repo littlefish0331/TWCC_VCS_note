@@ -1,6 +1,6 @@
 # README
 
-<!-- X副對員工這麼壞= =，那公司的產品我還不用爆!  
+<!-- X副對員工這麼壞= =，那公司的產品我還不用爆!  <br>
 把資源用到大爆炸的那一種XDD~   -->
 
 記得 VM 剛啟動的時候，建議最好 `sudo reboot` 一下，之前的經驗是有一些檔案好像還處於 lock 狀態。  <br>
@@ -27,11 +27,11 @@ docker 的部分就十分建議看官方的 tutorial!!
 > 舊的 repository。
 > 抓取專案請用 `git clone https://github.com/littlefish0331/TWCC_tutorial.git --branch share_note`。--branch 可以用 -b。
 
-基本上除非專案很大，不然不必為了 gitbook 而特別一個分支，將其他不必要文件刪除。  
+基本上除非專案很大，不然不必為了 gitbook 而特別一個分支，將其他不必要文件刪除。  <br>
 這樣太耗費工夫，因為基本上專案應該就是以文件為主的專案。
 
-如果真的專案很大，文件說明只是其中一小項，  
-那在針對文件資料夾的部分做一個 git repository 的版本管理就好。  
+如果真的專案很大，文件說明只是其中一小項，  <br>
+那在針對文件資料夾的部分做一個 git repository 的版本管理就好。  <br>
 類似外層一個 repository，內部還有自己的 repositroy。
 
 **結尾設定(end-of-line marker):**
