@@ -24,7 +24,7 @@ docker 的部分就十分建議看官方的 tutorial!!
 
 抓取專案請用 `https://github.com/littlefish0331/TWCC_VCS_note.git`
 
-> 舊的 repository。
+> 舊的 repository。  
 > 抓取專案請用 `git clone https://github.com/littlefish0331/TWCC_tutorial.git --branch share_note`。--branch 可以用 -b。
 
 基本上除非專案很大，不然不必為了 gitbook 而特別一個分支，將其他不必要文件刪除。  <br>
