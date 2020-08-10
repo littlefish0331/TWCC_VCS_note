@@ -22,7 +22,9 @@
   - jupyter notebook mini/r/scipy: 8801, 8802, 8803
   - R+Python+Julia+jupyter notebook/lab: 8800, 9900
   - [【Docker】建立 Jupyter Container. 這邊使用jupyter/datascience-notebook(https:/… | by JiHung Lin | Medium](https://medium.com/@jihung.mycena/docker-%E5%BB%BA%E7%AB%8B-jupyter-container-8084748e2f33)
-  <br>
+- Others
+  - datascience
+
 ---
 
 ## 下載 images-01
