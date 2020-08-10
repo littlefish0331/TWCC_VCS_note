@@ -481,6 +481,9 @@ docker exec -it mssql /opt/mssql-tools/bin/sqlcmd -S localhost -U SA \
 **啟動 container:**
 
 ```{bash}
+docker run --name some-postgres -e PGDATA=//data/pgdata -e POSTGRES_PASSWORD=Postgres@2020 -v /datamount/postgres:/var/lib/postgresql -p 5432:5432 -dit postgres
+
+// 可以設定 user_name
 docker run --name some-postgres \
 -e PGDATA=//data/pgdata \
 -e POSTGRES_USER=NCHC \
@@ -1093,56 +1096,6 @@ jupyter notebook password
 ### 下載 images-04others
 
 #### datascienceschool/rpython
-
-這個 image 裡面有 Ubuntu, R, Python, Rstudio, postgres, jupyter notebook, ssh等等，  
-是很大一包的 image，共18G。
-
-```{bash}
-// 啟動 container
-docker run --name=rpython \
--p 8787:8787 \
--v e:\container_folder\rpython:/home/dockeruser/rpython \
--dit datascienceschool/rpython
-
-docker run --name=rpython \
--p 8787:8787 \
--dit datascienceschool/rpython
-```
-
-因為其 docker hub 沒有寫 Docker file 的資訊，  
-所以後來我是去 github 找，  
-發現在 docker_rpython/02_rpython 目錄下，supervisord.conf 檔案中有做設定。
-
-> [program:rserver]
-> command=/usr/lib/rstudio-server/bin/rserver --auth-none 1 --server-user USER_ID --server-app-armor-enabled 0
-> stdout_logfile=/var/log/supervisor/%(program_name)s.log
-> stderr_logfile=/var/log/supervisor/%(program_name)s.log
-> startsecs=0
-> autorestart=false
-> user=USER_ID
-
-所以要去修改 supervisord.conf 檔案的設定。  
-發現 docker_rpython/02_rpythona/Dockerfile 有標示這個檔案在哪，`/etc/supervisor/supervisord.conf`。
-
-因此，如果不想要自動登入，就去改成 `--auth-none 0`，  
-重啟 container 即可。
-
-**改密碼:**
-
-就登入之後，到 Rstudio > Tools > Shell
-
-```{bash}
-passwd
-```
-
---
-
-### 下載 images-04others
-
-#### datascienceschool/rpython
-
-- [datascienceschool/rpython - Docker Hub](https://hub.docker.com/r/datascienceschool/rpython/)
-- [datascienceschool/docker_rpython: dockerfile for datascienceschool/rpython2 and datascienceschool/rpython3](https://github.com/datascienceschool/docker_rpython)
 
 這個 image 裡面有 Ubuntu, R, Python, Rstudio, postgres, jupyter notebook, ssh等等，  
 是很大一包的 image，共18G。

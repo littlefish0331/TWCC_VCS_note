@@ -194,6 +194,9 @@ docker exec -it mssql /opt/mssql-tools/bin/sqlcmd -S localhost -U SA \
 **啟動 container:**
 
 ```{bash}
+docker run --name some-postgres -e PGDATA=//data/pgdata -e POSTGRES_PASSWORD=Postgres@2020 -v /datamount/postgres:/var/lib/postgresql -p 5432:5432 -dit postgres
+
+// 可以設定 user_name
 docker run --name some-postgres \
 -e PGDATA=//data/pgdata \
 -e POSTGRES_USER=NCHC \
