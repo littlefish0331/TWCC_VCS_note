@@ -31,5 +31,6 @@
 
 ## 其他
 
+- [VM_Container_story](./VM_Container_story.md)
 - [little_skills](./little_skills.md)
 - [Self_Command_History](./Self_Command_History.md): 集集大成。
