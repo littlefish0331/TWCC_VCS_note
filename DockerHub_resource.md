@@ -211,7 +211,7 @@ docker run --name some-postgres \
 ```{bash}
 docker exec -it some-postgres bash
 
-  > psql -d postgres -U postgres  
+  > psql -d postgres -U postgres  <br>
   > SHOW port;
   > exit
 ```
@@ -256,7 +256,7 @@ mysql -u root -p
 
   > SELECT @@character_set_database, @@collation_database;
   > SELECT DEFAULT_CHARACTER_SET_NAME, DEFAULT_COLLATION_NAME FROM INFORMATION_SCHEMA.SCHEMATA; //另一種作法
-  >  
+  >  <br>
   > show variables like 'char%';
   > show variables like 'collation%';
   > exit
@@ -491,7 +491,7 @@ mysql -u root -p
 
   > SELECT @@character_set_database, @@collation_database;
   > SELECT DEFAULT_CHARACTER_SET_NAME, DEFAULT_COLLATION_NAME FROM INFORMATION_SCHEMA.SCHEMATA; //另一種作法
-  >  
+  >  <br>
   > show variables like 'char%';
   > show variables like 'collation%';
   > exit
@@ -642,7 +642,7 @@ docker run --name rstudio_latest \
 
 **修改密碼:**
 
-修改密碼的方式很簡單，進到 Rstudio Server 之後，  
+修改密碼的方式很簡單，進到 Rstudio Server 之後，  <br>
 上方功能列 > Tools > shell(terminal)
 輸入 `passwd`
 然後先輸入舊密碼，接著就可以改密碼了
@@ -653,20 +653,20 @@ docker run --name rstudio_latest \
 - [How to set an enviroment variable on an existing container? · Issue #8838 · moby/moby](https://github.com/moby/moby/issues/8838)
 - [Allow `docker start` to take environment variables · Issue #7561 · moby/moby](https://github.com/moby/moby/issues/7561)
 
-有幾種可能的做法可以嘗試!!  
-終究還是要去看一下這個 image 的 dockerfile 是如何撰寫的，  
+有幾種可能的做法可以嘗試!!  <br>
+終究還是要去看一下這個 image 的 dockerfile 是如何撰寫的，  <br>
 才知道它是怎麼啟動 Rstudio。
 
 - **solution01:** 修改 rserver.conf
 
-> 在 container 中，路徑 /etc/rstudio/ 之下，有一個檔案叫做 rserver.conf。  
-> 只要在裡面加入下方指令，就可以自動登入。  
+> 在 container 中，路徑 /etc/rstudio/ 之下，有一個檔案叫做 rserver.conf。  <br>
+> 只要在裡面加入下方指令，就可以自動登入。  <br>
 > 但目前在此 image 中嘗試失敗。
->  
+>  <br>
 > ```{rserver.conf}
 > // rserver.conf
 > # Server Configuration File
->  
+>  <br>
 > rsession-which-r=/usr/local/bin/R
 > auth-none=1
 > server-user=rstudio
@@ -674,8 +674,8 @@ docker run --name rstudio_latest \
 
 - **solution02:** docker run -e DISABLE_AUTH=TRUE
 
-從這個 image 的 Dockerfile，可以知道在路徑 /etc/cont-init.d 下觀看 userconf.conf 這個檔案，  
-就可以知道可以更改環境變數 DISABLE_AUTH=TRUE，  
+從這個 image 的 Dockerfile，可以知道在路徑 /etc/cont-init.d 下觀看 userconf.conf 這個檔案，  <br>
+就可以知道可以更改環境變數 DISABLE_AUTH=TRUE，  <br>
 所以就在一開始 docker run 指令時增加參數如下。
 
 ```{bash}
@@ -705,12 +705,12 @@ docker run --name r_env_no -e ROOT=TRUE -e PASSWORD=rstudio@2020 -p 8787:8787 -d
 
 docker run --name r_env_TRUE -e ROOT=TRUE -e PASSWORD=rstudio@2020 -e DISABLE_AUTH=TRUE -p 8788:8787 -d rocker/rstudio:3.6.3-ubuntu18.04
 
-  > 依照 userconf.conf 的指令，會多這一行。  
-  > Skipping authentication as requested  
-  >  
-  > 在 /etc/rstudio 目錄之下，缺少 disable_auth_rserver.conf 檔案，  
+  > 依照 userconf.conf 的指令，會多這一行。  <br>
+  > Skipping authentication as requested  <br>
+  >  <br>
+  > 在 /etc/rstudio 目錄之下，缺少 disable_auth_rserver.conf 檔案，  <br>
   > 因為這個檔案的 `auth-none=1` 被寫入 rserver.conf 中。
-  >  
+  >  <br>
   > cat /etc/environment
   > 環境變數增加 `USER=rstudio`。
 
@@ -718,19 +718,19 @@ docker run --name r_env_FALSE -e ROOT=TRUE -e PASSWORD=rstudio@2020 -e DISABLE_A
 
 // 其餘的 logs 如下
 
-  > [s6-init] making user provided files available at /var/run/s6/etc...exited 0.  
-  > [s6-init] ensuring user provided files have correct perms...exited 0.  
-  > [fix-attrs.d] applying ownership & permissions fixes...  
-  > [fix-attrs.d] done.  
-  > [cont-init.d] executing container initialization scripts...  
-  > [cont-init.d] userconf: executing...  
-  > Adding user `rstudio' to group `sudo' ...  
-  > Adding user rstudio to group sudo  
-  > Done.  
-  > rstudio added to sudoers  
-  > [cont-init.d] userconf: exited 0.  
-  > [cont-init.d] done.  
-  > [services.d] starting services  
+  > [s6-init] making user provided files available at /var/run/s6/etc...exited 0.  <br>
+  > [s6-init] ensuring user provided files have correct perms...exited 0.  <br>
+  > [fix-attrs.d] applying ownership & permissions fixes...  <br>
+  > [fix-attrs.d] done.  <br>
+  > [cont-init.d] executing container initialization scripts...  <br>
+  > [cont-init.d] userconf: executing...  <br>
+  > Adding user `rstudio' to group `sudo' ...  <br>
+  > Adding user rstudio to group sudo  <br>
+  > Done.  <br>
+  > rstudio added to sudoers  <br>
+  > [cont-init.d] userconf: exited 0.  <br>
+  > [cont-init.d] done.  <br>
+  > [services.d] starting services  <br>
   > [services.d] done.
 
 // 路徑 /etc/rstudio 目錄底下的資料有
@@ -751,23 +751,23 @@ docker run --name r_env_FALSE -e ROOT=TRUE -e PASSWORD=rstudio@2020 -e DISABLE_A
 
 如果有下列兩種需求，解決方式如下:
 
-1. 先設定每次都需要登入，後改為預設登入。container:r_env_no, r_env_FLASE  
+1. 先設定每次都需要登入，後改為預設登入。container:r_env_no, r_env_FLASE  <br>
 2. 先設定預設登入，後改為每次都需要登入。container:r_env_TRUE
 
-> 均先安裝 vim  
-> > apt-get update  
+> 均先安裝 vim  <br>
+> > apt-get update  <br>
 > > apt-get install vim
->  
-> 1. 先設定每次都需要登入，後改為預設登入  
-> `vim /etc/rstudio/rserver.conf`  
+>  <br>
+> 1. 先設定每次都需要登入，後改為預設登入  <br>
+> `vim /etc/rstudio/rserver.conf`  <br>
 > 新增 `auth-none=1`
-> `vim /etc/environment`  
+> `vim /etc/environment`  <br>
 > 新增 `USER=rstudio`
 > docker restart container 即可。
->  
-> 2. 先設定預設登入，後改為每次都需要登入  
-> vim /etc/rstudio/rserver.conf  
-> 將 auth-none=1 註釋掉，  
+>  <br>
+> 2. 先設定預設登入，後改為每次都需要登入  <br>
+> vim /etc/rstudio/rserver.conf  <br>
+> 將 auth-none=1 註釋掉，  <br>
 > docker restart container 即可。
 
 p.s. 重啟的時候，/etc/environment 環境變數，可能會重複，但是沒差。
@@ -794,11 +794,11 @@ p.s. 重啟的時候，/etc/environment 環境變數，可能會重複，但是�
 > 如果抓 datascience 系列，會有R。
 > scipy, minimal 系列的 tag 看不出版本，但都是基於 base 系列製作。
 > 所以最後抓取 base 系列的 python-3.7.6。
->  
+>  <br>
 > 但是研究一下文檔，其實 base 系列沒有支援 LaTeX 讓我覺得很不妙，
 > 可是 minimal, scipy 系列就是沒有 python 版本的 tag。
 > 不然建議還是裝 minimal, scipy 系列。
->  
+>  <br>
 > 後來覺得不妙，只好去一一嘗試，發現這個也是 python3.7.6，jupyter/scipy-notebook:dc9744740e12。
 
 ```{bash}
@@ -911,7 +911,7 @@ jupyter notebook password
 - [datascienceschool/rpython - Docker Hub](https://hub.docker.com/r/datascienceschool/rpython/)
 - [datascienceschool/docker_rpython: dockerfile for datascienceschool/rpython2 and datascienceschool/rpython3](https://github.com/datascienceschool/docker_rpython)
 
-這個 image 裡面有 Ubuntu, R, Python, Rstudio, postgres, jupyter notebook, ssh等等，  
+這個 image 裡面有 Ubuntu, R, Python, Rstudio, postgres, jupyter notebook, ssh等等，  <br>
 是很大一包的 image，共18G。
 
 ```{bash}
@@ -926,8 +926,8 @@ docker run --name=rpython \
 -dit datascienceschool/rpython
 ```
 
-因為其 docker hub 沒有寫 Docker file 的資訊，  
-所以後來我是去 github 找，  
+因為其 docker hub 沒有寫 Docker file 的資訊，  <br>
+所以後來我是去 github 找，  <br>
 發現在 docker_rpython/02_rpython 目錄下，supervisord.conf 檔案中有做設定。
 
 > [program:rserver]
@@ -938,10 +938,10 @@ docker run --name=rpython \
 > autorestart=false
 > user=USER_ID
 
-所以要去修改 supervisord.conf 檔案的設定。  
+所以要去修改 supervisord.conf 檔案的設定。  <br>
 發現 docker_rpython/02_rpythona/Dockerfile 有標示這個檔案在哪，`/etc/supervisor/supervisord.conf`。
 
-因此，如果不想要自動登入，就去改成 `--auth-none 0`，  
+因此，如果不想要自動登入，就去改成 `--auth-none 0`，  <br>
 重啟 container 即可。
 
 **改密碼:**
