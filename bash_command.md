@@ -40,6 +40,38 @@ apt list --installed | wc -l
 apt list | grep ^docker  //dcoker 開頭的套件。
 ```
 
+一開始安裝的套件有 516 個。  <br>
+其中並沒有 docker。  <br>
+比較重點有的是 vim, zsh, python3.6, perl, openssl, ntp, nano, gzip, git, ftp, gcc-8-base, dpkg, fdisk, curl, apt。
+
+- [apt list - apt 使用筆記](https://foreachsam.github.io/book-util-apt/book/content/command/apt/apt-list/)
+- [apt - How to list all installed packages - Ask Ubuntu](https://askubuntu.com/questions/17823/how-to-list-all-installed-packages)
+
+```{bash}
+//列出可安裝的套件，共 67371 個。
+apt list
+apt list | wc -l
+
+//列出有安裝的套件，並計算個數，共 516 個。
+apt list --installed | wc -l
+```
+
+**更新:**
+
+```{bash}
+apt-get update
+```
+
+**安裝vim:**
+
+```{bash}
+// 一定要先更新 apt-get 這個工具，不然後面其實會出問題。
+apt-get update
+
+// 安裝
+apt-get install vim
+```
+
 ---
 
 ## Others
@@ -148,6 +180,20 @@ chown -R ubuntu:ubuntu /data2/bigobject
 磁碟使用的初始狀況。
 
 -h, --human-readable  print sizes in powers of 1024 (e.g., 1023M)
+
+---
+
+## env、printenv
+
+查看環境變數。
+
+```{bash}
+env
+printenv
+
+// 要看哪一個環境變數。
+env PATH
+```
 
 ---
 

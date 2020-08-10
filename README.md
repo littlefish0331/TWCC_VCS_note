@@ -43,8 +43,15 @@ p.s.這和 git config --local core.autocrlf 的設定無關。如果不小心變
 
 ```{bash}
 // 在該資料夾目錄下，輸入下列指令完成。
-// 建議是在 wsl 環境下執行，但 cmd or powershell 也可以。
+// 建議是在 wsl(Unix) 環境下執行，但 cmd or powershell 也可以。
+// 兩個等價。
 sed --in-place 's/  \r$/  <br>\r/g' *.md
+sed -i 's/  \r$/  <br>\r/g' *.md
+
+// 如果 .md 有在資料夾中。
+// 兩個效果相同。
+find ./ -type f | sed -i 's/  \r$/  <br>\r/g' *.md
+find ./ -type f -name '*.md' | sed -i 's/  \r$/  <br>\r/g' *.md
 ```
 
 **上傳設定:**

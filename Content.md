@@ -8,6 +8,8 @@
 - [ssh_connect](./ssh_connect.md)
 - [TWCC-port_connect](./TWCC-port_connect.md)
 - [Mount_Disk](./Mount_Disk.md)
+- [apt-get](./apt-get.md)
+- [env](./env.md)
 - [bash_command](./bash_command.md): 集大成。
 
 ## 進階主題

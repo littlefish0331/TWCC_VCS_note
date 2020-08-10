@@ -138,7 +138,25 @@ exit  <br>
 
 ---
 
-## apt list
+## apt
+
+**list:**
+
+列出所有的套件。  <br>
+list packages based on package names
+
+```{bash}
+apt list
+apt list --installed  //列出所有安裝的套件。
+```
+
+靈活運用
+
+```{bash}
+apt list | wc -l
+apt list --installed | wc -l
+apt list | grep ^docker  //dcoker 開頭的套件。
+```
 
 一開始安裝的套件有 516 個。  <br>
 其中並沒有 docker。  <br>
@@ -156,11 +174,27 @@ apt list | wc -l
 apt list --installed | wc -l
 ```
 
+**更新:**
+
+```{bash}
+apt-get update
+```
+
+**安裝vim:**
+
+```{bash}
+// 一定要先更新 apt-get 這個工具，不然後面其實會出問題。
+apt-get update
+
+// 安裝
+apt-get install vim
+```
+
 ---
 
 ## df -h
 
-磁碟使用的初始狀況
+磁碟使用的初始狀況、可以看容量
 
 -h, --human-readable  print sizes in powers of 1024 (e.g., 1023M)
 

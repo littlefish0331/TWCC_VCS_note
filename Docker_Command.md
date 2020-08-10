@@ -1,6 +1,6 @@
 # Docker Command
 
-簡單記錄使用過的 docker 指令，有點類似 cheet sheet。  <br>
+簡單記錄使用過的 docker 指令功用，有點類似 cheet sheet。  <br>
 
 ---
 
@@ -132,69 +132,91 @@ windows + x > 電腦管理 > 本機使用者和群組 > 群組 > docker-users。
 
 ---
 
-## Docker 安裝 + 初始化步驟
+## 本檔案紀錄的部分
 
-```{bash}
-curl -sSL https://get.docker.com/ | sh
-sudo usermod -aG docker ubuntu  //記得要重新登入
-```
-
-If you would like to use Docker as a non-root user, you should now consider adding your user to the "docker" group with something like: `sudo usermod -aG docker ubuntu`
-
-Remember that you will have to log out and back in for this to take effect!
-
-WARNING: Adding a user to the "docker" group will grant the ability to run containers which can be used to obtain root privileges on the docker host. Refer to https://docs.docker.com/engine/security/security/#docker-daemon-attack-surface for more information.
+- 下載與設定
+  - docker
+  - 加入 docker 帳號到群組
+  - DockerHub login
+  - docker-compose
+- container 操作
+  - 啟動
+  - 重啟
+  - 停止
+  - 進入 container
+  - docker start $(docker ps -a -q): [Command for restarting all running docker containers? - Stack Overflow](https://stackoverflow.com/questions/38221463/command-for-restarting-all-running-docker-containers)
 
 ---
 
-## 連結 docker hub + 下載 image
+## 下載與設定
 
-連結登入 Docker Hub
+### docker download
+
+- [Linux 修改使用者帳號設定 - usermod](https://www.opencli.com/linux/usermod-modify-linux-account)
+
+兩種方法其實是一樣的。
+
+```{bash}
+// 這是我從 社群好友 - 紙鈔(money)，那邊學的。
+// 從官方網站下載，然後以 shell 執行。
+curl -sSL https://get.docker.com/ | sh
+
+// 官方 docker Github 作法
+// 先從官方網站下載，儲存檔名為 get-docker.sh
+// 再用 sh 執行。
+// -o, --output <file> Write to file instead of stdout
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
+```
+
+> 會有一個指令提醒使用者權限與群組問題
+>
+> If you would like to use Docker as a non-root user, you should now consider adding your user to the "docker" group with something like: `sudo usermod -aG docker ubuntu`
+>
+> Remember that you will have to log out and back in for this to take effect!
+>
+> WARNING: Adding a user to the "docker" group will grant the ability to run containers which can be used to obtain root privileges on the docker host. Refer to https://docs.docker.com/engine/security/security/#docker-daemon-attack-surface for more information.
+
+### 加入 docker 帳號到群組
+
+因為 Docker 安裝後，會建立一個 docker 帳號和群組。  <br>
+如果沒有把 docker 帳號加入群組，就會每次使用 docker 指令都需要 sudo，  <br>
+為了直接使用 docker 指令，所以要把 docker 加入 ubuntu 群組中。  <br>
+
+- 當使用 "-G" 參數時, usermod 會將帳號從原來加入了的群組退出, 所以在 "-G" 參數前加入 "-a" 參數, 會保留原來的群組設定。
+- 記得要重新登入。
+
+```{bash}
+sudo usermod -aG docker ubuntu
+```
+
+--
+
+### DockerHub login
 
 ```{bash}
 docker login
+
+  > littlefish0331
+  > 去看 myPC的密碼.txt
 ```
 
-下載 DockerCon範例
+--
+
+### docker-compose download
+
+- [Install Docker Compose | Docker Documentation](https://docs.docker.com/compose/install/)
+- [linux下chmod +x的意思？为什么要进行chmod +x_yunlive的博客-CSDN博客](https://blog.csdn.net/u012106306/article/details/80436911)
 
 ```{bash}
-docker pull littlefish0331/hello-world
-docker images
-docker run -p 8080:80 --name DockerCon -d littlefish0331/hello-world
-```
+// 下載 docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
----
+// 讓 docker-compose 變更為執行檔。
+sudo chmod +x /usr/local/bin/docker-compose
 
-## MySQL
-
-- [mysql - Docker Hub](https://hub.docker.com/_/mysql?tab=description)
-
-如果連動的資料夾沒有建立，docker會自動建立幫忙建立該路徑的資料夾。  <br>
-如果不想要有密碼問題就 pull 5.7.31版的 MySQL。
-
-密碼無法登入的問題，詳見 Self_Command_History.md。
-
-```{bash}
-docker run --detach \
---name some-mysql \
--v /datamount/mysql/data:/var/lib/mysql \
--v /datamount/mysql/conf:/etc/mysql/conf.d \
--p 3306:3306 \
---env MYSQL_ROOT_PASSWORD=DAS@mysql2020 \
-mysql:latest
-
-//也可以只打一行
-docker run --detach --name some-mysql -v /datamount/mysql/data:/var/lib/mysql -v /datamount/mysql/conf:/etc/mysql/conf.d -p 3306:3306 --env MYSQL_ROOT_PASSWORD=DAS@mysql2020 mysql:latest
-```
-
----
-
-## Rstudio
-
-- [datascienceschool/rpython - Docker Hub](https://hub.docker.com/r/datascienceschool/rpython/): Ubuntu 18.04 + Python 3.7 (Anaconda3-2019.03) + R-3.6.1 + rstudio-server 1.2.1335 + Databases(PostgreSQL, Redis) + Tools(git, emacs, tex-live, pandoc, graphviz, imagemagick)、Running Services(jupyter notebook (port 8888), R-studio server (port 8787), ssh (port 22))。其實只需要 r, rstudio, python
-
-```{bash}
-docker run --name=rpython -dit -v e:\container_folder\rpython:/home/dockeruser/rpython -p 8787:8787 datascienceschool/rpython
+// 查看 docker-compose 版本。
+docker-compose version
 ```
 
 ---
