@@ -5,16 +5,19 @@
 <!-- TOC -->
 
 - [bash_command](#bash_command)
-  - [apt](#apt)
-  - [Others](#others)
-  - [su 最高權限者](#su-最高權限者)
-  - [Linux 系統支援語系](#linux-系統支援語系)
-  - [顯示目錄下-檔案-編碼-結尾換行符號](#顯示目錄下-檔案-編碼-結尾換行符號)
-  - [權限](#權限)
-  - [View History](#view-history)
-    - [window](#window)
-  - [df](#df)
-  - [END](#end)
+    - [apt](#apt)
+    - [Others](#others)
+    - [su 最高權限者](#su-最高權限者)
+    - [Linux 系統支援語系](#linux-系統支援語系)
+    - [顯示目錄下-檔案-編碼-結尾換行符號](#顯示目錄下-檔案-編碼-結尾換行符號)
+    - [權限](#權限)
+        - [檔案](#檔案)
+        - [目錄之擁有者或群組](#目錄之擁有者或群組)
+    - [View History](#view-history)
+        - [window](#window)
+    - [df](#df)
+    - [env、printenv](#envprintenv)
+    - [END](#end)
 
 <!-- /TOC -->
 
