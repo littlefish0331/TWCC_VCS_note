@@ -60,8 +60,7 @@ NGINX，是web server software，我猜和Apache很像。
 
 ```{bash}
 // ACCEPT_EULA confirms your acceptance of the End-User Licensing Agreement.
-docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=P@ssw0rd" -p 1433:1433 --name mssql -d mcr.microsoft.com/mssql/server:2019-latest
-docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=MSSQL@2020" -p 1433:1433 --name mssql -d mcr.microsoft.com/mssql/server:2019-latest
+docker run --name mssql -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=MSSQL@2020" -v /datamount/mssql:/var/opt/mssql -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-latest
 ```
 
 --
