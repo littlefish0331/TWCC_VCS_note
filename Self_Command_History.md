@@ -32,6 +32,7 @@
     - [下載 images-01](#下載-images-01)
     - [下載 images-02Database](#下載-images-02database)
     - [下載 images-03code](#下載-images-03code)
+    - [下載 images-04others](#下載-images-04others)
   - [END](#end)
 
 <!-- /TOC -->
@@ -1091,7 +1092,7 @@ jupyter notebook password
   > rpyju@nb2020
 ```
 
----
+--
 
 ### 下載 images-04others
 
@@ -1136,6 +1137,20 @@ docker run --name=rpython \
 
 ```{bash}
 passwd
+```
+
+#### jenkins
+
+- [jenkins - Docker Hub](https://hub.docker.com/_/jenkins)
+
+**啟動container:**
+
+```{bash}
+docker run --name some-jenkins \
+-v /datamount/Jenkins:/var/jenkins_home \
+-p 8083:8080 \
+-p 50000:50000 \
+-d jenkins
 ```
 
 ---

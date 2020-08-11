@@ -1,5 +1,6 @@
 # DockerHub resource
 
+- alpine版本
 - 下載 images-01
   - OS system
     - ubuntu
@@ -23,7 +24,29 @@
   - R+Python+Julia+jupyter notebook/lab: 8800, 9900
 - 下載 images-04others
   - datascienceschool/rpython: 裡面有 Ubuntu, R, Python, Rstudio, postgres, jupyter notebook, ssh
+  - jenkins: 8083, 50000
   - custom: ubuntu, R, rstudio, Python, jupyter notebook, Julia
+
+---
+
+## alpine版本
+
+- [Alpine - Docker —— 从入门到实践](https://yeasy.gitbook.io/docker_practice/os/alpine)
+- [很多官方 docker 镜像都出了基于 alpine 的版本，相较于正常的版本， alpine 版会有什么坑吗？ - V2EX](https://www.v2ex.com/t/581888): 說明為何其他版本存在的必要性。
+
+很多 image 都有 alpine版本的 tag，到底 alpine 算什麼。  
+
+Alpine 操作系統是一個面向安全的輕型 Linux 發行版。  
+它不同於通常 Linux 發行版，Alpine 採用了 musl libc 和 busybox 以減小系統的體積和運行時資源消耗，但功能上比 busybox 又完善的多，  
+因此得到開源社區越來越多的青睞。在保持瘦身的同時，Alpine 還提供了自己的包管理工具 apk，  
+可以通過 https://pkgs.alpinelinux.org/packages 網站上查詢包信息，也可以直接通過 apk 命令直接查詢和安裝各種軟件。
+
+Alpine 由非商業組織維護的，支持廣泛場景的 Linux發行版，  
+它特別為資深/重度Linux用戶而優化，關注安全，性能和資源效能。  
+Alpine 鏡像可以適用於更多常用場景，並且是一個優秀的可以適用於生產的基礎系統/環境。
+
+目前 Docker 官方已開始推薦使用 Alpine 替代之前的 Ubuntu 做為基礎鏡像環境。  
+這樣會帶來多個好處。包括鏡像下載速度加快，鏡像安全性提高，主機之間的切換更方便，佔用更少磁盤空間等。
 
 ---
 
@@ -952,14 +975,33 @@ docker run --name=rpython \
 passwd
 ```
 
+--
+
+### jenkins
+
+- [jenkins - Docker Hub](https://hub.docker.com/_/jenkins)
+
+**啟動container:**
+
+```{bash}
+docker run --name some-jenkins \
+-v /datamount/Jenkins:/var/jenkins_home \
+-p 8083:8080 \
+-p 50000:50000 \
+-d jenkins
+```
+
 ---
 
 ## END
 
-jupyter notebook/lab，之後要學怎麼用在
-
-- docker 指令中設定 token or password
-- dockerfile 指令中設定 token or password
+- jupyter notebook/lab，之後要學怎麼用在
+  - docker 指令中設定 token or password
+  - dockerfile 指令中設定 token or password
 
 - [【Docker】建立 Jupyter Container. 這邊使用jupyter/datascience-notebook(https:/… | by JiHung Lin | Medium](https://medium.com/@jihung.mycena/docker-%E5%BB%BA%E7%AB%8B-jupyter-container-8084748e2f33)
 - 了解 postgres 如何新增使用者
+
+- Jenkins 學習
+  - [安裝 Jenkins · 持續整合與自動化測試](http://jenkins.readbook.tw/jenkins/basic/install.html)
+  - [[ DevOps ] Jenkins 基本設定及 Pipeline 腳本教學](https://oranwind.org/-devops-jenkins-yu-centos-ubuntu-an-zhuang-jiao-xue/)
