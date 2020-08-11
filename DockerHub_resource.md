@@ -34,18 +34,18 @@
 - [Alpine - Docker —— 从入门到实践](https://yeasy.gitbook.io/docker_practice/os/alpine)
 - [很多官方 docker 镜像都出了基于 alpine 的版本，相较于正常的版本， alpine 版会有什么坑吗？ - V2EX](https://www.v2ex.com/t/581888): 說明為何其他版本存在的必要性。
 
-很多 image 都有 alpine版本的 tag，到底 alpine 算什麼。  
+很多 image 都有 alpine版本的 tag，到底 alpine 算什麼。  <br>
 
-Alpine 操作系統是一個面向安全的輕型 Linux 發行版。  
-它不同於通常 Linux 發行版，Alpine 採用了 musl libc 和 busybox 以減小系統的體積和運行時資源消耗，但功能上比 busybox 又完善的多，  
-因此得到開源社區越來越多的青睞。在保持瘦身的同時，Alpine 還提供了自己的包管理工具 apk，  
+Alpine 操作系統是一個面向安全的輕型 Linux 發行版。  <br>
+它不同於通常 Linux 發行版，Alpine 採用了 musl libc 和 busybox 以減小系統的體積和運行時資源消耗，但功能上比 busybox 又完善的多，  <br>
+因此得到開源社區越來越多的青睞。在保持瘦身的同時，Alpine 還提供了自己的包管理工具 apk，  <br>
 可以通過 https://pkgs.alpinelinux.org/packages 網站上查詢包信息，也可以直接通過 apk 命令直接查詢和安裝各種軟件。
 
-Alpine 由非商業組織維護的，支持廣泛場景的 Linux發行版，  
-它特別為資深/重度Linux用戶而優化，關注安全，性能和資源效能。  
+Alpine 由非商業組織維護的，支持廣泛場景的 Linux發行版，  <br>
+它特別為資深/重度Linux用戶而優化，關注安全，性能和資源效能。  <br>
 Alpine 鏡像可以適用於更多常用場景，並且是一個優秀的可以適用於生產的基礎系統/環境。
 
-目前 Docker 官方已開始推薦使用 Alpine 替代之前的 Ubuntu 做為基礎鏡像環境。  
+目前 Docker 官方已開始推薦使用 Alpine 替代之前的 Ubuntu 做為基礎鏡像環境。  <br>
 這樣會帶來多個好處。包括鏡像下載速度加快，鏡像安全性提高，主機之間的切換更方便，佔用更少磁盤空間等。
 
 ---
