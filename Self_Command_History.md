@@ -1141,16 +1141,78 @@ passwd
 
 #### jenkins
 
-- [jenkins - Docker Hub](https://hub.docker.com/_/jenkins)
+以下介紹兩種方式的安裝，最終都為 Jenkins + Blue Ocean。
 
-**啟動container:**
+**啟動 jenkins/jenkins image:**
+
+記得連動的資料夾，權限要先打開。
 
 ```{bash}
-docker run --name some-jenkins \
--v /datamount/Jenkins:/var/jenkins_home \
--p 8083:8080 \
+docker pull jenkins/jenkins:lts
+
+docker run \
+--name jenkins-only \
+-v /datamount/jenkins-only/jenkins_home:/var/jenkins_home \
+-p 8082:8080 \
 -p 50000:50000 \
--d jenkins
+-d jenkins/jenkins:lts
+
+// 進入 container 觀看密碼。
+docker exec -it jenkins-only bash
+
+  > cat /var/jenkins_home/secrets/initialAdminPassword
+```
+
+**啟動 jenkinsci/blueocean image:**
+
+(此為官方教學文件指示，更多解釋請看官方文件)。  <br>
+為了讓容器裡也可以操作 docker 鏡像，又不想污染宿主機上的 docker 鏡像，要使用 docker in docker(dind) 的方案。  <br>
+然後這個 image 在初始化 jenkins 的速度比較快!!
+
+記得連動的資料夾，權限要先打開。  <br>
+
+之後透過此 container，就可以連結 localhost 的 Docker Server。
+
+```{bash}
+// 建立 Jenkins 網路
+docker network create jenkins
+
+// docker-in-docker，這個無法用 docker exec 進入唷!
+// port 2376，不用去 TWCC 上面開啟。
+// --network network                Connect a container to a network
+// --network-alias list             Add network-scoped alias for the container
+docker run \
+--name jenkins-docker \
+--network jenkins \
+--network-alias docker \
+--env DOCKER_TLS_CERTDIR=/certs \
+--volume /datamount/jen-bo-dind/jenkins-data:/var/jenkins_home \
+--volume /datamount/jen-bo-dind/jenkins-docker-certs:/certs/client \
+--publish 2376:2376 \
+--privileged \
+-d docker:dind
+```
+
+```{bash}
+// 安裝 jenkinsci/blueocean。
+// env 那三行，讓我們可以順利接到 localhost 的 Docker Server。
+docker run \
+--name jenkins-blueocean-dind \
+--network jenkins \
+--env DOCKER_HOST=tcp://docker:2376 \
+--env DOCKER_CERT_PATH=/certs/client \
+--env DOCKER_TLS_VERIFY=1 \
+--volume /datamount/jen-bo-dind/jenkins-data:/var/jenkins_home \
+--volume /datamount/jen-bo-dind/jenkins-docker-certs:/certs/client:ro \
+--publish 8083:8080 \
+--publish 50001:50000 \
+-d jenkinsci/blueocean
+
+// 進入 container 觀看密碼和docker version
+docker exec -it jenkins-blueocean-dind bash
+
+  > docker version
+  > cat /var/jenkins_home/secrets/initialAdminPassword
 ```
 
 ---

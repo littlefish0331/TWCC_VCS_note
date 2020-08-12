@@ -24,7 +24,7 @@
   - R+Python+Julia+jupyter notebook/lab: 8800, 9900
 - 下載 images-04others
   - datascienceschool/rpython: 裡面有 Ubuntu, R, Python, Rstudio, postgres, jupyter notebook, ssh
-  - jenkins: 8083, 50000
+  - jenkins: (8082, 50000), (8083, 50001)
   - custom: ubuntu, R, rstudio, Python, jupyter notebook, Julia
 
 ---
@@ -979,30 +979,10 @@ passwd
 
 ### jenkins
 
-- [jenkins - Docker Hub](https://hub.docker.com/_/jenkins)
-
-
-
-
-**啟動container:**
-
-```{bash}
-docker run --name some-jenkins \
--v /datamount/Jenkins:/var/jenkins_home \
--p 8083:8080 \
--p 50000:50000 \
--d jenkins
-```
-
-
-
-
---
-
-### jenkins
-
 - Jenkins
-  - [jenkins - Docker Hub](https://hub.docker.com/_/jenkins): 直接搜尋到的這個不是官方官網推薦的
+  - [jenkins - Docker Hub](https://hub.docker.com/_/jenkins): 直接搜尋到的這個不是官方官網推薦的。
+  - [jenkins/jenkins - Docker Hub](https://hub.docker.com/r/jenkins/jenkins/)
+  - [jenkins/blueocean - Docker Hub](https://hub.docker.com/r/jenkins/blueocean)
   - [Installing Jenkins](https://www.jenkins.io/doc/book/installing/): 官網安裝指南。
   - [使用docker in docker - jeremy的技术点滴](https://jeremyxu2010.github.io/2019/02/使用docker-in-docker/)
 
@@ -1014,7 +994,7 @@ docker run --name some-jenkins \
 因為它是 Long-Term Support (LTS) release of Jenkins (which is production-ready) bundled with all Blue Ocean plugins and features.  
 This means that you do not need to install the Blue Ocean plugins separately. 。
 
-> 當然也可以自行安裝比較乾淨的 jenkins/jenkins (on Docker Hub)，  
+> 當然也可以自行安裝比較小包的 jenkins/jenkins (on Docker Hub)，  
 > 然後再自行加上插件(plugins)。
 
 以下介紹兩種方式的安裝，最終都為 Jenkins + Blue Ocean。
@@ -1023,11 +1003,11 @@ This means that you do not need to install the Blue Ocean plugins separately. �
 
 Jenkins是一款Java開發的跨平台持續集成和持續發布的開源項目，它具有如下特徵:
 
-> - 安裝及遷移方便：安裝直接部署war包，遷移只需替換JENKINS_HOME目錄。
+> - 安裝及遷移方便：安裝直接部署 war 包，遷移只需替換 JENKINS_HOME 目錄。
 > - 配置方便：可視化後台操作。
-> - 豐富的插件生態圈：比如git, junit, jacoco等。
+> - 豐富的插件生態圈：比如 git, junit, jacoco 等。
 > - 可擴展：自定義插件。
-> - 分佈式：支持Master-Slave。
+> - 分佈式：支持 Master-Slave。
 
 Jenkins已經作為各大公司進行CI/CD的首選工具。  
 Jenkins UI從2006年-2016年，幾乎沒有變化。
@@ -1040,144 +1020,83 @@ Jenkins UI從2006年-2016年，幾乎沒有變化。
 > - pipeline精確度，通過UI直接介入pipeline的中間問題。
 > - 集成代碼分支和pull請求。
 
+**啟動 jenkins/jenkins image:**
+
+記得連動的資料夾，權限要先打開。  
+如果一開始 Getting Started，有安裝 plugins 失敗，之後會可以再按 Retry，  
+所以不用太緊張。  
+
+不然砍掉重建也可以XD~ 我就這樣做了好多次。
+
+```{bash}
+// docker pull jenkins/jenkins
+docker pull jenkins/jenkins:lts
+
+docker run \
+--name jenkins-only \
+-v /datamount/jenkins-only/jenkins_home:/var/jenkins_home \
+-p 8082:8080 \
+-p 50000:50000 \
+-d jenkins/jenkins:lts
+
+// 進入 container 觀看密碼。
+docker exec -it jenkins-only bash
+
+  > cat /var/jenkins_home/secrets/initialAdminPassword
+```
+
+管理 Jenkins > 管理外掛程式 > 可用的，filter:blue ocean > 勾選 Blue Ocean。
+
 **啟動 jenkinsci/blueocean image:**
 
 (此為官方教學文件指示，更多解釋請看官方文件)。  
-為了讓容器裡也可以操作 docker 鏡像，又不想污染宿主機上的 docker 鏡像，要使用 docker in docker(dind) 的方案。
+為了讓容器裡也可以操作 docker 鏡像，又不想污染宿主機上的 docker 鏡像，要使用 docker in docker(dind) 的方案。  
+
+記得連動的資料夾，權限要先打開。  
+
+之後透過此 container，就可以連結 localhost 的 Docker Server。
 
 ```{bash}
-// docker-in-docker
-docker container run \
+// 建立 Jenkins 網路
+docker network create jenkins
+
+// docker-in-docker，這個無法用 docker exec 進入唷!
+// port 2376，不用去 TWCC 上面開啟。
+// --network network                Connect a container to a network
+// --network-alias list             Add network-scoped alias for the container
+docker run \
 --name jenkins-docker \
 --network jenkins \
 --network-alias docker \
 --env DOCKER_TLS_CERTDIR=/certs \
---volume /datamount/jenkins-data:/var/jenkins_home \
---volume /datamount/jenkins-docker-certs:/certs/client \
+--volume /datamount/jen-bo-dind/jenkins-data:/var/jenkins_home \
+--volume /datamount/jen-bo-dind/jenkins-docker-certs:/certs/client \
 --publish 2376:2376 \
 --privileged \
 -d docker:dind
-
-// 安裝 jenkinsci/blueocean
-docker container run \
---name jenkins-blueocean-dind  \
---network jenkins \
---env DOCKER_CERT_PATH=/certs/client \
---env DOCKER_TLS_VERIFY=1 \
---volume /datamount/jenkins-data:/var/jenkins_home \
---volume /datamount/jenkins-docker-certs:/certs/client:ro \
---publish 8083:8080 --publish 50000:50000 \
--d jenkinsci/blueocean
 ```
-
-**啟動 jenkins/jenkins image:**
-
-```
-docker run --name jenkins-only -v /data/jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 -d jenkins/jenkins:lts
-
-```
-
-**啟動container:**
 
 ```{bash}
-docker run --name some-jenkins \
--v /datamount/Jenkins:/var/jenkins_home \
--p 8083:8080 \
--p 50000:50000 \
--d jenkins
-```
-
-
-
-
-
-
-
-
-
-
-
-named volume
-	docker volume create
-	docker volume ls
-Host Volume
-
-
-docker container run --name jenkins-docker --rm --detach \
-  --privileged --network jenkins --network-alias docker \
-  --env DOCKER_TLS_CERTDIR=/certs \
-  --volume /data/jenkins-docker-certs:/certs/client \
-  --volume /data/jenkins-data:/var/jenkins_home \
-  --publish 2376:2376 docker:dind
-
-========================
-
-docker container run --name jenkins-blueocean  \
+// 安裝 jenkinsci/blueocean。
+// env 那三行，讓我們可以順利接到 localhost 的 Docker Server。
+docker run \
+--name jenkins-blueocean-dind \
 --network jenkins \
+--env DOCKER_HOST=tcp://docker:2376 \
 --env DOCKER_CERT_PATH=/certs/client \
 --env DOCKER_TLS_VERIFY=1 \
---volume /data/jenkins-data:/var/jenkins_home \
---volume /data/jenkins-docker-certs:/certs/client:ro \
---publish 8080:8080 --publish 50000:50000 \
+--volume /datamount/jen-bo-dind/jenkins-data:/var/jenkins_home \
+--volume /datamount/jen-bo-dind/jenkins-docker-certs:/certs/client:ro \
+--publish 8083:8080 \
+--publish 50001:50000 \
 -d jenkinsci/blueocean
 
-docker container run --name jenkins-docker \
---privileged --network jenkins --network-alias docker \
---env DOCKER_TLS_CERTDIR=/certs \
---volume /data/jenkins-docker-certs:/certs/client \
---volume /data/jenkins-data:/var/jenkins_home \
---publish 2376:2376 \
--d docker:dind
+// 進入 container 觀看密碼和docker version
+docker exec -it jenkins-blueocean-dind bash
 
-========================
-
-資訊架構(IA, Information Architecture)
-人工AI
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  > docker version
+  > cat /var/jenkins_home/secrets/initialAdminPassword
+```
 
 ---
 
@@ -1193,3 +1112,18 @@ docker container run --name jenkins-docker \
 - Jenkins 學習
   - [安裝 Jenkins · 持續整合與自動化測試](http://jenkins.readbook.tw/jenkins/basic/install.html)
   - [[ DevOps ] Jenkins 基本設定及 Pipeline 腳本教學](https://oranwind.org/-devops-jenkins-yu-centos-ubuntu-an-zhuang-jiao-xue/)
+
+
+docker network ls
+
+systemctl -a | grep docker
+
+named volume
+	docker volume create
+	docker volume ls
+Host Volume
+
+資訊架構(IA, Information Architecture)
+人工AI
+
+

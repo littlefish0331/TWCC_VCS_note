@@ -30,7 +30,7 @@
 ### Docker
 
 - [Docker_Learning_from_Others](./Docker/Docker_Learning_from_Others.md)
-- [DockerHub_resource](./Docker/DockerHub_resource.md)
+- [DockerHub_resource](./Docker/DockerHub_resource.md): 集大成。
 - [Docker_Official_Tutorial](./Docker/Docker_Official_Tutorial.md): 完善中
 - [DockerFiles]: 完善中
 - [Docker_Command](./Docker/Docker_Command.md): 集大成。
