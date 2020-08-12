@@ -1,0 +1,586 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>ssh_connect · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="TWCC-port_connect.html" />
+    
+    
+    <link rel="prev" href="Initial_Status.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    README
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">基礎操作</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="Initial_Status.html">
+            
+                <a href="Initial_Status.html">
+            
+                    
+                    Initial_Status
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.2" data-path="ssh_connect.html">
+            
+                <a href="ssh_connect.html">
+            
+                    
+                    ssh_connect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="TWCC-port_connect.html">
+            
+                <a href="TWCC-port_connect.html">
+            
+                    
+                    TWCC-port_connect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="Mount_Disk.html">
+            
+                <a href="Mount_Disk.html">
+            
+                    
+                    Mount_Disk
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="apt-get.md">
+            
+                <span>
+            
+                    
+                    apt-get
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="env.html">
+            
+                <a href="env.html">
+            
+                    
+                    env
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="bash_command.html">
+            
+                <a href="bash_command.html">
+            
+                    
+                    bash_command
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">進階主題</li>
+        
+        
+    
+
+    
+        
+        <li class="header">Database</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="mysql_client.md">
+            
+                <span>
+            
+                    
+                    mysql_client
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" >
+            
+                <span>
+            
+                    
+                    [MySQL]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" >
+            
+                <span>
+            
+                    
+                    [BigObject]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" >
+            
+                <span>
+            
+                    
+                    [MariaDB]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" >
+            
+                <span>
+            
+                    
+                    [Postgres]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="Database_Command.html">
+            
+                <a href="Database_Command.html">
+            
+                    
+                    Database_Command
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Docker</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="Docker/Docker_Learning_from_Others.html">
+            
+                <a href="Docker/Docker_Learning_from_Others.html">
+            
+                    
+                    Docker_Learning_from_Others
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="Docker/DockerHub_resource.html">
+            
+                <a href="Docker/DockerHub_resource.html">
+            
+                    
+                    DockerHub_resource
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="Docker/Docker_Official_Tutorial.html">
+            
+                <a href="Docker/Docker_Official_Tutorial.html">
+            
+                    
+                    Docker_Official_Tutorial
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" >
+            
+                <span>
+            
+                    
+                    [DockerFiles]: 完善中
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="Docker/Docker_Command.html">
+            
+                <a href="Docker/Docker_Command.html">
+            
+                    
+                    Docker_Command
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">其他</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="VM_Container_story.html">
+            
+                <a href="VM_Container_story.html">
+            
+                    
+                    VM_Container_story
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="little_skills.html">
+            
+                <a href="little_skills.html">
+            
+                    
+                    little_skills
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="Self_Command_History.html">
+            
+                <a href="Self_Command_History.html">
+            
+                    
+                    Self_Command_History
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >ssh_connect</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="ssh-connect">ssh connect</h1><!-- TOC -->
+
+
+<ul><li><a href="#ssh-connect">ssh connect</a>
+<ul><li><a href="#&#x91D1;&#x9470;&#x6A94;&#x65B9;&#x5F0F;">&#x91D1;&#x9470;&#x6A94;&#x65B9;&#x5F0F;</a>
+</li>
+<li><a href="#&#x5E33;&#x865F;&#x5BC6;&#x78BC;">&#x5E33;&#x865F;&#x5BC6;&#x78BC;</a>
+</li>
+<li><a href="#end">END</a>
+</li></ul>
+</li></ul>
+<h2 id=""><!-- /TOC --></h2><h2 id="&#x91D1;&#x9470;&#x6A94;&#x65B9;&#x5F0F;">&#x91D1;&#x9470;&#x6A94;&#x65B9;&#x5F0F;</h2><p>&#x56E0;&#x70BA;ssh&#x670D;&#x52D9;&#x9810;&#x8A2D;&#x4F7F;&#x7528;&#x91D1;&#x9470;&#x505A;&#x767B;&#x5165;&#xFF0C;&#x6240;&#x4EE5;.pem/.ppk&#x6A94;&#x7684;&#x767B;&#x5165;&#x65B9;&#x5F0F;&#xFF0C;&#x662F;&#x6C92;&#x554F;&#x984C;&#x7684;&#x3002;  <br></p><ul><li>.ppk &#x53EF;&#x4EE5;&#x7528; PuTTY.exe &#x505A;&#x9023;&#x7DDA;&#x3002;
+</li>
+<li>.pem &#x53EF;&#x4EE5;&#x7528; MobaXterm/cmd &#x505A;&#x9023;&#x7DDA;&#x3002;
+</li></ul>
+<p>&#x9023;&#x7DDA;&#x6642;&#x7684;port&#x70BA;22&#x3002;  <br>
+&#x4F7F;&#x7528;&#x8005;&#x5E33;&#x865F;&#x70BA; ubuntu&#x7CFB;&#x7D71;&#x70BA;ubuntu / centos&#x7CFB;&#x7D71;&#x70BA;centos / windows&#x7CFB;&#x7D71;&#x70BA;administrator&#x3002;</p><p>--</p><p><strong>PuTTY &#x767B;&#x5165;:</strong></p><p>&#x8ACB;&#x5148;&#x7528; PuTTYgen &#x5C07;.pem&#x6A94;&#x8F49;&#x70BA;.ppk&#x6A94;&#x3002;  <br>
+&#x53C3;&#x8003;: <a href="https://officeguide.cc/putty-convert-pem-to-ppk-tutorial/" target="_blank">PuTTYgen &#x5C07; .pem &#x91D1;&#x9470;&#x6A94;&#x6848;&#x8F49;&#x70BA; .ppk &#x683C;&#x5F0F;&#x6559;&#x5B78; - Office &#x6307;&#x5357;</a>  <br>
+&#x5C07;&#x8F49;&#x63DB;&#x597D;&#x7684;.ppk&#x6A94;&#x6848;&#xFF0C;&#x653E;&#x5230; PuTTY.exe &gt; Connection &gt; SSH &gt; Auth &gt; Private key file for authentication&#x3002;  <br>
+&#x4E26;&#x5728; PuTTY.exe &gt; Session &gt; Host Name (or IP address)&#xFF0C;&#x586B;&#x5165;&#x60F3;&#x9023;&#x7DDA;&#x7684;IP&#x3002;  <br>
+&#x8A2D;&#x5B9A;&#x597D;&#x4E86;&#x4E4B;&#x5F8C;&#xFF0C;&#x6309;&#x4E0B;&#x53F3;&#x4E0B;&#x89D2;&#x7684; Open&#xFF0C;  <br>
+&#x8F38;&#x5165;&#x4F7F;&#x7528;&#x8005;&#x5E33;&#x865F;&#x540D;&#x7A31;(&#x6BD4;&#x5982;:ubuntu&#x7CFB;&#x7D71;&#x5373;&#x70BA;ubuntu)&#xFF0C;&#x5373;&#x53EF;&#x9032;&#x5165;&#x3002;</p><p><strong>MobaXterm &#x767B;&#x5165;&#x793A;&#x610F;&#x5716;:</strong>
+<img alt="mobaxterm_connect_ubuntu" src="image/mobaxterm_connect_ubuntu.png"></p><hr><h2 id="&#x5E33;&#x865F;&#x5BC6;&#x78BC;">&#x5E33;&#x865F;&#x5BC6;&#x78BC;</h2><p>&#x4F46;&#x662F;&#x6709;&#x4E9B;&#x4EBA;&#x4E0D;&#x7FD2;&#x6163;&#x4F7F;&#x7528;&#x91D1;&#x9470;&#x7684;&#x65B9;&#x5F0F;&#x505A;&#x767B;&#x5165;&#xFF0C;&#x90A3;&#x8981;&#x600E;&#x9EBC;&#x628A; ssh &#x7684;&#x8A2D;&#x5B9A;&#x505A;&#x4FEE;&#x6539;&#x5462;?  <br>
+&#x9996;&#x5148;&#x8981;&#x5148;&#x5EFA;&#x7ACB;&#x5E33;&#x865F;</p><pre><code class="lang-{bash}">sudo su  --&#x5207;&#x63DB;&#x5230;&#x8D85;&#x7D1A;&#x4F7F;&#x7528;&#x8005;
+adduser &lt;new_username&gt;  --&#x65B0;&#x589E;&#x8981;&#x7528;&#x5BC6;&#x78BC;&#x767B;&#x5165;&#x7684;&#x4F7F;&#x7528;&#x8005;&#x540D;&#x7A31;
+
+  &gt; &#x7CFB;&#x7D71;&#x63A5;&#x4E0B;&#x4F86;&#x5C31;&#x6703;&#x6307;&#x793A;&#x4F60;&#x8981;&#x8F38;&#x5165;&#x4F7F;&#x7528;&#x8005;&#x540D;&#x7A31;&#x3001;&#x5BC6;&#x78BC;&#x3001;fullname...&#x7B49;&#x7B49;&#x3002;
+  &gt; &#x4F7F;&#x7528;&#x8005;&#x540D;&#x7A31;&#x3001;&#x5BC6;&#x78BC;&#x6700;&#x91CD;&#x8981;&#xFF0C;&#x5176;&#x4ED6;&#x76F4;&#x63A5;&#x6309; Enter &#x5C31;&#x53EF;&#x4EE5;&#x4E86;(&#x6703;&#x4F7F;&#x7528;&#x9810;&#x8A2D;&#x7684;)&#x3002;</code></pre>
+<pre><code class="lang-{bash}">sudo vim /etc/sudoers  --&#x4FEE;&#x6539;&#x6587;&#x4EF6;
+
+  &gt; &#x627E; &#x300C;# User privilege specification&#x300D;&#x7684;&#x5340;&#x584A;
+  &gt; root    ALL=(ALL:ALL) ALL  &lt;--&#x539F;&#x672C;&#x5C31;&#x6709;&#x7684;&#x3002;
+  &gt; &lt;new_username&gt; ALL=(ALL:ALL) ALL  &lt;--&#x65B0;&#x589E;&#x9019;&#x4E00;&#x884C;&#x3002;</code></pre>
+<pre><code class="lang-{bash}">sudo vim /etc/ssh/sshd_config  --&#x4FEE;&#x6539; ssh &#x670D;&#x52D9;&#x7684;&#x8A2D;&#x5B9A;&#x3002;
+
+  &gt; &#x5C07; PasswordAuthentication no &#x6539;&#x70BA; yes&#x3002;  &lt;br&gt;
+  &gt; PasswordAuthentication yes</code></pre>
+<pre><code class="lang-{bash}">service sshd restart  --&#x91CD;&#x555F;sshd&#x670D;&#x52D9;&#x3002;</code></pre>
+<p>&#x8A2D;&#x5B9A;&#x5B8C;&#x6210;&#x5F8C;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5229;&#x7528; cmd &#x505A;&#x5E33;&#x865F;&#x5BC6;&#x78BC;&#x767B;&#x5165;&#x7684;&#x9023;&#x7DDA;&#x4E86;!!</p><pre><code class="lang-{bash}">ssh -V  --&#x78BA;&#x8A8D;&#x6709;&#x7121; ssh &#x670D;&#x52D9;
+ssh new_username@hostip
+
+  &gt; &#x6309;&#x7167;&#x6307;&#x793A;&#x8F38;&#x5165;&#x5BC6;&#x78BC;&#x3002;</code></pre>
+<p>&#x4E5F;&#x53EF;&#x5229;&#x7528; PuTTY.exe &#x9023;&#x7DDA;&#x3002;</p><pre><code class="lang-{bash}">putty.exe -ssh new_username@hostip -pw password
+&#x6216;&#x662F;
+start putty.exe -ssh new_username@hostip -pw password</code></pre>
+<hr><h2 id="end">END</h2>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Initial_Status.html" class="navigation navigation-prev " aria-label="Previous page: Initial_Status">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="TWCC-port_connect.html" class="navigation navigation-next " aria-label="Next page: TWCC-port_connect">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"ssh_connect","level":"2.2","depth":1,"next":{"title":"TWCC-port_connect","level":"2.3","depth":1,"path":"TWCC-port_connect.md","ref":"./TWCC-port_connect.md","articles":[]},"previous":{"title":"Initial_Status","level":"2.1","depth":1,"path":"Initial_Status.md","ref":"./Initial_Status.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ssh_connect.md","mtime":"2020-08-08T21:56:54.214Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2020-08-08T22:01:02.650Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
