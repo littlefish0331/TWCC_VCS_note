@@ -31,10 +31,10 @@
 ### Docker
 
 - [Docker_Learning_from_Others](./Docker/Docker_Learning_from_Others.md)
-- [DockerHub_resource](./Docker/DockerHub_resource.md): 集大成。
+- [DockerHub_resource](./Docker/DockerHub_resource.md)
 - [Docker_Official_Tutorial](./Docker/Docker_Official_Tutorial.md): 完善中
 - [DockerFiles]: 完善中
-- [Docker_Command](./Docker/Docker_Command.md): 集大成。
+- [Docker_Command](./Docker/Docker_Command.md): 需要整合所有 docker 指令到這邊
 
 ---
 

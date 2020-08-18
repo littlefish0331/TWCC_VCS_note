@@ -9,6 +9,9 @@ docker 的部分就十分建議看官方的 tutorial!!
 
 **密碼不怕看，因為 port 我有鎖國網的網域!!**
 
+> 用VPN連回中心之後，有鎖網域的port依舊不能使用，  
+> 後來問過 THomas，是因為新竹的 VPN 似乎不允許這樣操作。
+
 <!-- TOC -->
 
 - [README](#readme)
@@ -102,6 +105,7 @@ find ./ -type f -name '*.md' | sed -i 's/  \r$/  <br>\r/g' *.md
 - Web Service
   - Shiny
 - VPN
+- Jenkins
 
 ---
 

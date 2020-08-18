@@ -14,6 +14,14 @@ printenv
 env PATH
 ```
 
+新增環境變數(only for this time)
+
+```{bash}
+// export <env_variable>=<env_value>
+export testenv=littlefish
+env
+```
+
 ---
 
 ## END
