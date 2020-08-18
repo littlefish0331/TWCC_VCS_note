@@ -487,7 +487,11 @@
 <li><a href="#step06-&#x5207;&#x65B7;-vpn-&#x9023;&#x7DDA;">step06. &#x5207;&#x65B7; VPN &#x9023;&#x7DDA;</a>
 </li></ul>
 </li>
-<li><p><a href="#end">END</a></p></li></ul>
+<li><p><a href="#&#x8A2D;&#x5B9A;&#x597D;&#x4E4B;&#x5F8C;&#x7684;&#x6D41;&#x7A0B;">&#x8A2D;&#x5B9A;&#x597D;&#x4E4B;&#x5F8C;&#x7684;&#x6D41;&#x7A0B;</a></p></li>
+<li><a href="#&#x9644;&#x8A3B;">&#x9644;&#x8A3B;</a>
+</li>
+<li><a href="#end">END</a>
+</li></ul>
 </li></ul>
 <h2 id=""><!-- /TOC --></h2><h2 id="reference">reference</h2><ul><li><a href="https://hackmd.io/@thomastsai/Sy5BajmMv" target="_blank">TWCC VM - NCHC VPN - HackMD</a>: Thomas &#x63D0;&#x4F9B;&#x3002;
 </li>
@@ -528,9 +532,14 @@ apt-get install ppp // &#x9019;&#x500B;&#x8A18;&#x5F97;&#x4E5F;&#x8981;&#x5B89;&
 &#x5426;&#x5247;&#x4E00;&#x555F;&#x52D5; openfortivpn&#xFF0C;VM&#x7684;&#x9060;&#x7AEF;&#x9023;&#x7DDA;&#x5C31;&#x6703;&#x7ACB;&#x99AC;&#x65B7;&#x7DDA;&#x3002;</p><pre><code class="lang-{bash}">sudo su
 vim /etc/openfortivpn/config</code></pre>
 <p>&#x5982;&#x679C;&#x4E0D;&#x77E5;&#x9053; trusted-cert &#x8981;&#x586B;&#x751A;&#x9EBC;&#xFF0C;&#x53EF;&#x4EE5;&#x5148;&#x4E0D;&#x586B;&#x5BEB;&#xFF0C;  
-&#x7B49;&#x7B49;&#x9023;&#x7DDA;&#x6703;&#x81EA;&#x7136;&#x5831;&#x932F;&#xFF0C;&#x7136;&#x5F8C;&#x8DDF;&#x4F60;&#x8AAA;&#x8981;&#x52A0;&#x4E0A;&#x9019;&#x4E00;&#x6BB5;&#x3002;</p><p>&#x53C3;&#x6578;&#x8A2D;&#x5B9A; host = 140.110.22.100 &#x4E5F;&#x53EF;&#x4EE5;&#x3002;</p><p>```{openfortivpn config}</p><h1 id="fortinet-vpn-&#x4F3A;&#x670D;&#x5668;">Fortinet VPN &#x4F3A;&#x670D;&#x5668;</h1><p>host = vpn-hc.nchc.org.tw
-port = 443</p><h1 id="&#x4F7F;&#x7528;&#x8005;&#x540D;&#x7A31;&#x8207;&#x5BC6;&#x78BC;">&#x4F7F;&#x7528;&#x8005;&#x540D;&#x7A31;&#x8207;&#x5BC6;&#x78BC;</h1><p>username =
-password =</p><h1 id="&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x9810;&#x8A2D;&#x8DEF;&#x7531;">&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x9810;&#x8A2D;&#x8DEF;&#x7531;</h1><p>set-routes = 0</p><h1 id="&#x4FE1;&#x4EFB;&#x6307;&#x5B9A;&#x6191;&#x8B49;">&#x4FE1;&#x4EFB;&#x6307;&#x5B9A;&#x6191;&#x8B49;</h1><p>trusted-cert = fcf8010a3c12408e44fc3d949843b9fb16b46f26dcc5d179beff8f9600541bb5</p><pre><code>![openfortivpn_config](./image/openfortivpn_config.jpg)
+&#x7B49;&#x7B49;&#x9023;&#x7DDA;&#x6703;&#x81EA;&#x7136;&#x5831;&#x932F;&#xFF0C;&#x7136;&#x5F8C;&#x8DDF;&#x4F60;&#x8AAA;&#x8981;&#x52A0;&#x4E0A;&#x9019;&#x4E00;&#x6BB5;&#x3002;</p><p>&#x53C3;&#x6578;&#x8A2D;&#x5B9A; host = 140.110.22.100 &#x4E5F;&#x53EF;&#x4EE5;&#x3002;</p><p>```{openfortivpn config}
+// Fortinet VPN &#x4F3A;&#x670D;&#x5668;
+host = vpn-hc.nchc.org.tw
+port = 443</p><p>// &#x4F7F;&#x7528;&#x8005;&#x540D;&#x7A31;&#x8207;&#x5BC6;&#x78BC;
+username =
+password =</p><p>// &#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x9810;&#x8A2D;&#x8DEF;&#x7531;
+set-routes = 0</p><p>// &#x4FE1;&#x4EFB;&#x6307;&#x5B9A;&#x6191;&#x8B49;
+trusted-cert = fcf8010a3c12408e44fc3d949843b9fb16b46f26dcc5d179beff8f9600541bb5</p><pre><code>![openfortivpn_config](./image/openfortivpn_config.jpg)
 
 --
 
@@ -632,7 +641,7 @@ openfortivpn ${VPN_GATEWAY} --username=${USERNAME}</code></pre>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"VPN","level":"2.7","depth":1,"next":{"title":"bash_command","level":"2.8","depth":1,"path":"bash_command.md","ref":"./bash_command.md","articles":[]},"previous":{"title":"env","level":"2.6","depth":1,"path":"env.md","ref":"./env.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"VPN.md","mtime":"2020-08-18T11:58:37.269Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2020-08-08T22:01:02.650Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"VPN","level":"2.7","depth":1,"next":{"title":"bash_command","level":"2.8","depth":1,"path":"bash_command.md","ref":"./bash_command.md","articles":[]},"previous":{"title":"env","level":"2.6","depth":1,"path":"env.md","ref":"./env.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"VPN.md","mtime":"2020-08-18T12:02:05.012Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2020-08-08T22:01:02.650Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
