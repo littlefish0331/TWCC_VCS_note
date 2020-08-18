@@ -19,3 +19,5 @@ mysql -h <IP> -P 3306 -u root -p
 ---
 
 ## END
+
+- [logging - How to see log files in MySQL? - Stack Overflow](https://stackoverflow.com/questions/5441972/how-to-see-log-files-in-mysql): 這是登入記錄或是相關操作的 error，要自己研究測試一下。
