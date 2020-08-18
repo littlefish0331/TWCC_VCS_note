@@ -16,6 +16,8 @@
     - [step04. 手動查找要連的服務主機IP並加入](#step04-手動查找要連的服務主機ip並加入)
     - [step05. gitconfig設定](#step05-gitconfig設定)
     - [step06. 切斷 VPN 連線](#step06-切斷-vpn-連線)
+  - [設定好之後的流程](#設定好之後的流程)
+  - [附註](#附註)
   - [END](#end)
 
 <!-- /TOC -->
@@ -121,18 +123,18 @@ vim /etc/openfortivpn/config
 參數設定 host = 140.110.22.100 也可以。
 
 ```{openfortivpn config}
-# Fortinet VPN 伺服器
+// Fortinet VPN 伺服器
 host = vpn-hc.nchc.org.tw
 port = 443
 
-# 使用者名稱與密碼
+// 使用者名稱與密碼
 username =
 password =
 
-# 不要使用預設路由
+// 不要使用預設路由
 set-routes = 0
 
-# 信任指定憑證
+// 信任指定憑證
 trusted-cert = fcf8010a3c12408e44fc3d949843b9fb16b46f26dcc5d179beff8f9600541bb5
 ```
 
