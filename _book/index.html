@@ -489,18 +489,20 @@ docker &#x7684;&#x90E8;&#x5206;&#x5C31;&#x5341;&#x5206;&#x5EFA;&#x8B70;&#x770B;&
 &#x9019;&#x6A23;&#x592A;&#x8017;&#x8CBB;&#x5DE5;&#x592B;&#xFF0C;&#x56E0;&#x70BA;&#x57FA;&#x672C;&#x4E0A;&#x5C08;&#x6848;&#x61C9;&#x8A72;&#x5C31;&#x662F;&#x4EE5;&#x6587;&#x4EF6;&#x70BA;&#x4E3B;&#x7684;&#x5C08;&#x6848;&#x3002;</p><p>&#x5982;&#x679C;&#x771F;&#x7684;&#x5C08;&#x6848;&#x5F88;&#x5927;&#xFF0C;&#x6587;&#x4EF6;&#x8AAA;&#x660E;&#x53EA;&#x662F;&#x5176;&#x4E2D;&#x4E00;&#x5C0F;&#x9805;&#xFF0C;  <br>
 &#x90A3;&#x5728;&#x91DD;&#x5C0D;&#x6587;&#x4EF6;&#x8CC7;&#x6599;&#x593E;&#x7684;&#x90E8;&#x5206;&#x505A;&#x4E00;&#x500B; git repository &#x7684;&#x7248;&#x672C;&#x7BA1;&#x7406;&#x5C31;&#x597D;&#x3002;  <br>
 &#x985E;&#x4F3C;&#x5916;&#x5C64;&#x4E00;&#x500B; repository&#xFF0C;&#x5167;&#x90E8;&#x9084;&#x6709;&#x81EA;&#x5DF1;&#x7684; repositroy&#x3002;</p><p><strong>&#x7D50;&#x5C3E;&#x8A2D;&#x5B9A;(end-of-line marker):</strong></p><ul><li><a href="https://legacy.gitbook.com/book/gitbookio/help/discussions/40" target="_blank">How do I create a new line without creating a new paragraph? - GitBook Help Center &#xB7; GitBook (Legacy)</a>
+</li>
+<li><a href="https://stackoverflow.com/questions/905144/sed-beginner-changing-all-occurrences-in-a-folder" target="_blank">regex - sed beginner: changing all occurrences in a folder - Stack Overflow</a>
 </li></ul>
 <p>&#x6069;..&#x9019;&#x554F;&#x984C;&#x6BD4;&#x8F03;&#x8907;&#x96DC;&#xFF0C;&#x4F46;&#x662F;&#x7C21;&#x55AE;&#x4F86;&#x8AAA;&#x5C31;&#x662F;&#x5FC5;&#x9808;&#x5728;&#x6BCF;&#x500B;&#x6A94;&#x6848;&#x7684;&#x5F8C;&#x9762;&#x52A0;&#x4E0A; <br>&#x3002;  <br>
 p.s.&#x9019;&#x548C; git config --local core.autocrlf &#x7684;&#x8A2D;&#x5B9A;&#x7121;&#x95DC;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x5C0F;&#x5FC3;&#x8B8A;&#x66F4;&#x5230;&#xFF0C;&#x5C31;&#x5230; .git/config &#x6A94;&#x6848;&#x4FEE;&#x6539;&#x5C31;&#x884C;&#x4E86;&#x3002;(--local or --golobal or --system)</p><pre><code class="lang-{bash}">// &#x5728;&#x8A72;&#x8CC7;&#x6599;&#x593E;&#x76EE;&#x9304;&#x4E0B;&#xFF0C;&#x8F38;&#x5165;&#x4E0B;&#x5217;&#x6307;&#x4EE4;&#x5B8C;&#x6210;&#x3002;
 // &#x5EFA;&#x8B70;&#x662F;&#x5728; wsl(Unix) &#x74B0;&#x5883;&#x4E0B;&#x57F7;&#x884C;&#xFF0C;&#x4F46; cmd or powershell &#x4E5F;&#x53EF;&#x4EE5;&#x3002;
-// &#x5169;&#x500B;&#x7B49;&#x50F9;&#x3002;
+// &#x4E0B;&#x9762;&#x5169;&#x500B;&#x6307;&#x4EE4;&#x7B49;&#x50F9;&#x3002;
 sed --in-place &apos;s/  \r$/  &lt;br&gt;\r/g&apos; *.md
 sed -i &apos;s/  \r$/  &lt;br&gt;\r/g&apos; *.md
 
-// &#x5982;&#x679C; .md &#x6709;&#x5728;&#x8CC7;&#x6599;&#x593E;&#x4E2D;&#x3002;
-// &#x5169;&#x500B;&#x6548;&#x679C;&#x76F8;&#x540C;&#x3002;
-find ./ -type f | sed -i &apos;s/  \r$/  &lt;br&gt;\r/g&apos; *.md
-find ./ -type f -name &apos;*.md&apos; | sed -i &apos;s/  \r$/  &lt;br&gt;\r/g&apos; *.md</code></pre>
+// &#x4FDD;&#x7559;&#x539F;&#x59CB;&#x6578;&#x64DA;&#xFF0C;&#x4E26;&#x591A;&#x52A0;&#x4E0A;&#x653E;&#x6A94;&#x6848;&#x540D;&#x7A31;.orimd
+sed -i.orimd &apos;s/  \r$/  &lt;br&gt;\r/g&apos; *.md</code></pre>
+<pre><code class="lang-{bash}">// &#x5982;&#x679C; .md &#x6709;&#x5728;&#x8CC7;&#x6599;&#x593E;&#x4E2D;&#xFF0C;&#x5247;&#x9700;&#x8981;&#x8FED;&#x4EE3;&#x57F7;&#x884C;&#x3002;
+find ./ -type f -name &apos;*.md&apos; | xargs sed -i &apos;s/  \r$/  &lt;br&gt;\r/g&apos;</code></pre>
 <p><strong>&#x4E0A;&#x50B3;&#x8A2D;&#x5B9A;:</strong></p><ul><li><a href="https://www.jianshu.com/p/ae80af8f65e5" target="_blank">2019-01-06 Github &#x4E0A;&#x50B3;&#x932F;&#x8AA4;&#xFF0C; master (push declined due to email privacy restrictions - &#x7C21;&#x66F8;</a>
 </li></ul>
 <p>&#x8981;&#x5148;&#x53BB;&#x81EA;&#x5DF1; Github &#x5E33;&#x865F;&#x7684; E-mail settings&#xFF0C;  <br>
@@ -596,7 +598,7 @@ find ./ -type f -name &apos;*.md&apos; | sed -i &apos;s/  \r$/  &lt;br&gt;\r/g&a
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"README","level":"1.1","depth":1,"next":{"title":"Initial_Status","level":"2.1","depth":1,"path":"Initial_Status.md","ref":"./Initial_Status.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2020-08-18T11:58:37.269Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2020-08-08T22:01:02.650Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"README","level":"1.1","depth":1,"next":{"title":"Initial_Status","level":"2.1","depth":1,"path":"Initial_Status.md","ref":"./Initial_Status.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2020-08-20T02:51:38.826Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2020-08-08T22:01:02.650Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
