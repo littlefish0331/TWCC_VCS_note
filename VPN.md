@@ -1,6 +1,6 @@
 # VPN
 
-如果要使用國網內部的資源，因為有鎖網域的原因，所以要用 VPN，  
+如果要使用國網內部的資源，因為有鎖網域的原因，所以要用 VPN，  <br>
 本文介紹如何在 TWCC 的 VM(VCS) 安裝 VPN，以及對 NCHC-VPN 連線的相關設定。
 
 最後 git clone 中心的 gitlab(`https://gitlab.nchc.org.tw/`) 專案，做為示範案例。
@@ -37,10 +37,10 @@
 
 先把所有步驟列出來，再一一介紹說明
 
-1. login to VM，查看相關設定。  
+1. login to VM，查看相關設定。  <br>
 2. 安裝與設定 openfortivpn
 
-    > 不要用預設路由，會造成VM斷線失連。  
+    > 不要用預設路由，會造成VM斷線失連。  <br>
     > 所以要設定 set-routes = 0
 
 3. 啟動 openfortivpn
@@ -52,10 +52,10 @@
 
 ### step01. login to VM，查看相關設定
 
-登入自己的 VM，這應該沒什麼問題XD~  
+登入自己的 VM，這應該沒什麼問題XD~  <br>
 
 在這個階段你可以知道幾件事情。
-因為你可以登入，所以你知道自己 VM 的 IP~  
+因為你可以登入，所以你知道自己 VM 的 IP~  <br>
 
 有幾個指令可以順便玩玩看。(`ifconfig`、`route`、`ip address`)
 
@@ -63,7 +63,7 @@
 
 - [鳥哥的 Linux 私房菜 -- Linux 常用網路指令介紹](http://linux.vbird.org/linux_server/0140networkcommand.php#ifconfig)。
 
-啟動、觀察與修改網路介面的相關參數。  
+啟動、觀察與修改網路介面的相關參數。  <br>
 
 ![ifconfig](./image/ifconfig.jpg)
 
@@ -71,7 +71,7 @@
 
 - [鳥哥的 Linux 私房菜 -- Linux 常用網路指令介紹](http://linux.vbird.org/linux_server/0140networkcommand.php#route)
 
-兩部主機之間一定要有路由才能夠互通 TCP/IP 的協定，否則就無法進行連線!  
+兩部主機之間一定要有路由才能夠互通 TCP/IP 的協定，否則就無法進行連線!  <br>
 一般來說，只要有網路介面，該介面就會產生一個路由，所以我們的主機一定會有一個 eth0 的介面。(TWCC-VM的初始名稱叫做 ens3)
 
 > - -n  ：不要使用通訊協定或主機名稱，直接使用 IP 或 port number
@@ -87,7 +87,7 @@
 
 - [鳥哥的 Linux 私房菜 -- Linux 常用網路指令介紹](http://linux.vbird.org/linux_server/0140networkcommand.php#ip_cmd)
 
-整合了 ifconfig 與 route 這兩個指令!  
+整合了 ifconfig 與 route 這兩個指令!  <br>
 不過 ip 可以達成的功能又多更多。
 
 ![ip_address](./image/ip_address.jpg)
@@ -109,7 +109,7 @@ apt-get install ppp // 這個記得也要安裝。
 
 **config vpn connection:**
 
-接著去 openfortivpn 那邊做設定，不要讓它成為預設路由，  
+接著去 openfortivpn 那邊做設定，不要讓它成為預設路由，  <br>
 否則一啟動 openfortivpn，VM的遠端連線就會立馬斷線。
 
 ```{bash}
@@ -117,7 +117,7 @@ sudo su
 vim /etc/openfortivpn/config
 ```
 
-如果不知道 trusted-cert 要填甚麼，可以先不填寫，  
+如果不知道 trusted-cert 要填甚麼，可以先不填寫，  <br>
 等等連線會自然報錯，然後跟你說要加上這一段。
 
 參數設定 host = 140.110.22.100 也可以。
@@ -146,8 +146,8 @@ trusted-cert = fcf8010a3c12408e44fc3d949843b9fb16b46f26dcc5d179beff8f9600541bb5
 
 **start vpn:**
 
-`&`是指在背景執行。  
-要等他一陣子，連線需要時間。  
+`&`是指在背景執行。  <br>
+要等他一陣子，連線需要時間。  <br>
 
 ```{bash}
 sudo su
@@ -164,7 +164,7 @@ openfortivpn &
 
 ```{bash}
 // 可以用 fg 觀看背景執行的程式。ㄕ
-// 按下Ctrl+z可跳出。  
+// 按下Ctrl+z可跳出。  <br>
 fg
 
     > Ctrl+z
@@ -181,7 +181,7 @@ ps aux | grep fort
 
 ### step04. 手動查找要連的服務主機IP並加入
 
-**look for host you want to connect by vpn:**  
+**look for host you want to connect by vpn:**  <br>
 
 但是我們剛剛設定它不是預設路由，所以要和 openfortivpn 說哪一個網站(IP)連線進來要走這條路。
 
@@ -202,8 +202,8 @@ route add -host 140.110.144.105/32 dev ppp0
 
 ### step05. gitconfig設定
 
-會生成一個 .gitconfig 的設定檔。  
-不同使用者，系統建立 .gitconfig 的路徑不相同。  
+會生成一個 .gitconfig 的設定檔。  <br>
+不同使用者，系統建立 .gitconfig 的路徑不相同。  <br>
 
 - ubuntu: /home/ubuntu/
 - root: /root
@@ -218,7 +218,7 @@ export GIT_SSL_NO_VERIFY=1
 git config --global http.sslverify false
 ```
 
-當然除了上面的用git指令建立 .gitconfig 檔案之外，  
+當然除了上面的用git指令建立 .gitconfig 檔案之外，  <br>
 也可以自行 touch .gitconfig file。
 
 ![gitconfig](./image/gitconfig.jpg)
@@ -263,7 +263,7 @@ exit
 
 ## 附註
 
-如果不知道 /etc/openfortivpn/config 檔案的 trusted-cert 參數。  
+如果不知道 /etc/openfortivpn/config 檔案的 trusted-cert 參數。  <br>
 就會爆出 error，中間會和你說要加上這一段。
 
 ![trusted-cert](./image/trusted-cert.jpg)
@@ -272,15 +272,15 @@ exit
 
 VPN 連線成功 + 加入指定的服務主機。
 
-**route**  
+**route**  <br>
 ![route_connect](./image/route_connect.jpg)
 
-**ps aux | grep fort**  
+**ps aux | grep fort**  <br>
 ![ps_aux](./image/ps_aux.jpg)
 
 --
 
-如果不想要帳密出現在 VPN 的 config 檔案中，  
+如果不想要帳密出現在 VPN 的 config 檔案中，  <br>
 可以使用下列方法。
 
 ```{bash}

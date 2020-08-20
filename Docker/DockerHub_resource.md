@@ -990,11 +990,11 @@ passwd
   - [Blue Ocean](https://www.jenkins.io/doc/book/blueocean/)
   - [Jenkins BlueOcean初探_neven7的專欄-CSDN博客_jenkins blueocean](https://blog.csdn.net/neven7/article/details/53645215)
 
-官方建議是直接安裝帶有 Blue Ocean UI 介面的 image，  
-因為它是 Long-Term Support (LTS) release of Jenkins (which is production-ready) bundled with all Blue Ocean plugins and features.  
+官方建議是直接安裝帶有 Blue Ocean UI 介面的 image，  <br>
+因為它是 Long-Term Support (LTS) release of Jenkins (which is production-ready) bundled with all Blue Ocean plugins and features.  <br>
 This means that you do not need to install the Blue Ocean plugins separately. 。
 
-> 當然也可以自行安裝比較小包的 jenkins/jenkins (on Docker Hub)，  
+> 當然也可以自行安裝比較小包的 jenkins/jenkins (on Docker Hub)，  <br>
 > 然後再自行加上插件(plugins)。
 
 以下介紹兩種方式的安裝，最終都為 Jenkins + Blue Ocean。
@@ -1009,10 +1009,10 @@ Jenkins是一款Java開發的跨平台持續集成和持續發布的開源項目
 > - 可擴展：自定義插件。
 > - 分佈式：支持 Master-Slave。
 
-Jenkins已經作為各大公司進行CI/CD的首選工具。  
+Jenkins已經作為各大公司進行CI/CD的首選工具。  <br>
 Jenkins UI從2006年-2016年，幾乎沒有變化。
 
-為了適應 Jenkins Pipeline 和 Freestyle jobs任務，Jenkins 推出了 BlueOcean UI，  
+為了適應 Jenkins Pipeline 和 Freestyle jobs任務，Jenkins 推出了 BlueOcean UI，  <br>
 其目的就是讓程序員執行任務時，降低工作流程的複雜度和提升工作流程的清晰度，它具有如下特徵:
 
 > - 清晰的可視化，對CI/CD pipelines, 可以快速直觀的觀察項目pipeline狀態。
@@ -1022,9 +1022,9 @@ Jenkins UI從2006年-2016年，幾乎沒有變化。
 
 **啟動 jenkins/jenkins image:**
 
-記得連動的資料夾，權限要先打開。  
-如果一開始 Getting Started，有安裝 plugins 失敗，之後會可以再按 Retry，  
-所以不用太緊張。  
+記得連動的資料夾，權限要先打開。  <br>
+如果一開始 Getting Started，有安裝 plugins 失敗，之後會可以再按 Retry，  <br>
+所以不用太緊張。  <br>
 
 不然砍掉重建也可以XD~ 我就這樣做了好多次。
 
@@ -1049,10 +1049,10 @@ docker exec -it jenkins-only bash
 
 **啟動 jenkinsci/blueocean image:**
 
-(此為官方教學文件指示，更多解釋請看官方文件)。  
-為了讓容器裡也可以操作 docker 鏡像，又不想污染宿主機上的 docker 鏡像，要使用 docker in docker(dind) 的方案。  
+(此為官方教學文件指示，更多解釋請看官方文件)。  <br>
+為了讓容器裡也可以操作 docker 鏡像，又不想污染宿主機上的 docker 鏡像，要使用 docker in docker(dind) 的方案。  <br>
 
-記得連動的資料夾，權限要先打開。  
+記得連動的資料夾，權限要先打開。  <br>
 
 之後透過此 container，就可以連結 localhost 的 Docker Server。
 
