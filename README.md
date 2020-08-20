@@ -40,6 +40,7 @@ docker 的部分就十分建議看官方的 tutorial!!
 **結尾設定(end-of-line marker):**
 
 - [How do I create a new line without creating a new paragraph? - GitBook Help Center · GitBook (Legacy)](https://legacy.gitbook.com/book/gitbookio/help/discussions/40)
+- [regex - sed beginner: changing all occurrences in a folder - Stack Overflow](https://stackoverflow.com/questions/905144/sed-beginner-changing-all-occurrences-in-a-folder)
 
 恩..這問題比較複雜，但是簡單來說就是必須在每個檔案的後面加上 <br>。  <br>
 p.s.這和 git config --local core.autocrlf 的設定無關。如果不小心變更到，就到 .git/config 檔案修改就行了。(--local or --golobal or --system)
@@ -47,14 +48,17 @@ p.s.這和 git config --local core.autocrlf 的設定無關。如果不小心變
 ```{bash}
 // 在該資料夾目錄下，輸入下列指令完成。
 // 建議是在 wsl(Unix) 環境下執行，但 cmd or powershell 也可以。
-// 兩個等價。
+// 下面兩個指令等價。
 sed --in-place 's/  \r$/  <br>\r/g' *.md
 sed -i 's/  \r$/  <br>\r/g' *.md
 
-// 如果 .md 有在資料夾中。
-// 兩個效果相同。
-find ./ -type f | sed -i 's/  \r$/  <br>\r/g' *.md
-find ./ -type f -name '*.md' | sed -i 's/  \r$/  <br>\r/g' *.md
+// 保留原始數據，並多加上放檔案名稱.orimd
+sed -i.orimd 's/  \r$/  <br>\r/g' *.md
+```
+
+```{bash}
+// 如果 .md 有在資料夾中，則需要迭代執行。
+find ./ -type f -name '*.md' | xargs sed -i 's/  \r$/  <br>\r/g'
 ```
 
 **上傳設定:**
