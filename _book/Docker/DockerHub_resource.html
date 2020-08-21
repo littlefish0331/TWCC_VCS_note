@@ -573,15 +573,15 @@ cd /usr/share/grafana/</code></pre>
 </li>
 <li><a href="https://titangene.github.io/article/docker-mssql-server-for-linux.html" target="_blank">&#x5728; Docker &#x4E0B;&#x5EFA;&#x7ACB;&#x4E26;&#x4F7F;&#x7528; MSSQL Server for Linux | Titangene Blog</a>
 </li></ul>
-<p><strong>&#x555F;&#x52D5; container:</strong></p><blockquote><ul><li>ACCEPT_EULA: &#x9700;&#x540C;&#x610F;&#x6388;&#x6B0A;&#x5408;&#x7D04;&#x3002;
+<p><strong>&#x555F;&#x52D5; container:</strong></p><blockquote><ul><li>ACCEPT_EULA: &#x9700;&#x540C;&#x610F;&#x6388;&#x6B0A;&#x5408;&#x7D04;&#x3002;  <br>
 </li>
-<li>MSSQL_SA_PASSWORD: &#x9700;&#x8981;&#x662F;&#x5F37;&#x5F0F;&#x5BC6;&#x78BC;&#x4E26;&#x81F3;&#x5C11; 8 &#x500B;&#x5B57;&#x5143;&#x3002;&#x5F37;&#x5F0F;&#x5BC6;&#x78BC;&#x9700;&#x5305;&#x542B;&#xFF1A;&#x5927;&#x5BEB;&#x3001;&#x5C0F;&#x5BEB;&#x3001;&#x6578;&#x5B57;&#xFF0C;&#x7B26;&#x865F;&#x56DB;&#x8005;&#x3002;
+<li>MSSQL_SA_PASSWORD: &#x9700;&#x8981;&#x662F;&#x5F37;&#x5F0F;&#x5BC6;&#x78BC;&#x4E26;&#x81F3;&#x5C11; 8 &#x500B;&#x5B57;&#x5143;&#x3002;&#x5F37;&#x5F0F;&#x5BC6;&#x78BC;&#x9700;&#x5305;&#x542B;&#xFF1A;&#x5927;&#x5BEB;&#x3001;&#x5C0F;&#x5BEB;&#x3001;&#x6578;&#x5B57;&#xFF0C;&#x7B26;&#x865F;&#x56DB;&#x8005;&#x3002;  <br>
 </li>
-<li>-p hostPort:containerPort
+<li>-p hostPort:containerPort  <br>
 </li>
-<li>--name: &#x6307;&#x5B9A; container &#x540D;&#x7A31;
+<li>--name: &#x6307;&#x5B9A; container &#x540D;&#x7A31;  <br>
 </li>
-<li>-d: &#x80CC;&#x666F;&#x57F7;&#x884C;
+<li>-d: &#x80CC;&#x666F;&#x57F7;&#x884C;  <br>
 </li>
 <li>-v: (Volume &#x6280;&#x8853;)&#x5EFA;&#x7ACB;&#x5BE6;&#x9AD4;&#x8CC7;&#x6599;&#x593E;&#x8207; container &#x8CC7;&#x6599;&#x593E;&#x7684;&#x5C0D;&#x61C9;&#x95DC;&#x4FC2;&#x3002;
 </li></ul>
@@ -604,10 +604,10 @@ docker run --name mssql \
 docker run -e &quot;ACCEPT_EULA=Y&quot; -e &quot;SA_PASSWORD=MSSQL@2020&quot; -v /datamount/mssql:/var/opt/mssql -p 1433:1433 --name mssql -d mcr.microsoft.com/mssql/server:2019-latest</code></pre>
 <p><strong>&#x9032;&#x5165; container&#xFF0C;&#x4E26;&#x67E5;&#x770B; SA &#x5BC6;&#x78BC;:</strong></p><pre><code class="lang-{bash}">docker exec -it mssql bash
 echo $SA_PASSWORD</code></pre>
-<p><strong>&#x8B8A;&#x66F4;&#x5BC6;&#x78BC;:</strong></p><blockquote><p>-S&#xFF1A;server
--U&#xFF1A;user name
--P&#xFF1A;password
--Q&#xFF1A;query&#xFF0C;&#x57F7;&#x884C; SQL &#x6307;&#x4EE4;&#x5F8C;&#x7D50;&#x675F; sqlcmd</p></blockquote><pre><code class="lang-{bash}">docker exec -it mssql /opt/mssql-tools/bin/sqlcmd \
+<p><strong>&#x8B8A;&#x66F4;&#x5BC6;&#x78BC;:</strong></p><blockquote><p>-S&#xFF1A;server  <br>
+-U&#xFF1A;user name  <br>
+-P&#xFF1A;password  <br>
+-Q&#xFF1A;query&#xFF0C;&#x57F7;&#x884C; SQL &#x6307;&#x4EE4;&#x5F8C;&#x7D50;&#x675F; sqlcmd  <br></p></blockquote><pre><code class="lang-{bash}">docker exec -it mssql /opt/mssql-tools/bin/sqlcmd \
   -S localhost -U SA -P &apos;&lt;YourStrong!Passw0rd&gt;&apos; \
   -Q &apos;ALTER LOGIN SA WITH PASSWORD=&quot;&lt;YourNewStrong!Passw0rd&gt;&quot;&apos;
 
@@ -725,67 +725,67 @@ SELECT user, authentication_string, host from user;
 ALTER USER &apos;root&apos;@&apos;%&apos; IDENTIFIED WITH mysql_native_password BY &apos;MYSQL@2020&apos;;
 FLUSH PRIVILEGES;</code></pre>
 <p><strong>docker-compose:</strong></p><p>&#x6216;&#x662F;&#x4FEE;&#x6539; docker-compose.yml &#x7684; mysql &#x670D;&#x52D9;&#x90E8;&#x5206;&#xFF0C;&#x65B0;&#x589E;&#x4E00;&#x884C;&#x3002;(&#x9019;&#x65B9;&#x6CD5;&#x6211;&#x9084;&#x6C92;&#x5617;&#x8A66;&#x904E;&#xFF0C;&#x4F46;&#x61C9;&#x8A72;&#x53EF;&#x884C;&#x3002;)</p><p>```{docker compose .yml}
-command: --default-authentication-plugin=mysql_native_password</p><pre><code>&gt; &#x4EE5;&#x4E0B;&#x662F;&#x820A;&#x7684;&#x505A;&#x6CD5;&#xFF0C;&#x4F9D;&#x820A;&#x53EF;&#x7528;&#xFF0C;&#x6307;&#x793A;&#x6B65;&#x9A5F;&#x6BD4;&#x8F03;&#x591A;&#x4E00;&#x9EDE;&#x3002;
+command: --default-authentication-plugin=mysql_native_password</p><pre><code>&gt; &#x4EE5;&#x4E0B;&#x662F;&#x820A;&#x7684;&#x505A;&#x6CD5;&#xFF0C;&#x4F9D;&#x820A;&#x53EF;&#x7528;&#xFF0C;&#x6307;&#x793A;&#x6B65;&#x9A5F;&#x6BD4;&#x8F03;&#x591A;&#x4E00;&#x9EDE;&#x3002;  &lt;br&gt;
 &gt;  &lt;br&gt;
-&gt; **Step01:**
-&gt;
+&gt; **Step01:**  &lt;br&gt;
+&gt;  &lt;br&gt;
 &gt; &#x53BB; /DBdata/mysql/conf &#x65B0;&#x589E; my.cnf&#x3002;  &lt;br&gt;
 &gt; &#x65B0;&#x589E;&#x8207;&#x4FEE;&#x6539;&#x6A94;&#x6848;&#x8981;&#x7528; sudo su &#x6B0A;&#x9650;&#x3002;  &lt;br&gt;
-&gt;
-&gt;
-&gt; ```{my.cnf}
-&gt; [mysqld]
-&gt; skip-grant-tables
-&gt; ```
-&gt;
-&gt; ```{bash}
-&gt; docker restart some-mysql
-&gt; ```
-&gt;
-&gt; **Step02:**
-&gt;
+&gt;  &lt;br&gt;
+&gt;  &lt;br&gt;
+&gt; ```{my.cnf}  &lt;br&gt;
+&gt; [mysqld]  &lt;br&gt;
+&gt; skip-grant-tables  &lt;br&gt;
+&gt; ```  &lt;br&gt;
+&gt;  &lt;br&gt;
+&gt; ```{bash}  &lt;br&gt;
+&gt; docker restart some-mysql  &lt;br&gt;
+&gt; ```  &lt;br&gt;
+&gt;  &lt;br&gt;
+&gt; **Step02:**  &lt;br&gt;
+&gt;  &lt;br&gt;
 &gt; &#x767B;&#x5165; container  &lt;br&gt;
-&gt; &#x767B;&#x5165; mysql&#xFF0C;&#x5BC6;&#x78BC; DAS@mysql2020
-&gt;
-&gt; ```{bash}
-&gt; docker exec -it some-mysql bash
-&gt; mysql -u root -p
-&gt; ```
-&gt;
-&gt; **Step03:**
-&gt;
-&gt; &#x6307;&#x5B9A;&#x4F7F;&#x7528;&#x8CC7;&#x6599;&#x5EAB;&#xFF0C;&#x66F4;&#x65B0;&#x5BC6;&#x78BC;&#x70BA;&#x7A7A;&#x3002;
-&gt;
-&gt; ```{bash}
-&gt; use mysql;
-&gt; SELECT user, authentication_string, host from user;
-&gt; update user set authentication_string=&apos;&apos; where user=&apos;root&apos;;
-&gt; flush privileges;
-&gt; ```
-&gt;
-&gt; **Step04:**
-&gt;
-&gt; &#x9000;&#x51FA;mysql&#xFF0C;&#x628A;&#x7B2C;&#x4E00;&#x6B65;&#x7684;skip-grant-tables&#x8A3B;&#x91CB;&#x3002;&#x518D;&#x91CD;&#x555F;mysql
-&gt;
-&gt; ```{bash}
-&gt; vim my.cnf
-&gt; docker restart some-mysql
-&gt; docker exec -it some-mysql bash
-&gt; mysql -u root -p
-&gt; ```
-&gt;
-&gt; **Step05:**
-&gt;
-&gt; &#x4F7F;&#x7528;&#x539F;&#x59CB;&#x52A0;&#x5BC6;&#x7684;&#x5BC6;&#x78BC; + &#x6B0A;&#x9650;&#x8A2D;&#x5B9A;
-&gt;
-&gt; mysql_native_password
-&gt;
-&gt; ```{bash}
-&gt; use mysql;
-&gt; ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED WITH mysql_native_password BY &apos;DAS@mysql2020&apos;;
-&gt; ALTER USER &apos;root&apos;@&apos;%&apos; IDENTIFIED WITH mysql_native_password BY &apos;DAS@mysql2020&apos;;
-&gt; GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;localhost&apos; WITH GRANT OPTION;
-&gt; ```
+&gt; &#x767B;&#x5165; mysql&#xFF0C;&#x5BC6;&#x78BC; DAS@mysql2020  &lt;br&gt;
+&gt;  &lt;br&gt;
+&gt; ```{bash}  &lt;br&gt;
+&gt; docker exec -it some-mysql bash  &lt;br&gt;
+&gt; mysql -u root -p  &lt;br&gt;
+&gt; ```  &lt;br&gt;
+&gt;  &lt;br&gt;
+&gt; **Step03:**  &lt;br&gt;
+&gt;  &lt;br&gt;
+&gt; &#x6307;&#x5B9A;&#x4F7F;&#x7528;&#x8CC7;&#x6599;&#x5EAB;&#xFF0C;&#x66F4;&#x65B0;&#x5BC6;&#x78BC;&#x70BA;&#x7A7A;&#x3002;  &lt;br&gt;
+&gt;  &lt;br&gt;
+&gt; ```{bash}  &lt;br&gt;
+&gt; use mysql;  &lt;br&gt;
+&gt; SELECT user, authentication_string, host from user;  &lt;br&gt;
+&gt; update user set authentication_string=&apos;&apos; where user=&apos;root&apos;;  &lt;br&gt;
+&gt; flush privileges;  &lt;br&gt;
+&gt; ```  &lt;br&gt;
+&gt;  &lt;br&gt;
+&gt; **Step04:**  &lt;br&gt;
+&gt;  &lt;br&gt;
+&gt; &#x9000;&#x51FA;mysql&#xFF0C;&#x628A;&#x7B2C;&#x4E00;&#x6B65;&#x7684;skip-grant-tables&#x8A3B;&#x91CB;&#x3002;&#x518D;&#x91CD;&#x555F;mysql  &lt;br&gt;
+&gt;  &lt;br&gt;
+&gt; ```{bash}  &lt;br&gt;
+&gt; vim my.cnf  &lt;br&gt;
+&gt; docker restart some-mysql  &lt;br&gt;
+&gt; docker exec -it some-mysql bash  &lt;br&gt;
+&gt; mysql -u root -p  &lt;br&gt;
+&gt; ```  &lt;br&gt;
+&gt;  &lt;br&gt;
+&gt; **Step05:**  &lt;br&gt;
+&gt;  &lt;br&gt;
+&gt; &#x4F7F;&#x7528;&#x539F;&#x59CB;&#x52A0;&#x5BC6;&#x7684;&#x5BC6;&#x78BC; + &#x6B0A;&#x9650;&#x8A2D;&#x5B9A;  &lt;br&gt;
+&gt;  &lt;br&gt;
+&gt; mysql_native_password  &lt;br&gt;
+&gt;  &lt;br&gt;
+&gt; ```{bash}  &lt;br&gt;
+&gt; use mysql;  &lt;br&gt;
+&gt; ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED WITH mysql_native_password BY &apos;DAS@mysql2020&apos;;  &lt;br&gt;
+&gt; ALTER USER &apos;root&apos;@&apos;%&apos; IDENTIFIED WITH mysql_native_password BY &apos;DAS@mysql2020&apos;;  &lt;br&gt;
+&gt; GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;localhost&apos; WITH GRANT OPTION;  &lt;br&gt;
+&gt; ```  &lt;br&gt;
 
 #### &#x770B;&#x4E00;&#x4E9B;&#x8B8A;&#x6578;&#x503C;
 
@@ -957,14 +957,14 @@ docker run --name rstudio_latest \
 </li></ul>
 <blockquote><p>&#x5728; container &#x4E2D;&#xFF0C;&#x8DEF;&#x5F91; /etc/rstudio/ &#x4E4B;&#x4E0B;&#xFF0C;&#x6709;&#x4E00;&#x500B;&#x6A94;&#x6848;&#x53EB;&#x505A; rserver.conf&#x3002;  <br>
 &#x53EA;&#x8981;&#x5728;&#x88E1;&#x9762;&#x52A0;&#x5165;&#x4E0B;&#x65B9;&#x6307;&#x4EE4;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x81EA;&#x52D5;&#x767B;&#x5165;&#x3002;  <br>
-&#x4F46;&#x76EE;&#x524D;&#x5728;&#x6B64; image &#x4E2D;&#x5617;&#x8A66;&#x5931;&#x6557;&#x3002;
- <br></p><pre><code class="lang-{rserver.conf}">// rserver.conf
-# Server Configuration File
- &lt;br&gt;
-rsession-which-r=/usr/local/bin/R
-auth-none=1
-server-user=rstudio</code></pre>
-</blockquote><ul><li><strong>solution02:</strong> docker run -e DISABLE_AUTH=TRUE
+&#x4F46;&#x76EE;&#x524D;&#x5728;&#x6B64; image &#x4E2D;&#x5617;&#x8A66;&#x5931;&#x6557;&#x3002;  <br>
+ <br>
+```{rserver.conf}  <br>
+// rserver.conf  <br></p><h1 id="server-configuration-file--">Server Configuration File  <br></h1><p><br>
+rsession-which-r=/usr/local/bin/R  <br>
+auth-none=1  <br>
+server-user=rstudio  <br>
+```</p></blockquote><ul><li><strong>solution02:</strong> docker run -e DISABLE_AUTH=TRUE
 </li></ul>
 <p>&#x5F9E;&#x9019;&#x500B; image &#x7684; Dockerfile&#xFF0C;&#x53EF;&#x4EE5;&#x77E5;&#x9053;&#x5728;&#x8DEF;&#x5F91; /etc/cont-init.d &#x4E0B;&#x89C0;&#x770B; userconf.conf &#x9019;&#x500B;&#x6A94;&#x6848;&#xFF0C;  <br>
 &#x5C31;&#x53EF;&#x4EE5;&#x77E5;&#x9053;&#x53EF;&#x4EE5;&#x66F4;&#x6539;&#x74B0;&#x5883;&#x8B8A;&#x6578; DISABLE_AUTH=TRUE&#xFF0C;  <br>
@@ -1033,14 +1033,14 @@ docker run --name r_env_FALSE -e ROOT=TRUE -e PASSWORD=rstudio@2020 -e DISABLE_A
 <li>&#x5148;&#x8A2D;&#x5B9A;&#x9810;&#x8A2D;&#x767B;&#x5165;&#xFF0C;&#x5F8C;&#x6539;&#x70BA;&#x6BCF;&#x6B21;&#x90FD;&#x9700;&#x8981;&#x767B;&#x5165;&#x3002;container:r_env_TRUE
 </li></ol>
 <blockquote><p>&#x5747;&#x5148;&#x5B89;&#x88DD; vim  <br></p><blockquote><p>apt-get update  <br>
-apt-get install vim
+apt-get install vim  <br>
  <br>
 1. &#x5148;&#x8A2D;&#x5B9A;&#x6BCF;&#x6B21;&#x90FD;&#x9700;&#x8981;&#x767B;&#x5165;&#xFF0C;&#x5F8C;&#x6539;&#x70BA;&#x9810;&#x8A2D;&#x767B;&#x5165;  <br>
 <code>vim /etc/rstudio/rserver.conf</code>  <br>
-&#x65B0;&#x589E; <code>auth-none=1</code>
+&#x65B0;&#x589E; <code>auth-none=1</code>  <br>
 <code>vim /etc/environment</code>  <br>
-&#x65B0;&#x589E; <code>USER=rstudio</code>
-docker restart container &#x5373;&#x53EF;&#x3002;
+&#x65B0;&#x589E; <code>USER=rstudio</code>  <br>
+docker restart container &#x5373;&#x53EF;&#x3002;  <br>
  <br>
 2. &#x5148;&#x8A2D;&#x5B9A;&#x9810;&#x8A2D;&#x767B;&#x5165;&#xFF0C;&#x5F8C;&#x6539;&#x70BA;&#x6BCF;&#x6B21;&#x90FD;&#x9700;&#x8981;&#x767B;&#x5165;  <br>
 vim /etc/rstudio/rserver.conf  <br>
@@ -1055,22 +1055,22 @@ docker restart container &#x5373;&#x53EF;&#x3002;</p></blockquote></blockquote><
 </li>
 <li><a href="https://hub.docker.com/layers/jupyter/scipy-notebook/dc9744740e12/images/sha256-9bc3ccb1e56f1ac030d4e71242b3dfc6f3b64e76b41d926dc88eb01303bcf3f9?context=explore" target="_blank">Docker Hub</a>
 </li></ul>
-<p>&#x7A0D;&#x5FAE;&#x7814;&#x7A76;&#x4E00;&#x4E0B; notebook relation!!</p><p><img alt="notebook_relation" src="image/notebook_relation.svg"></p><blockquote><p>&#x5982;&#x679C;&#x6293; datascience &#x7CFB;&#x5217;&#xFF0C;&#x6703;&#x6709;R&#x3002;
-scipy, minimal &#x7CFB;&#x5217;&#x7684; tag &#x770B;&#x4E0D;&#x51FA;&#x7248;&#x672C;&#xFF0C;&#x4F46;&#x90FD;&#x662F;&#x57FA;&#x65BC; base &#x7CFB;&#x5217;&#x88FD;&#x4F5C;&#x3002;
-&#x6240;&#x4EE5;&#x6700;&#x5F8C;&#x6293;&#x53D6; base &#x7CFB;&#x5217;&#x7684; python-3.7.6&#x3002;
+<p>&#x7A0D;&#x5FAE;&#x7814;&#x7A76;&#x4E00;&#x4E0B; notebook relation!!</p><p><img alt="notebook_relation" src="image/notebook_relation.svg"></p><blockquote><p>&#x5982;&#x679C;&#x6293; datascience &#x7CFB;&#x5217;&#xFF0C;&#x6703;&#x6709;R&#x3002;  <br>
+scipy, minimal &#x7CFB;&#x5217;&#x7684; tag &#x770B;&#x4E0D;&#x51FA;&#x7248;&#x672C;&#xFF0C;&#x4F46;&#x90FD;&#x662F;&#x57FA;&#x65BC; base &#x7CFB;&#x5217;&#x88FD;&#x4F5C;&#x3002;  <br>
+&#x6240;&#x4EE5;&#x6700;&#x5F8C;&#x6293;&#x53D6; base &#x7CFB;&#x5217;&#x7684; python-3.7.6&#x3002;  <br>
  <br>
-&#x4F46;&#x662F;&#x7814;&#x7A76;&#x4E00;&#x4E0B;&#x6587;&#x6A94;&#xFF0C;&#x5176;&#x5BE6; base &#x7CFB;&#x5217;&#x6C92;&#x6709;&#x652F;&#x63F4; LaTeX &#x8B93;&#x6211;&#x89BA;&#x5F97;&#x5F88;&#x4E0D;&#x5999;&#xFF0C;
-&#x53EF;&#x662F; minimal, scipy &#x7CFB;&#x5217;&#x5C31;&#x662F;&#x6C92;&#x6709; python &#x7248;&#x672C;&#x7684; tag&#x3002;
-&#x4E0D;&#x7136;&#x5EFA;&#x8B70;&#x9084;&#x662F;&#x88DD; minimal, scipy &#x7CFB;&#x5217;&#x3002;
+&#x4F46;&#x662F;&#x7814;&#x7A76;&#x4E00;&#x4E0B;&#x6587;&#x6A94;&#xFF0C;&#x5176;&#x5BE6; base &#x7CFB;&#x5217;&#x6C92;&#x6709;&#x652F;&#x63F4; LaTeX &#x8B93;&#x6211;&#x89BA;&#x5F97;&#x5F88;&#x4E0D;&#x5999;&#xFF0C;  <br>
+&#x53EF;&#x662F; minimal, scipy &#x7CFB;&#x5217;&#x5C31;&#x662F;&#x6C92;&#x6709; python &#x7248;&#x672C;&#x7684; tag&#x3002;  <br>
+&#x4E0D;&#x7136;&#x5EFA;&#x8B70;&#x9084;&#x662F;&#x88DD; minimal, scipy &#x7CFB;&#x5217;&#x3002;  <br>
  <br>
 &#x5F8C;&#x4F86;&#x89BA;&#x5F97;&#x4E0D;&#x5999;&#xFF0C;&#x53EA;&#x597D;&#x53BB;&#x4E00;&#x4E00;&#x5617;&#x8A66;&#xFF0C;&#x767C;&#x73FE;&#x9019;&#x500B;&#x4E5F;&#x662F; python3.7.6&#xFF0C;jupyter/scipy-notebook:dc9744740e12&#x3002;</p></blockquote><pre><code class="lang-{bash}">// docker pull jupyter/base-notebook:python-3.7.6
 // docker run --name notebook_base -v /datamount/notebook/base_work:/home/jovyan/work -p 8888:8888 -d jupyter/base-notebook:python-3.7.6</code></pre>
-<blockquote><ul><li>jupyter notebook password: notebook@base2020
-<ul><li>&#x53EA;&#x6709; python3.7.6&#x3002;
+<blockquote><ul><li>jupyter notebook password: notebook@base2020  <br>
+<ul><li>&#x53EA;&#x6709; python3.7.6&#x3002;  <br>
 </li>
-<li>&#x7528; <code>apt list | wc -l</code> &#x6AA2;&#x67E5;&#x6709;102&#x500B;&#x5957;&#x4EF6;&#x3002;
+<li>&#x7528; <code>apt list | wc -l</code> &#x6AA2;&#x67E5;&#x6709;102&#x500B;&#x5957;&#x4EF6;&#x3002;  <br>
 </li>
-<li>&#x7528; <code>pip list | wc -l</code> &#x6AA2;&#x67E5;&#x6709;82&#x500B;&#x5957;&#x4EF6;&#x3002;
+<li>&#x7528; <code>pip list | wc -l</code> &#x6AA2;&#x67E5;&#x6709;82&#x500B;&#x5957;&#x4EF6;&#x3002;  <br>
 </li>
 <li>&#x7528; <code>pip freeze | wc -l</code> &#x6AA2;&#x67E5;&#x6709;76&#x500B;&#x5957;&#x4EF6;&#x3002;
 </li></ul>
@@ -1094,7 +1094,7 @@ docker run --name notebook_python_lab -e JUPYTER_ENABLE_LAB=yes -v /datamount/no
 </li>
 <li><a href="https://hub.docker.com/r/jupyter/scipy-notebook" target="_blank">jupyter/scipy-notebook - Docker Hub</a>
 </li></ul>
-<blockquote><p>freeze: Output installed packages in requirements format.
+<blockquote><p>freeze: Output installed packages in requirements format.  <br>
 list: List installed packages</p></blockquote><ul><li><p>jupyter/minimal-notebook</p><ul><li>docker run --name notebook_mini -v /datamount/notebook/mini_work:/home/jovyan/work -p 8801:8888 -d jupyter/minimal-notebook
 </li>
 <li>&#x6709; python3&#x3002;
@@ -1208,23 +1208,23 @@ user=USER_ID</p></blockquote><p>&#x6240;&#x4EE5;&#x8981;&#x53BB;&#x4FEE;&#x6539;
 <p>&#x5B98;&#x65B9;&#x5EFA;&#x8B70;&#x662F;&#x76F4;&#x63A5;&#x5B89;&#x88DD;&#x5E36;&#x6709; Blue Ocean UI &#x4ECB;&#x9762;&#x7684; image&#xFF0C;  <br>
 &#x56E0;&#x70BA;&#x5B83;&#x662F; Long-Term Support (LTS) release of Jenkins (which is production-ready) bundled with all Blue Ocean plugins and features.  <br>
 This means that you do not need to install the Blue Ocean plugins separately. &#x3002;</p><blockquote><p>&#x7576;&#x7136;&#x4E5F;&#x53EF;&#x4EE5;&#x81EA;&#x884C;&#x5B89;&#x88DD;&#x6BD4;&#x8F03;&#x5C0F;&#x5305;&#x7684; jenkins/jenkins (on Docker Hub)&#xFF0C;  <br>
-&#x7136;&#x5F8C;&#x518D;&#x81EA;&#x884C;&#x52A0;&#x4E0A;&#x63D2;&#x4EF6;(plugins)&#x3002;</p></blockquote><p>&#x4EE5;&#x4E0B;&#x4ECB;&#x7D39;&#x5169;&#x7A2E;&#x65B9;&#x5F0F;&#x7684;&#x5B89;&#x88DD;&#xFF0C;&#x6700;&#x7D42;&#x90FD;&#x70BA; Jenkins + Blue Ocean&#x3002;</p><p><strong>&#x4ECB;&#x7D39; Blue Ocean:</strong></p><p>Jenkins&#x662F;&#x4E00;&#x6B3E;Java&#x958B;&#x767C;&#x7684;&#x8DE8;&#x5E73;&#x53F0;&#x6301;&#x7E8C;&#x96C6;&#x6210;&#x548C;&#x6301;&#x7E8C;&#x767C;&#x5E03;&#x7684;&#x958B;&#x6E90;&#x9805;&#x76EE;&#xFF0C;&#x5B83;&#x5177;&#x6709;&#x5982;&#x4E0B;&#x7279;&#x5FB5;:</p><blockquote><ul><li>&#x5B89;&#x88DD;&#x53CA;&#x9077;&#x79FB;&#x65B9;&#x4FBF;&#xFF1A;&#x5B89;&#x88DD;&#x76F4;&#x63A5;&#x90E8;&#x7F72; war &#x5305;&#xFF0C;&#x9077;&#x79FB;&#x53EA;&#x9700;&#x66FF;&#x63DB; JENKINS_HOME &#x76EE;&#x9304;&#x3002;
+&#x7136;&#x5F8C;&#x518D;&#x81EA;&#x884C;&#x52A0;&#x4E0A;&#x63D2;&#x4EF6;(plugins)&#x3002;</p></blockquote><p>&#x4EE5;&#x4E0B;&#x4ECB;&#x7D39;&#x5169;&#x7A2E;&#x65B9;&#x5F0F;&#x7684;&#x5B89;&#x88DD;&#xFF0C;&#x6700;&#x7D42;&#x90FD;&#x70BA; Jenkins + Blue Ocean&#x3002;</p><p><strong>&#x4ECB;&#x7D39; Blue Ocean:</strong></p><p>Jenkins&#x662F;&#x4E00;&#x6B3E;Java&#x958B;&#x767C;&#x7684;&#x8DE8;&#x5E73;&#x53F0;&#x6301;&#x7E8C;&#x96C6;&#x6210;&#x548C;&#x6301;&#x7E8C;&#x767C;&#x5E03;&#x7684;&#x958B;&#x6E90;&#x9805;&#x76EE;&#xFF0C;&#x5B83;&#x5177;&#x6709;&#x5982;&#x4E0B;&#x7279;&#x5FB5;:</p><blockquote><ul><li>&#x5B89;&#x88DD;&#x53CA;&#x9077;&#x79FB;&#x65B9;&#x4FBF;&#xFF1A;&#x5B89;&#x88DD;&#x76F4;&#x63A5;&#x90E8;&#x7F72; war &#x5305;&#xFF0C;&#x9077;&#x79FB;&#x53EA;&#x9700;&#x66FF;&#x63DB; JENKINS_HOME &#x76EE;&#x9304;&#x3002;  <br>
 </li>
-<li>&#x914D;&#x7F6E;&#x65B9;&#x4FBF;&#xFF1A;&#x53EF;&#x8996;&#x5316;&#x5F8C;&#x53F0;&#x64CD;&#x4F5C;&#x3002;
+<li>&#x914D;&#x7F6E;&#x65B9;&#x4FBF;&#xFF1A;&#x53EF;&#x8996;&#x5316;&#x5F8C;&#x53F0;&#x64CD;&#x4F5C;&#x3002;  <br>
 </li>
-<li>&#x8C50;&#x5BCC;&#x7684;&#x63D2;&#x4EF6;&#x751F;&#x614B;&#x5708;&#xFF1A;&#x6BD4;&#x5982; git, junit, jacoco &#x7B49;&#x3002;
+<li>&#x8C50;&#x5BCC;&#x7684;&#x63D2;&#x4EF6;&#x751F;&#x614B;&#x5708;&#xFF1A;&#x6BD4;&#x5982; git, junit, jacoco &#x7B49;&#x3002;  <br>
 </li>
-<li>&#x53EF;&#x64F4;&#x5C55;&#xFF1A;&#x81EA;&#x5B9A;&#x7FA9;&#x63D2;&#x4EF6;&#x3002;
+<li>&#x53EF;&#x64F4;&#x5C55;&#xFF1A;&#x81EA;&#x5B9A;&#x7FA9;&#x63D2;&#x4EF6;&#x3002;  <br>
 </li>
 <li>&#x5206;&#x4F48;&#x5F0F;&#xFF1A;&#x652F;&#x6301; Master-Slave&#x3002;
 </li></ul>
 </blockquote><p>Jenkins&#x5DF2;&#x7D93;&#x4F5C;&#x70BA;&#x5404;&#x5927;&#x516C;&#x53F8;&#x9032;&#x884C;CI/CD&#x7684;&#x9996;&#x9078;&#x5DE5;&#x5177;&#x3002;  <br>
 Jenkins UI&#x5F9E;2006&#x5E74;-2016&#x5E74;&#xFF0C;&#x5E7E;&#x4E4E;&#x6C92;&#x6709;&#x8B8A;&#x5316;&#x3002;</p><p>&#x70BA;&#x4E86;&#x9069;&#x61C9; Jenkins Pipeline &#x548C; Freestyle jobs&#x4EFB;&#x52D9;&#xFF0C;Jenkins &#x63A8;&#x51FA;&#x4E86; BlueOcean UI&#xFF0C;  <br>
-&#x5176;&#x76EE;&#x7684;&#x5C31;&#x662F;&#x8B93;&#x7A0B;&#x5E8F;&#x54E1;&#x57F7;&#x884C;&#x4EFB;&#x52D9;&#x6642;&#xFF0C;&#x964D;&#x4F4E;&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;&#x7684;&#x8907;&#x96DC;&#x5EA6;&#x548C;&#x63D0;&#x5347;&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;&#x7684;&#x6E05;&#x6670;&#x5EA6;&#xFF0C;&#x5B83;&#x5177;&#x6709;&#x5982;&#x4E0B;&#x7279;&#x5FB5;:</p><blockquote><ul><li>&#x6E05;&#x6670;&#x7684;&#x53EF;&#x8996;&#x5316;&#xFF0C;&#x5C0D;CI/CD pipelines, &#x53EF;&#x4EE5;&#x5FEB;&#x901F;&#x76F4;&#x89C0;&#x7684;&#x89C0;&#x5BDF;&#x9805;&#x76EE;pipeline&#x72C0;&#x614B;&#x3002;
+&#x5176;&#x76EE;&#x7684;&#x5C31;&#x662F;&#x8B93;&#x7A0B;&#x5E8F;&#x54E1;&#x57F7;&#x884C;&#x4EFB;&#x52D9;&#x6642;&#xFF0C;&#x964D;&#x4F4E;&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;&#x7684;&#x8907;&#x96DC;&#x5EA6;&#x548C;&#x63D0;&#x5347;&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;&#x7684;&#x6E05;&#x6670;&#x5EA6;&#xFF0C;&#x5B83;&#x5177;&#x6709;&#x5982;&#x4E0B;&#x7279;&#x5FB5;:</p><blockquote><ul><li>&#x6E05;&#x6670;&#x7684;&#x53EF;&#x8996;&#x5316;&#xFF0C;&#x5C0D;CI/CD pipelines, &#x53EF;&#x4EE5;&#x5FEB;&#x901F;&#x76F4;&#x89C0;&#x7684;&#x89C0;&#x5BDF;&#x9805;&#x76EE;pipeline&#x72C0;&#x614B;&#x3002;  <br>
 </li>
-<li>pipeline&#x53EF;&#x7DE8;&#x8F2F;(&#x958B;&#x767C;&#x4E2D;)&#xFF0C;&#x53EF;&#x8996;&#x5316;&#x7DE8;&#x8F2F;pipeline&#xFF0C;&#x73FE;&#x5728;&#x53EA;&#x80FD;&#x901A;&#x904E;&#x914D;&#x7F6E;&#x4E2D;Pipeline&#x7684;Pipeline script&#x7DE8;&#x8F2F;&#x3002;
+<li>pipeline&#x53EF;&#x7DE8;&#x8F2F;(&#x958B;&#x767C;&#x4E2D;)&#xFF0C;&#x53EF;&#x8996;&#x5316;&#x7DE8;&#x8F2F;pipeline&#xFF0C;&#x73FE;&#x5728;&#x53EA;&#x80FD;&#x901A;&#x904E;&#x914D;&#x7F6E;&#x4E2D;Pipeline&#x7684;Pipeline script&#x7DE8;&#x8F2F;&#x3002;  <br>
 </li>
-<li>pipeline&#x7CBE;&#x78BA;&#x5EA6;&#xFF0C;&#x901A;&#x904E;UI&#x76F4;&#x63A5;&#x4ECB;&#x5165;pipeline&#x7684;&#x4E2D;&#x9593;&#x554F;&#x984C;&#x3002;
+<li>pipeline&#x7CBE;&#x78BA;&#x5EA6;&#xFF0C;&#x901A;&#x904E;UI&#x76F4;&#x63A5;&#x4ECB;&#x5165;pipeline&#x7684;&#x4E2D;&#x9593;&#x554F;&#x984C;&#x3002;  <br>
 </li>
 <li>&#x96C6;&#x6210;&#x4EE3;&#x78BC;&#x5206;&#x652F;&#x548C;pull&#x8ACB;&#x6C42;&#x3002;
 </li></ul>
@@ -1340,7 +1340,7 @@ Host Volume</p><p>&#x8CC7;&#x8A0A;&#x67B6;&#x69CB;(IA, Information Architecture)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"DockerHub_resource","level":"5.2","depth":1,"next":{"title":"Docker_Official_Tutorial","level":"5.3","depth":1,"path":"Docker/Docker_Official_Tutorial.md","ref":"./Docker/Docker_Official_Tutorial.md","articles":[]},"previous":{"title":"Docker_Learning_from_Others","level":"5.1","depth":1,"path":"Docker/Docker_Learning_from_Others.md","ref":"./Docker/Docker_Learning_from_Others.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Docker/DockerHub_resource.md","mtime":"2020-08-20T02:53:43.030Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2020-08-08T22:01:02.650Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"DockerHub_resource","level":"5.2","depth":1,"next":{"title":"Docker_Official_Tutorial","level":"5.3","depth":1,"path":"Docker/Docker_Official_Tutorial.md","ref":"./Docker/Docker_Official_Tutorial.md","articles":[]},"previous":{"title":"Docker_Learning_from_Others","level":"5.1","depth":1,"path":"Docker/Docker_Learning_from_Others.md","ref":"./Docker/Docker_Learning_from_Others.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Docker/DockerHub_resource.md","mtime":"2020-08-21T01:28:48.718Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2020-08-08T22:01:02.650Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
