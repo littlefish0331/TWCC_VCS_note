@@ -132,11 +132,11 @@ cd /usr/share/grafana/
 
 **啟動 container:**
 
-> - ACCEPT_EULA: 需同意授權合約。
-> - MSSQL_SA_PASSWORD: 需要是強式密碼並至少 8 個字元。強式密碼需包含：大寫、小寫、數字，符號四者。
-> - -p hostPort:containerPort
-> - --name: 指定 container 名稱
-> - -d: 背景執行
+> - ACCEPT_EULA: 需同意授權合約。  <br>
+> - MSSQL_SA_PASSWORD: 需要是強式密碼並至少 8 個字元。強式密碼需包含：大寫、小寫、數字，符號四者。  <br>
+> - -p hostPort:containerPort  <br>
+> - --name: 指定 container 名稱  <br>
+> - -d: 背景執行  <br>
 > - -v: (Volume 技術)建立實體資料夾與 container 資料夾的對應關係。
 
 ```{bash}
@@ -171,10 +171,10 @@ echo $SA_PASSWORD
 
 **變更密碼:**
 
-> -S：server
-> -U：user name
-> -P：password
-> -Q：query，執行 SQL 指令後結束 sqlcmd
+> -S：server  <br>
+> -U：user name  <br>
+> -P：password  <br>
+> -Q：query，執行 SQL 指令後結束 sqlcmd  <br>
 
 ```{bash}
 docker exec -it mssql /opt/mssql-tools/bin/sqlcmd \
@@ -380,67 +380,67 @@ FLUSH PRIVILEGES;
 command: --default-authentication-plugin=mysql_native_password
 ```
 
-> 以下是舊的做法，依舊可用，指示步驟比較多一點。
+> 以下是舊的做法，依舊可用，指示步驟比較多一點。  <br>
 >  <br>
-> **Step01:**
->
+> **Step01:**  <br>
+>  <br>
 > 去 /DBdata/mysql/conf 新增 my.cnf。  <br>
 > 新增與修改檔案要用 sudo su 權限。  <br>
->
->
-> ```{my.cnf}
-> [mysqld]
-> skip-grant-tables
-> ```
->
-> ```{bash}
-> docker restart some-mysql
-> ```
->
-> **Step02:**
->
+>  <br>
+>  <br>
+> ```{my.cnf}  <br>
+> [mysqld]  <br>
+> skip-grant-tables  <br>
+> ```  <br>
+>  <br>
+> ```{bash}  <br>
+> docker restart some-mysql  <br>
+> ```  <br>
+>  <br>
+> **Step02:**  <br>
+>  <br>
 > 登入 container  <br>
-> 登入 mysql，密碼 DAS@mysql2020
->
-> ```{bash}
-> docker exec -it some-mysql bash
-> mysql -u root -p
-> ```
->
-> **Step03:**
->
-> 指定使用資料庫，更新密碼為空。
->
-> ```{bash}
-> use mysql;
-> SELECT user, authentication_string, host from user;
-> update user set authentication_string='' where user='root';
-> flush privileges;
-> ```
->
-> **Step04:**
->
-> 退出mysql，把第一步的skip-grant-tables註釋。再重啟mysql
->
-> ```{bash}
-> vim my.cnf
-> docker restart some-mysql
-> docker exec -it some-mysql bash
-> mysql -u root -p
-> ```
->
-> **Step05:**
->
-> 使用原始加密的密碼 + 權限設定
->
-> mysql_native_password
->
-> ```{bash}
-> use mysql;
-> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'DAS@mysql2020';
-> ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'DAS@mysql2020';
-> GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' WITH GRANT OPTION;
-> ```
+> 登入 mysql，密碼 DAS@mysql2020  <br>
+>  <br>
+> ```{bash}  <br>
+> docker exec -it some-mysql bash  <br>
+> mysql -u root -p  <br>
+> ```  <br>
+>  <br>
+> **Step03:**  <br>
+>  <br>
+> 指定使用資料庫，更新密碼為空。  <br>
+>  <br>
+> ```{bash}  <br>
+> use mysql;  <br>
+> SELECT user, authentication_string, host from user;  <br>
+> update user set authentication_string='' where user='root';  <br>
+> flush privileges;  <br>
+> ```  <br>
+>  <br>
+> **Step04:**  <br>
+>  <br>
+> 退出mysql，把第一步的skip-grant-tables註釋。再重啟mysql  <br>
+>  <br>
+> ```{bash}  <br>
+> vim my.cnf  <br>
+> docker restart some-mysql  <br>
+> docker exec -it some-mysql bash  <br>
+> mysql -u root -p  <br>
+> ```  <br>
+>  <br>
+> **Step05:**  <br>
+>  <br>
+> 使用原始加密的密碼 + 權限設定  <br>
+>  <br>
+> mysql_native_password  <br>
+>  <br>
+> ```{bash}  <br>
+> use mysql;  <br>
+> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'DAS@mysql2020';  <br>
+> ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'DAS@mysql2020';  <br>
+> GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' WITH GRANT OPTION;  <br>
+> ```  <br>
 
 #### 看一些變數值
 
@@ -684,15 +684,15 @@ docker run --name rstudio_latest \
 
 > 在 container 中，路徑 /etc/rstudio/ 之下，有一個檔案叫做 rserver.conf。  <br>
 > 只要在裡面加入下方指令，就可以自動登入。  <br>
-> 但目前在此 image 中嘗試失敗。
+> 但目前在此 image 中嘗試失敗。  <br>
 >  <br>
-> ```{rserver.conf}
-> // rserver.conf
-> # Server Configuration File
+> ```{rserver.conf}  <br>
+> // rserver.conf  <br>
+> # Server Configuration File  <br>
 >  <br>
-> rsession-which-r=/usr/local/bin/R
-> auth-none=1
-> server-user=rstudio
+> rsession-which-r=/usr/local/bin/R  <br>
+> auth-none=1  <br>
+> server-user=rstudio  <br>
 > ```
 
 - **solution02:** docker run -e DISABLE_AUTH=TRUE
@@ -779,14 +779,14 @@ docker run --name r_env_FALSE -e ROOT=TRUE -e PASSWORD=rstudio@2020 -e DISABLE_A
 
 > 均先安裝 vim  <br>
 > > apt-get update  <br>
-> > apt-get install vim
+> > apt-get install vim  <br>
 >  <br>
 > 1. 先設定每次都需要登入，後改為預設登入  <br>
 > `vim /etc/rstudio/rserver.conf`  <br>
-> 新增 `auth-none=1`
+> 新增 `auth-none=1`  <br>
 > `vim /etc/environment`  <br>
-> 新增 `USER=rstudio`
-> docker restart container 即可。
+> 新增 `USER=rstudio`  <br>
+> docker restart container 即可。  <br>
 >  <br>
 > 2. 先設定預設登入，後改為每次都需要登入  <br>
 > vim /etc/rstudio/rserver.conf  <br>
@@ -814,13 +814,13 @@ p.s. 重啟的時候，/etc/environment 環境變數，可能會重複，但是�
 
 ![notebook_relation](./image/notebook_relation.svg)
 
-> 如果抓 datascience 系列，會有R。
-> scipy, minimal 系列的 tag 看不出版本，但都是基於 base 系列製作。
-> 所以最後抓取 base 系列的 python-3.7.6。
+> 如果抓 datascience 系列，會有R。  <br>
+> scipy, minimal 系列的 tag 看不出版本，但都是基於 base 系列製作。  <br>
+> 所以最後抓取 base 系列的 python-3.7.6。  <br>
 >  <br>
-> 但是研究一下文檔，其實 base 系列沒有支援 LaTeX 讓我覺得很不妙，
-> 可是 minimal, scipy 系列就是沒有 python 版本的 tag。
-> 不然建議還是裝 minimal, scipy 系列。
+> 但是研究一下文檔，其實 base 系列沒有支援 LaTeX 讓我覺得很不妙，  <br>
+> 可是 minimal, scipy 系列就是沒有 python 版本的 tag。  <br>
+> 不然建議還是裝 minimal, scipy 系列。  <br>
 >  <br>
 > 後來覺得不妙，只好去一一嘗試，發現這個也是 python3.7.6，jupyter/scipy-notebook:dc9744740e12。
 
@@ -829,10 +829,10 @@ p.s. 重啟的時候，/etc/environment 環境變數，可能會重複，但是�
 // docker run --name notebook_base -v /datamount/notebook/base_work:/home/jovyan/work -p 8888:8888 -d jupyter/base-notebook:python-3.7.6
 ```
 
-> - jupyter notebook password: notebook@base2020
->   - 只有 python3.7.6。
->   - 用 `apt list | wc -l` 檢查有102個套件。
->   - 用 `pip list | wc -l` 檢查有82個套件。
+> - jupyter notebook password: notebook@base2020  <br>
+>   - 只有 python3.7.6。  <br>
+>   - 用 `apt list | wc -l` 檢查有102個套件。  <br>
+>   - 用 `pip list | wc -l` 檢查有82個套件。  <br>
 >   - 用 `pip freeze | wc -l` 檢查有76個套件。
 
 ```{bash}
@@ -855,7 +855,7 @@ docker run --name notebook_python_lab -e JUPYTER_ENABLE_LAB=yes -v /datamount/no
 - [Docker Hub](https://hub.docker.com/r/jupyter/r-notebook)
 - [jupyter/scipy-notebook - Docker Hub](https://hub.docker.com/r/jupyter/scipy-notebook)
 
-> freeze: Output installed packages in requirements format.
+> freeze: Output installed packages in requirements format.  <br>
 > list: List installed packages
 
 - jupyter/minimal-notebook
@@ -1003,10 +1003,10 @@ This means that you do not need to install the Blue Ocean plugins separately. �
 
 Jenkins是一款Java開發的跨平台持續集成和持續發布的開源項目，它具有如下特徵:
 
-> - 安裝及遷移方便：安裝直接部署 war 包，遷移只需替換 JENKINS_HOME 目錄。
-> - 配置方便：可視化後台操作。
-> - 豐富的插件生態圈：比如 git, junit, jacoco 等。
-> - 可擴展：自定義插件。
+> - 安裝及遷移方便：安裝直接部署 war 包，遷移只需替換 JENKINS_HOME 目錄。  <br>
+> - 配置方便：可視化後台操作。  <br>
+> - 豐富的插件生態圈：比如 git, junit, jacoco 等。  <br>
+> - 可擴展：自定義插件。  <br>
 > - 分佈式：支持 Master-Slave。
 
 Jenkins已經作為各大公司進行CI/CD的首選工具。  <br>
@@ -1015,9 +1015,9 @@ Jenkins UI從2006年-2016年，幾乎沒有變化。
 為了適應 Jenkins Pipeline 和 Freestyle jobs任務，Jenkins 推出了 BlueOcean UI，  <br>
 其目的就是讓程序員執行任務時，降低工作流程的複雜度和提升工作流程的清晰度，它具有如下特徵:
 
-> - 清晰的可視化，對CI/CD pipelines, 可以快速直觀的觀察項目pipeline狀態。
-> - pipeline可編輯(開發中)，可視化編輯pipeline，現在只能通過配置中Pipeline的Pipeline script編輯。
-> - pipeline精確度，通過UI直接介入pipeline的中間問題。
+> - 清晰的可視化，對CI/CD pipelines, 可以快速直觀的觀察項目pipeline狀態。  <br>
+> - pipeline可編輯(開發中)，可視化編輯pipeline，現在只能通過配置中Pipeline的Pipeline script編輯。  <br>
+> - pipeline精確度，通過UI直接介入pipeline的中間問題。  <br>
 > - 集成代碼分支和pull請求。
 
 **啟動 jenkins/jenkins image:**
