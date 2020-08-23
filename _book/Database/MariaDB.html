@@ -560,7 +560,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="mariadb">MariaDB</h1><p>&#x8A18;&#x9304;&#x6211;&#x5728; VCS &#x4E0A;&#x64CD;&#x4F5C; container:MariaDB &#x7684;&#x904E;&#x7A0B;&#xFF0C;&#x4EE5;&#x53CA;&#x4E00;&#x4E9B;&#x554F;&#x984C;&#x8981;&#x5982;&#x4F55;&#x514B;&#x670D;&#x3002;  
+                                <h1 id="mariadb">MariaDB</h1><p>&#x8A18;&#x9304;&#x6211;&#x5728; VCS &#x4E0A;&#x64CD;&#x4F5C; container:MariaDB &#x7684;&#x904E;&#x7A0B;&#xFF0C;&#x4EE5;&#x53CA;&#x4E00;&#x4E9B;&#x554F;&#x984C;&#x8981;&#x5982;&#x4F55;&#x514B;&#x670D;&#x3002;  <br>
 &#x90E8;&#x5206;&#x662F;&#x5F9E; DockerHub &gt; Database &gt; MariaDB &#x8907;&#x88FD;&#x904E;&#x4F86;&#x3002;</p><p>--</p><p><strong>Content:</strong></p><!-- TOC -->
 
 
@@ -596,11 +596,11 @@ mysql -u root -p
 <p><strong>&#x67E5;&#x770B; mariaDB &#x7684; character-set-server &#x548C; collation-server:</strong></p><pre><code class="lang-{bash}">docker exec -it some-mariadb bash
 mysql -u root -p
 
-  &gt; SELECT @@character_set_database, @@collation_database;  
+  &gt; SELECT @@character_set_database, @@collation_database;  &lt;br&gt;
   &gt; SELECT DEFAULT_CHARACTER_SET_NAME, DEFAULT_COLLATION_NAME FROM INFORMATION_SCHEMA.SCHEMATA; // &#x53E6;&#x4E00;&#x7A2E;&#x4F5C;&#x6CD5;&#x3002;
   &gt;  &lt;br&gt;
-  &gt; show variables like &apos;char%&apos;;  
-  &gt; show variables like &apos;collation%&apos;;  
+  &gt; show variables like &apos;char%&apos;;  &lt;br&gt;
+  &gt; show variables like &apos;collation%&apos;;  &lt;br&gt;
   &gt; exit</code></pre>
 <p><strong>&#x4FEE;&#x6539; Configuration file &#x8207;&#x7D50;&#x679C;:</strong></p><p>&#x5373;&#x9023;&#x52D5;&#x8CC7;&#x6599;&#x593E;&#x4E0B;&#xFF0C;&#x65B0;&#x589E; my.cnf&#xFF0C;&#x4FEE;&#x6539;&#x88E1;&#x9762;&#x5167;&#x5BB9;&#x3002;  <br>
 &#x4FEE;&#x6539;&#x4E4B;&#x5F8C;&#x8981;&#x91CD;&#x555F; container&#x3002;</p><pre><code class="lang-{mysql}">[client]
@@ -657,7 +657,7 @@ character-set-server = utf8</code></pre>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"MariaDB","level":"5.3","depth":1,"next":{"title":"MySQL","level":"5.4","depth":1,"path":"Database/MySQL.md","ref":"./Database/MySQL.md","articles":[]},"previous":{"title":"PostgreSQL","level":"5.2","depth":1,"path":"Database/PostgreSQL.md","ref":"./Database/PostgreSQL.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Database/MariaDB.md","mtime":"2020-08-23T03:08:19.741Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2020-08-08T22:01:02.650Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"MariaDB","level":"5.3","depth":1,"next":{"title":"MySQL","level":"5.4","depth":1,"path":"Database/MySQL.md","ref":"./Database/MySQL.md","articles":[]},"previous":{"title":"PostgreSQL","level":"5.2","depth":1,"path":"Database/PostgreSQL.md","ref":"./Database/PostgreSQL.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Database/MariaDB.md","mtime":"2020-08-23T03:11:25.444Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2020-08-08T22:01:02.650Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
