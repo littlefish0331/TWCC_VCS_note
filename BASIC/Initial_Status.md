@@ -1,6 +1,6 @@
 # Initial Status
 
-TWCC-VCS 上面有多個映像檔可做建立的選擇。  
+TWCC-VCS 上面有多個映像檔可做建立的選擇。  <br>
 我選擇使用 ubuntu 來建立一個 VCS。
 
 ![VCS_images](./image/VCS_images.jpg)
@@ -8,7 +8,7 @@ TWCC-VCS 上面有多個映像檔可做建立的選擇。
 以下是 TWCC 預設會先執行的 script，我盡可能註解。  <br>
 另外也註記一開始會安裝哪些東西，或是有哪些設定。
 
-然後記得 VCS 剛啟動的時候，建議最好 `sudo reboot` 重新開機一下，  
+然後記得 VCS 剛啟動的時候，建議最好 `sudo reboot` 重新開機一下，  <br>
 之前的經驗是有一些檔案好像還處於 lock 狀態。
 
 --
@@ -31,12 +31,12 @@ TWCC-VCS 上面有多個映像檔可做建立的選擇。
 
 ## script history
 
-成功啟動 VCS 之後，連線進去會發現在啟動 VCS 服務時，TWCC 已經幫我們做了很多的設定，  
+成功啟動 VCS 之後，連線進去會發現在啟動 VCS 服務時，TWCC 已經幫我們做了很多的設定，  <br>
 透過 history 我們可以略知一二。
 
 ### ubuntu
 
-這個檔案在 ubuntu 使用者的家目錄下。  
+這個檔案在 ubuntu 使用者的家目錄下。  <br>
 
 ```{bash}
 cd /home/ubuntu/
@@ -127,14 +127,14 @@ exit
 
 ### root
 
-這個檔案在 ubuntu 使用者的家目錄下。  
+這個檔案在 ubuntu 使用者的家目錄下。  <br>
 
 ```{bash}
 cd /root/
 cat .bash_history
 ```
 
-> 指令 `systemctl <操作指令> <服務名稱.service>`  
+> 指令 `systemctl <操作指令> <服務名稱.service>`  <br>
 >  <br>
 > 在 Systemd 中每一個系統服務就稱為一個服務單位（unit），而服務單位又可以區分為 service、socket、target、path、snapshot、timer 等多種不同的類型（type），我們可以從設定檔的附檔名來判斷該服務單位所屬的類型，最常見的就是以 .service 結尾的系統服務，大部分的伺服器都是屬於這種。  <br>
 >  <br>
@@ -156,7 +156,7 @@ cat .bash_history
 13  sudo vi /etc/rc.local
 14  sudo chmod +x /etc/rc.local
 15  sudo systemctl enable rc-local
-16  sudo systemctl start rc-local.service  --重啟服務。  
+16  sudo systemctl start rc-local.service  --重啟服務。  <br>
 17  sudo systemctl status rc-local.service
 18  sudo vi /etc/rc.local
 19  sudo systemctl status rc-local.service

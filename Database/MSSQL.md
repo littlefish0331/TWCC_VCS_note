@@ -1,6 +1,6 @@
 # MSSQL
 
-記錄我在 VCS 上操作 container:MSSQL 的過程，以及一些問題要如何克服。  
+記錄我在 VCS 上操作 container:MSSQL 的過程，以及一些問題要如何克服。  <br>
 部分是從 DockerHub > Database > MSSQL 複製過來。
 
 --
@@ -41,17 +41,17 @@
 
 ## 啟動 container
 
-> 環境參數:  
->  
+> 環境參數:  <br>
+>  <br>
 > - ACCEPT_EULA: 需同意授權合約。confirms your acceptance of the End-User Licensing Agreement.  <br>
 > - MSSQL_PID，可以選擇 MSSQL 的版本。
 > - SA_PASSWORD: 需要是強式密碼並至少 8 個字元。強式密碼需包含：大寫、小寫、數字，符號四者。(MSSQL_SA_PASSWORD 好像也可以。)  <br>
 > - MSSQL_COLLATION: 資料庫 Server collation。
->  
-> docker 參數:  
->  
+>  <br>
+> docker 參數:  <br>
+>  <br>
 > - --name: 指定 container 名稱  <br>
-> - -v: (Volume 技術)建立實體資料夾與 container 資料夾的對應關係。  
+> - -v: (Volume 技術)建立實體資料夾與 container 資料夾的對應關係。  <br>
 > - -p hostPort:containerPort。  <br>
 > - -d: 背景執行。
 
@@ -109,7 +109,7 @@ docker exec -it mssql /opt/mssql-tools/bin/sqlcmd \
 docker exec -it mssql bash
 /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P 'MSSQL@2020'
 
-  > ALTER LOGIN SA WITH PASSWORD="<YourNewStrong!Passw0rd>"  
+  > ALTER LOGIN SA WITH PASSWORD="<YourNewStrong!Passw0rd>"  <br>
   > quit
 ```
 
@@ -137,10 +137,10 @@ docker exec -it mssql /opt/mssql-tools/bin/sqlcmd -S localhost -U SA \
 
 - [定序與 Unicode 支援 - SQL Server | Microsoft Docs](https://docs.microsoft.com/zh-tw/sql/relational-databases/collations/collation-and-unicode-support?view=sql-server-ver15)
 
-> 不要問這是什麼，因為我也還不是很懂XD~  
-> 總之就是資料庫關於編碼方面的設定。  
+> 不要問這是什麼，因為我也還不是很懂XD~  <br>
+> 總之就是資料庫關於編碼方面的設定。  <br>
 
-Collation 要選擇"Chinese_Taiwan_Stroke_CI_AS"。  
+Collation 要選擇"Chinese_Taiwan_Stroke_CI_AS"。  <br>
 它這個代碼有特別的意思，但我不知道是甚麼><
 
 ![mssql_setting](./image/mssql_setting.png)
@@ -151,7 +151,7 @@ p.s. 有一種是"bopomofo"，代表ㄅㄆㄇㄈ。
 
 後來有查到了，但我還是看不太懂。
 
-SQL Server 中的定序會提供資料的排序規則、大小寫和區分腔調字屬性。  
+SQL Server 中的定序會提供資料的排序規則、大小寫和區分腔調字屬性。  <br>
 與字元資料類型 (例如 char 和 varchar) 搭配使用的定序會指示字碼頁，以及可針對該資料類型表示的對應字元。
 
 定序指定位元模式，代表資料集中的每一個字元。 定序也可以決定排序和比較資料的規則。
@@ -179,12 +179,12 @@ SQL Server 中的定序會提供資料的排序規則、大小寫和區分腔調
 - [在 Linux 上設定 SQL Server 的環境變數 - SQL Server | Microsoft Docs](https://docs.microsoft.com/zh-tw/sql/linux/sql-server-linux-configure-environment-variables?view=sql-server-ver15)
 - [在 Linux 上設定 SQL Server 設定 - SQL Server | Microsoft Docs](https://docs.microsoft.com/zh-tw/sql/linux/sql-server-linux-configure-mssql-conf?view=sql-server-ver15)
 
-> docker 語法網路上說單雙引號有差，我常是下列做法都是沒有問題的。  
-> - -e "MSSQL_COLLATION=Chinese_Taiwan_Stroke_CI_AS"  
-> - -e 'MSSQL_COLLATION=Chinese_Taiwan_Stroke_CI_AS'  
-> - -e MSSQL_COLLATION="Chinese_Taiwan_Stroke_CI_AS"  
-> - -e MSSQL_COLLATION='Chinese_Taiwan_Stroke_CI_AS'  
->  
+> docker 語法網路上說單雙引號有差，我常是下列做法都是沒有問題的。  <br>
+> - -e "MSSQL_COLLATION=Chinese_Taiwan_Stroke_CI_AS"  <br>
+> - -e 'MSSQL_COLLATION=Chinese_Taiwan_Stroke_CI_AS'  <br>
+> - -e MSSQL_COLLATION="Chinese_Taiwan_Stroke_CI_AS"  <br>
+> - -e MSSQL_COLLATION='Chinese_Taiwan_Stroke_CI_AS'  <br>
+>  <br>
 > 至於 mssql-conf 的作法，可能要有UI介面會比較好。
 
 **嘗試的做法如下:**
@@ -216,7 +216,7 @@ SELECT CONVERT (VARCHAR(50), DATABASEPROPERTYEX('db_name','collation'));
 
 ### 伺服器層級定序
 
-依照作業系統 (OS) 地區設定決定的預設定序指定，包括其 Windows 和 SQL 語言代碼識別碼 (LCID)。  
+依照作業系統 (OS) 地區設定決定的預設定序指定，包括其 Windows 和 SQL 語言代碼識別碼 (LCID)。  <br>
 而下面這兩個是可以接受中文(台灣)的定序。
 
 - Chinese_Taiwan_Bopomofo_CI_AS
@@ -242,7 +242,7 @@ SELECT * FROM sys.fn_helpcollations();
 
 ### 資料庫層級定序
 
-當建立資料庫時，您可以使用 `CREATE DATABASE` 的 `COLLATE` 子句或 `ALTER DATABASE` 陳述式來指定預設資料庫定序。  
+當建立資料庫時，您可以使用 `CREATE DATABASE` 的 `COLLATE` 子句或 `ALTER DATABASE` 陳述式來指定預設資料庫定序。  <br>
 如果未指定定序，則會將伺服器定序指派給資料庫。
 
 另外，除非變更伺服器的定序，否則無法變更系統資料庫的定序。
@@ -265,7 +265,7 @@ SELECT CONVERT (VARCHAR(50), DATABASEPROPERTYEX('database_name','collation'));
 
 ### 資料行層級定序
 
-建立或改變資料表時，可以使用 `COLLATE` 子句來指定每個字元字串資料行的定序。  
+建立或改變資料表時，可以使用 `COLLATE` 子句來指定每個字元字串資料行的定序。  <br>
 如果您沒有指定定序，就會將資料庫的預設定序指派給資料行。
 
 **使用類似下列 `ALTER TABLE` 陳述式來變更資料行的定序:**
@@ -278,7 +278,7 @@ ALTER TABLE <db_name> ALTER COLUMN <col_name> NVARCHAR(10) COLLATE <collation_na
 
 ### 運算式層級定序
 
-運算式層級定序是在執行陳述式時設定的，而且它們會影響傳回結果集的方式。  
+運算式層級定序是在執行陳述式時設定的，而且它們會影響傳回結果集的方式。  <br>
 這樣可讓 `ORDER BY` 將結果排序為地區設定特定。
 
 **要執行運算式層級定序，請使用 `COLLATE` 子句:**
@@ -291,7 +291,7 @@ SELECT <col_name> FROM <table_name> ORDER BY <col_name> COLLATE <collation_name>
 
 ## 建立資料庫
 
-可以建立時設定，也可以建立後更改。  
+可以建立時設定，也可以建立後更改。  <br>
 但是建立後更改，基本上不能是系統資料庫。(要也可以啦~但會很複雜。)
 
 ### 設定Collation
@@ -349,9 +349,9 @@ PRINT 'Model Database not in used.'
 
 ## PORT
 
-MSSQL 如果不是用預設的port(1433)做連線，  
-比如使用 port 5001，那麼正確連線方式如下，  
-`ip,5001`，它們家是用`,`，不知道有什麼歷史故事XDD~  
+MSSQL 如果不是用預設的port(1433)做連線，  <br>
+比如使用 port 5001，那麼正確連線方式如下，  <br>
+`ip,5001`，它們家是用`,`，不知道有什麼歷史故事XDD~  <br>
 總之記錄一下!!
 
 ---

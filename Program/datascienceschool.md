@@ -2,11 +2,11 @@
 
 > datascienceschool/rpython
 
-記錄我在 VCS 上操作 container:datascienceschool/rpython 的過程，以及一些問題要如何克服。  
+記錄我在 VCS 上操作 container:datascienceschool/rpython 的過程，以及一些問題要如何克服。  <br>
 部分是從 DockerHub > Program > datascienceschool/rpython 複製過來。
 
 這個 image 裡面有 Ubuntu, R, Python, Rstudio, postgres, jupyter notebook, ssh等等，  <br>
-是很大一包的 image，共18G。  
+是很大一包的 image，共18G。  <br>
 自己沒有在 VCS 上面啟動這個 container，但是有幫同事在團隊的 server 打開。
 
 --

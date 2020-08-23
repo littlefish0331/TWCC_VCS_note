@@ -1,6 +1,6 @@
 # PostgreSQL
 
-記錄我在 VCS 上操作 container:PostgreSQL 的過程，以及一些問題要如何克服。  
+記錄我在 VCS 上操作 container:PostgreSQL 的過程，以及一些問題要如何克服。  <br>
 部分是從 DockerHub > Database > PostgreSQL 複製過來。
 
 --
@@ -53,7 +53,7 @@ docker run --name some-postgres -e PGDATA=//data/pgdata -e POSTGRES_PASSWORD=<yo
 docker exec -it some-postgres bash
 
   > psql -d postgres -U postgres  <br>
-  > SHOW port;  
+  > SHOW port;  <br>
   > exit
 ```
 

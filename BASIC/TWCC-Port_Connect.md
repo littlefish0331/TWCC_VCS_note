@@ -55,12 +55,12 @@
 
 **TCP Port:**
 
-TCP Port，即傳輸控制協定Port，需要在用戶端和伺服器之間建立連接，這樣可以提供可靠的資料傳輸。  
+TCP Port，即傳輸控制協定Port，需要在用戶端和伺服器之間建立連接，這樣可以提供可靠的資料傳輸。  <br>
 常見的包括 FTP服務的 21Port，Telnet服務的 23Port，SMTP服務的25Port，以及 HTTP服務的 80Port 等等。
 
 **UDP Port:**
 
-UDP Port，即用戶資料包協定Port，無需在用戶端和伺服器之間建立連接，安全性得不到保障。  
+UDP Port，即用戶資料包協定Port，無需在用戶端和伺服器之間建立連接，安全性得不到保障。  <br>
 常見的有 DNS服務的 53Port，SNMP(簡單網路管理協定)服務的 161Port，QQ 使用的 8000 和 4000Port 等等。
 
 ---

@@ -7,13 +7,13 @@
 <!-- 主軸是教學使用台灣的超級電腦-台灣衫二號TWCC，其底下的虛擬運算資源。 -->
 <!-- 次要是學習 Docker 操作，架設自己的雲算環境與服務。 -->
 
-這是我利用國網中心的資源 - 台灣衫二號，所學習VCS的過程。  
+這是我利用國網中心的資源 - 台灣衫二號，所學習VCS的過程。  <br>
 一方面是善用中心的資源，二來是希望以使用者的角度，記錄學習的過程，或許未來有機會教導其他中心同仁做使用，讓中心資源利用最大化。
 
-> 小知識補充:  
->  
-> - 國網中心全名為「財團法人國家實驗研究院國家高速網路與計算中心(National Center for High-performance Computing, NCHC)」  
-> - 台灣衫二號是一台超級電腦。國網中心利用此硬體資源，結合廣達、台灣大、華碩等三大國內企業共同組隊建造了AI雲端平台 TWCC(Taiwan Computing Cloud Computing，臺灣AI雲)。  
+> 小知識補充:  <br>
+>  <br>
+> - 國網中心全名為「財團法人國家實驗研究院國家高速網路與計算中心(National Center for High-performance Computing, NCHC)」  <br>
+> - 台灣衫二號是一台超級電腦。國網中心利用此硬體資源，結合廣達、台灣大、華碩等三大國內企業共同組隊建造了AI雲端平台 TWCC(Taiwan Computing Cloud Computing，臺灣AI雲)。  <br>
 > - VCS 是其中一個叫虛擬運算的服務(Virtual Computing Service)。
 
 --
@@ -22,8 +22,8 @@
 
 所以基本上要要使用中心的網路才可以連線。
 
-> VPN連線使用:  
->  
+> VPN連線使用:  <br>
+>  <br>
 > 用VPN連回中心之後，有鎖網域的port依舊不能使用，  <br>
 > 後來問過 THomas，是因為新竹的 VPN 似乎不允許這樣操作。
 
@@ -44,7 +44,7 @@
 
 ## gitbook設定
 
-想自行重製本手冊內容，可以到我的 Github - [littlefish0331/TWCC_VCS_note](https://github.com/littlefish0331/TWCC_VCS_note)，直接做下載的動作。  
+想自行重製本手冊內容，可以到我的 Github - [littlefish0331/TWCC_VCS_note](https://github.com/littlefish0331/TWCC_VCS_note)，直接做下載的動作。  <br>
 下面列出一些可能會遇到的問題，可參考做一些修正。
 
 > 舊版的 repository - [littlefish0331/TWCC_tutorial_old](https://github.com/littlefish0331/TWCC_tutorial_old)。  <br>
@@ -54,7 +54,7 @@
 
 **結尾設定(end-of-line marker):**
 
-因為 Gitbook 和 Markdown 在換行語法上的不一致，  
+因為 Gitbook 和 Markdown 在換行語法上的不一致，  <br>
 所以再用 Gitbook 發布前，請執行下列的程式，對檔案虛幻行的結尾做的修正。
 
 ```{bash}
@@ -91,7 +91,7 @@ find ./ -type f -name '*.md' | xargs sed -i 's/  \r$/  <br>\r/g'
 
 ## 專案目標
 
-學習如何在VM上架設各種服務、應用程式、網路設定等等，以及如何讓不同服務之間做溝通。  
+學習如何在VM上架設各種服務、應用程式、網路設定等等，以及如何讓不同服務之間做溝通。  <br>
 到最後打包成果與個體快照，以下是我的 .md檔資料夾結構。
 
 - Docker、Docker-Compose、Dockerfile

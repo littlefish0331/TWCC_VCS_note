@@ -1,6 +1,6 @@
 # Grafana
 
-記錄我在 VCS 上操作 container:Grafana 的過程，以及一些問題要如何克服。  
+記錄我在 VCS 上操作 container:Grafana 的過程，以及一些問題要如何克服。  <br>
 部分是從 DockerHub > Database > Grafana 複製過來。
 
 --
@@ -39,7 +39,7 @@ cd /usr/share/grafana/
 
 ## 修改 root 密碼
 
-預設登入的帳密是 admin/admin。  
+預設登入的帳密是 admin/admin。  <br>
 第一次登入之後會要求更改 admin 的密碼，可以按 skip。
 
 ---

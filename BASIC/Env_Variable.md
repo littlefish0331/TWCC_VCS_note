@@ -34,7 +34,7 @@ env
 
 permanently
 
-見參考連結。  
+見參考連結。  <br>
 大概就是直接去文件新增 $HOME/.bashrc、/etc/environment (more globally)。
 
 ---

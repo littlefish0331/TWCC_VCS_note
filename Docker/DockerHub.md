@@ -1,6 +1,6 @@
 # DockerHub resource
 
-記錄我從 DockerHub 上面使用過的 image，同時也記錄自己使用的一些心得和誤區。  
+記錄我從 DockerHub 上面使用過的 image，同時也記錄自己使用的一些心得和誤區。  <br>
 
 --
 
@@ -184,8 +184,8 @@ docker run --name DockerCon2020 -p 8080:80 -d littlefish0331/hello-world
 - [yanqd0/gitbook - Docker Hub](https://hub.docker.com/r/yanqd0/gitbook/): 很久沒更新，inspire by fellah/gitbook。
 - [10,000小時的修煉之路: 【Docker】Ubuntu / gitbook](http://webcache.googleusercontent.com/search?q=cache:3yNCZ36iXKQJ:maxdev.huder.link/2016/02/dockerubuntu-gitbook.html+&cd=10&hl=zh-TW&ct=clnk&gl=tw): 教學在 ubuntu 上建立環境，架設 Gitbook。環境需要 `apt-get install nodejs, npm, nodejs-legacy`，接著可開始安裝 gitbook。
 
-存放 .md 的資料夾要先練立好，並把權限開啟。  
-關於權限設計與管理其實我並不是很懂，實際案例經驗有點少，  
+存放 .md 的資料夾要先練立好，並把權限開啟。  <br>
+關於權限設計與管理其實我並不是很懂，實際案例經驗有點少，  <br>
 所以目前我都是直接權限開最大XD~
 
 > chmod 777 <folder> -R
@@ -215,17 +215,17 @@ docker run --name FAE_no72_gitbook -v /datamount/Gitbook/FAE_no72:/srv/gitbook -
 
 **參數:**
 
-> 環境參數:  
->  
+> 環境參數:  <br>
+>  <br>
 > - ACCEPT_EULA: 需同意授權合約。confirms your acceptance of the End-User Licensing Agreement.  <br>
 > - MSSQL_PID，可以選擇 MSSQL 的版本。
 > - SA_PASSWORD: 需要是強式密碼並至少 8 個字元。強式密碼需包含：大寫、小寫、數字，符號四者。(MSSQL_SA_PASSWORD 好像也可以。)  <br>
 > - MSSQL_COLLATION: 資料庫 Server collation。
->  
-> docker 參數:  
->  
+>  <br>
+> docker 參數:  <br>
+>  <br>
 > - --name: 指定 container 名稱  <br>
-> - -v: (Volume 技術)建立實體資料夾與 container 資料夾的對應關係。  
+> - -v: (Volume 技術)建立實體資料夾與 container 資料夾的對應關係。  <br>
 > - -p hostPort:containerPort。  <br>
 > - -d: 背景執行。
 
@@ -300,7 +300,7 @@ docker run --name some-postgres -e PGDATA=//data/pgdata -e POSTGRES_PASSWORD=<yo
 docker exec -it some-postgres bash
 
   > psql -d postgres -U postgres  <br>
-  > SHOW port;  
+  > SHOW port;  <br>
   > exit
 ```
 
@@ -694,12 +694,12 @@ docker run \
 > 不然建議還是裝 minimal, scipy 系列。  <br>
 >  <br>
 > 後來覺得不妙，只好去一一嘗試，發現這個也是 python3.7.6，jupyter/scipy-notebook:dc9744740e12。
->  
+>  <br>
 > ```{bash}
 > docker pull jupyter/base-notebook:python-3.7.6
 > docker run --name notebook_base -v /datamount/notebook/base_work:/home/jovyan/work -p 8888:8888 -d jupyter/base-notebook:python-3.7.6
 > ```
->  
+>  <br>
 > - jupyter notebook password: notebook@base2020  <br>
 >   - 只有 python3.7.6。  <br>
 >   - 用 `apt list | wc -l` 檢查有102個套件。  <br>
@@ -877,7 +877,7 @@ cd /usr/share/grafana/
 
 **修改 root 密碼:**
 
-預設登入的帳密是 admin/admin。  
+預設登入的帳密是 admin/admin。  <br>
 第一次登入之後會要求更改 admin 的密碼，可以按 skip。
 
 ---
@@ -974,7 +974,7 @@ docker exec -it jenkins-only bash
 docker network create jenkins
 ```
 
-docker-in-docker，這個無法用 docker exec 進入唷!  
+docker-in-docker，這個無法用 docker exec 進入唷!  <br>
 port 2376，不用去 TWCC 上面開啟。
 
 --network network                Connect a container to a network
@@ -993,7 +993,7 @@ docker run \
 -d docker:dind
 ```
 
-安裝 jenkinsci/blueocean。  
+安裝 jenkinsci/blueocean。  <br>
 env 那三行，讓我們可以順利接到 localhost 的 Docker Server。
 
 ```{bash}

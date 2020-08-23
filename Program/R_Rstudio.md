@@ -1,6 +1,6 @@
 # R_Rstudio
 
-記錄我在 VCS 上操作 container:R+Rstudio 的過程，以及一些問題要如何克服。  
+記錄我在 VCS 上操作 container:R+Rstudio 的過程，以及一些問題要如何克服。  <br>
 部分是從 DockerHub > Program > R+Rstudio 複製過來。
 
 > 其實完整是包含 R+Rstudio(+python2+python3)
@@ -81,9 +81,9 @@ docker run --name rstudio_latest \
 ### 修改密碼
 
 修改密碼的方式很簡單，進到 Rstudio Server 之後，  <br>
-上方功能列 > Tools > shell(terminal)。  
-輸入 `passwd`。  
-然後先輸入舊密碼，接著就可以改密碼了。  
+上方功能列 > Tools > shell(terminal)。  <br>
+輸入 `passwd`。  <br>
+然後先輸入舊密碼，接著就可以改密碼了。  <br>
 
 --
 

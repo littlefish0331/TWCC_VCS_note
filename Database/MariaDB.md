@@ -1,6 +1,6 @@
 # MariaDB
 
-記錄我在 VCS 上操作 container:MariaDB 的過程，以及一些問題要如何克服。  
+記錄我在 VCS 上操作 container:MariaDB 的過程，以及一些問題要如何克服。  <br>
 部分是從 DockerHub > Database > MariaDB 複製過來。
 
 --
@@ -63,11 +63,11 @@ mysql -u root -p
 docker exec -it some-mariadb bash
 mysql -u root -p
 
-  > SELECT @@character_set_database, @@collation_database;  
+  > SELECT @@character_set_database, @@collation_database;  <br>
   > SELECT DEFAULT_CHARACTER_SET_NAME, DEFAULT_COLLATION_NAME FROM INFORMATION_SCHEMA.SCHEMATA; // 另一種作法。
   >  <br>
-  > show variables like 'char%';  
-  > show variables like 'collation%';  
+  > show variables like 'char%';  <br>
+  > show variables like 'collation%';  <br>
   > exit
 ```
 

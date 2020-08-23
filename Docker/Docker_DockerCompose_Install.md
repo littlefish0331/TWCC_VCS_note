@@ -25,15 +25,15 @@
 
 兩種方法其實是一樣的。
 
-這是我從社群朋友 - 紙鈔(money)，那邊學的。  
+這是我從社群朋友 - 紙鈔(money)，那邊學的。  <br>
 從官方網站下載，然後以 shell 執行。
 
 ```{bash}
 curl -sSL https://get.docker.com/ | sh
 ```
 
-官方 docker Github 作法，  
-先從官方網站下載，儲存檔名為 get-docker.sh，  
+官方 docker Github 作法，  <br>
+先從官方網站下載，儲存檔名為 get-docker.sh，  <br>
 再用 sh 執行。
 
 - -o, --output <file> Write to file instead of stdout

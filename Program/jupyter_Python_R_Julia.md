@@ -1,6 +1,6 @@
 # jupyter:Python、R、Julia
 
-記錄我在 VCS 上操作 container:jupyter 的過程，以及一些問題要如何克服。  
+記錄我在 VCS 上操作 container:jupyter 的過程，以及一些問題要如何克服。  <br>
 部分是從 DockerHub > Program > jupyter 複製過來。
 
 DockerHub 上 jupyter 有把打包成許多 不同的 image。
@@ -46,12 +46,12 @@ DockerHub 上 jupyter 有把打包成許多 不同的 image。
 > 不然建議還是裝 minimal, scipy 系列。  <br>
 >  <br>
 > 後來覺得不妙，只好去一一嘗試，發現這個也是 python3.7.6，jupyter/scipy-notebook:dc9744740e12。
->  
+>  <br>
 > ```{bash}
 > docker pull jupyter/base-notebook:python-3.7.6
 > docker run --name notebook_base -v /datamount/notebook/base_work:/home/jovyan/work -p 8888:8888 -d jupyter/base-notebook:python-3.7.6
 > ```
->  
+>  <br>
 > - jupyter notebook password: notebook@base2020  <br>
 >   - 只有 python3.7.6。  <br>
 >   - 用 `apt list | wc -l` 檢查有102個套件。  <br>

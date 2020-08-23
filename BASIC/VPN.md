@@ -1,9 +1,9 @@
 # VPN
 
-有時候會需要從 VCS 訪問外部資源，比如自己公司的 gitlab。  
+有時候會需要從 VCS 訪問外部資源，比如自己公司的 gitlab。  <br>
 因為筆者本身是國網中心的員工，因此以國網的 gitlab 為例，因為有鎖網域的原因，所以要先做 VPN 連線，  <br>
 
-本文介紹如何在 TWCC-VCS 安裝 VPN，以及對 NCHC-VPN 連線的相關設定，  
+本文介紹如何在 TWCC-VCS 安裝 VPN，以及對 NCHC-VPN 連線的相關設定，  <br>
 並以 git clone 中心 gitlab(`https://gitlab.nchc.org.tw/`) 的一個專案，做為示範案例。
 
 --
@@ -67,7 +67,7 @@
 - [鳥哥的 Linux 私房菜 -- Linux 常用網路指令介紹](http://linux.vbird.org/linux_server/0140networkcommand.php#ifconfig)。
 
 啟動、觀察與修改網路介面的相關參數。  <br>
-不過因為我們是用 TWCC-VCS，所以這邊顯示的IP是和連線所使用的IP不一樣。  
+不過因為我們是用 TWCC-VCS，所以這邊顯示的IP是和連線所使用的IP不一樣。  <br>
 但是這部分的知識有點太深，關鍵字是 IP別名(IP aliases)和輔助IP(secondary IP addresses)，有興趣的朋友可以上網自己 google 一下，有機會再和大家分享。
 
 ![ifconfig](./image/ifconfig.jpg)
@@ -122,7 +122,7 @@ sudo su
 vim /etc/openfortivpn/config
 ```
 
-這邊以國網中心為例，  
+這邊以國網中心為例，  <br>
 參數設定 host = 140.110.22.100 也可以。
 
 如果不知道 trusted-cert 要填甚麼，可以先不填寫，  <br>
@@ -258,7 +258,7 @@ pkill openfortivpn
 
 ## 設定好之後的流程
 
-以上設定都完成，就可以成功 git clone 中心的 gitlab 專案囉!!  
+以上設定都完成，就可以成功 git clone 中心的 gitlab 專案囉!!  <br>
 以下程式碼，完整地走一遍流程。
 
 ```{bash}
