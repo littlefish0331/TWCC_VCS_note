@@ -1,0 +1,850 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>MSSQL · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="PostgreSQL.html" />
+    
+    
+    <link rel="prev" href="../Docker/Docker_Command.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    README
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">基礎操作 BASIC</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../BASIC/Initial_Status.html">
+            
+                <a href="../BASIC/Initial_Status.html">
+            
+                    
+                    Initial Status
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../BASIC/SSH_Connect.html">
+            
+                <a href="../BASIC/SSH_Connect.html">
+            
+                    
+                    SSH Connect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../BASIC/TWCC-Port_Connect.html">
+            
+                <a href="../BASIC/TWCC-Port_Connect.html">
+            
+                    
+                    TWCC-Port Connect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../BASIC/Permission.html">
+            
+                <a href="../BASIC/Permission.html">
+            
+                    
+                    Permission
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../BASIC/Mount_Disk.html">
+            
+                <a href="../BASIC/Mount_Disk.html">
+            
+                    
+                    Mount Disk
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../BASIC/Env_Variable.html">
+            
+                <a href="../BASIC/Env_Variable.html">
+            
+                    
+                    Environment Variable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../BASIC/VPN.html">
+            
+                <a href="../BASIC/VPN.html">
+            
+                    
+                    VPN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../BASIC/bash_command.md">
+            
+                <span>
+            
+                    
+                    Bash Command
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">進階主題</li>
+        
+        
+    
+
+    
+        
+        <li class="header">Docker</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../Docker/Docker_DockerCompose_Install.html">
+            
+                <a href="../Docker/Docker_DockerCompose_Install.html">
+            
+                    
+                    Install Docker and DockerCompose
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../Docker/Learning_from_Others.html">
+            
+                <a href="../Docker/Learning_from_Others.html">
+            
+                    
+                    Learning from Others
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../Docker/DockerHub_resource.md">
+            
+                <span>
+            
+                    
+                    DockerHub
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../Docker/Docker_Official_Tutorial.md">
+            
+                <span>
+            
+                    
+                    Official Tutorial
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../Docker/DockerFile.md">
+            
+                <span>
+            
+                    
+                    DockerFile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../Docker/Docker_Command.html">
+            
+                <a href="../Docker/Docker_Command.html">
+            
+                    
+                    Docker Command
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Database</li>
+        
+        
+    
+        <li class="chapter active" data-level="5.1" data-path="MSSQL.html">
+            
+                <a href="MSSQL.html">
+            
+                    
+                    MSSQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="PostgreSQL.html">
+            
+                <a href="PostgreSQL.html">
+            
+                    
+                    PostgreSQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="MariaDB.html">
+            
+                <a href="MariaDB.html">
+            
+                    
+                    MariaDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="MySQL.html">
+            
+                <a href="MySQL.html">
+            
+                    
+                    MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="BigObject.html">
+            
+                <a href="BigObject.html">
+            
+                    
+                    BigObject
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="ElasticSearch.html">
+            
+                <a href="ElasticSearch.html">
+            
+                    
+                    ElasticSearch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="../Database_Command.md">
+            
+                <span>
+            
+                    
+                    Database_Command
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Program</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../Program/R_Rstudio.html">
+            
+                <a href="../Program/R_Rstudio.html">
+            
+                    
+                    R and Rstudio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../Program/jupyter_Python_R_Julia.html">
+            
+                <a href="../Program/jupyter_Python_R_Julia.html">
+            
+                    
+                    jupyter:Python、R、Julia
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../Program/datascienceschool.html">
+            
+                <a href="../Program/datascienceschool.html">
+            
+                    
+                    datascienceschool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../Program/Grafana.html">
+            
+                <a href="../Program/Grafana.html">
+            
+                    
+                    Grafana
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">其他 Others</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../Others/Build_Gitbook.html">
+            
+                <a href="../Others/Build_Gitbook.html">
+            
+                    
+                    Build Gitbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../VM_Container_story.md">
+            
+                <span>
+            
+                    
+                    VM_Container_story
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../little_skills.md">
+            
+                <span>
+            
+                    
+                    little_skills
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">END</li>
+        
+        
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >MSSQL</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="mssql">MSSQL</h1><p>&#x8A18;&#x9304;&#x6211;&#x5728; VCS &#x4E0A;&#x64CD;&#x4F5C; container:MSSQL &#x7684;&#x904E;&#x7A0B;&#xFF0C;&#x4EE5;&#x53CA;&#x4E00;&#x4E9B;&#x554F;&#x984C;&#x8981;&#x5982;&#x4F55;&#x514B;&#x670D;&#x3002;  
+&#x90E8;&#x5206;&#x662F;&#x5F9E; DockerHub &gt; Database &gt; MSSQL &#x8907;&#x88FD;&#x904E;&#x4F86;&#x3002;</p><p>--</p><p><strong>Content:</strong></p><!-- TOC -->
+
+
+<ul><li><p><a href="#mssql">MSSQL</a></p><ul><li><a href="#&#x555F;&#x52D5;-container">&#x555F;&#x52D5; container</a>
+</li>
+<li><p><a href="#&#x5BC6;&#x78BC;-&#x67E5;&#x770B;&#x8B8A;&#x66F4;">&#x5BC6;&#x78BC;-&#x67E5;&#x770B;&#x3001;&#x8B8A;&#x66F4;</a></p><ul><li><a href="#&#x9032;&#x5165;-container&#x4E26;&#x67E5;&#x770B;-sa-&#x5BC6;&#x78BC;">&#x9032;&#x5165; container&#xFF0C;&#x4E26;&#x67E5;&#x770B; SA &#x5BC6;&#x78BC;</a>
+</li>
+<li><a href="#&#x8B8A;&#x66F4;&#x5BC6;&#x78BC;">&#x8B8A;&#x66F4;&#x5BC6;&#x78BC;</a>
+</li></ul>
+</li>
+<li><p><a href="#&#x8CC7;&#x6599;&#x5EAB;-&#x5099;&#x4EFD;&#x9084;&#x539F;">&#x8CC7;&#x6599;&#x5EAB;-&#x5099;&#x4EFD;&#x3001;&#x9084;&#x539F;</a></p><ul><li><a href="#&#x5099;&#x5206;">&#x5099;&#x5206;</a>
+</li>
+<li><a href="#&#x9084;&#x539F;">&#x9084;&#x539F;</a>
+</li></ul>
+</li>
+<li><p><a href="#collation&#x5B9A;&#x5E8F;">Collation(&#x5B9A;&#x5E8F;)</a></p><ul><li><a href="#&#x4F3A;&#x670D;&#x5668;&#x5C64;&#x7D1A;&#x5B9A;&#x5E8F;">&#x4F3A;&#x670D;&#x5668;&#x5C64;&#x7D1A;&#x5B9A;&#x5E8F;</a>
+</li>
+<li><a href="#&#x8CC7;&#x6599;&#x5EAB;&#x5C64;&#x7D1A;&#x5B9A;&#x5E8F;">&#x8CC7;&#x6599;&#x5EAB;&#x5C64;&#x7D1A;&#x5B9A;&#x5E8F;</a>
+</li>
+<li><a href="#&#x8CC7;&#x6599;&#x884C;&#x5C64;&#x7D1A;&#x5B9A;&#x5E8F;">&#x8CC7;&#x6599;&#x884C;&#x5C64;&#x7D1A;&#x5B9A;&#x5E8F;</a>
+</li>
+<li><a href="#&#x904B;&#x7B97;&#x5F0F;&#x5C64;&#x7D1A;&#x5B9A;&#x5E8F;">&#x904B;&#x7B97;&#x5F0F;&#x5C64;&#x7D1A;&#x5B9A;&#x5E8F;</a>
+</li></ul>
+</li>
+<li><p><a href="#&#x5EFA;&#x7ACB;&#x8CC7;&#x6599;&#x5EAB;">&#x5EFA;&#x7ACB;&#x8CC7;&#x6599;&#x5EAB;</a></p><ul><li><a href="#&#x8A2D;&#x5B9A;collation">&#x8A2D;&#x5B9A;Collation</a>
+</li>
+<li><a href="#&#x66F4;&#x6539;collation">&#x66F4;&#x6539;collation</a>
+</li></ul>
+</li>
+<li><p><a href="#&#x662F;&#x5426;&#x6709;&#x4EBA;&#x5728;&#x9023;&#x63A5;db">&#x662F;&#x5426;&#x6709;&#x4EBA;&#x5728;&#x9023;&#x63A5;DB</a></p></li>
+<li><a href="#port">PORT</a>
+</li>
+<li><a href="#end">END</a>
+</li></ul>
+</li></ul>
+<h2 id=""><!-- /TOC --></h2><p><strong>reference:</strong></p><ul><li><a href="https://hub.docker.com/_/microsoft-mssql-server" target="_blank">Microsoft SQL Server - Docker Hub</a>
+</li>
+<li><a href="https://blog.kkbruce.net/2017/12/ms-sql-server-for-linux.html#.XylSRCgzaUk" target="_blank">KingKong Bruce&#x8A18;&#x4E8B;: &#x4E00;&#x6B21;&#x5C31;&#x611B;&#x4E0A;MS SQL Server for Linux</a>
+</li>
+<li><a href="https://titangene.github.io/article/docker-mssql-server-for-linux.html" target="_blank">&#x5728; Docker &#x4E0B;&#x5EFA;&#x7ACB;&#x4E26;&#x4F7F;&#x7528; MSSQL Server for Linux | Titangene Blog</a>
+</li></ul>
+<h2 id="&#x555F;&#x52D5;-container">&#x555F;&#x52D5; container</h2><blockquote><p>&#x74B0;&#x5883;&#x53C3;&#x6578;:</p><ul><li>ACCEPT_EULA: &#x9700;&#x540C;&#x610F;&#x6388;&#x6B0A;&#x5408;&#x7D04;&#x3002;confirms your acceptance of the End-User Licensing Agreement.  <br>
+</li>
+<li>MSSQL_PID&#xFF0C;&#x53EF;&#x4EE5;&#x9078;&#x64C7; MSSQL &#x7684;&#x7248;&#x672C;&#x3002;
+</li>
+<li>SA_PASSWORD: &#x9700;&#x8981;&#x662F;&#x5F37;&#x5F0F;&#x5BC6;&#x78BC;&#x4E26;&#x81F3;&#x5C11; 8 &#x500B;&#x5B57;&#x5143;&#x3002;&#x5F37;&#x5F0F;&#x5BC6;&#x78BC;&#x9700;&#x5305;&#x542B;&#xFF1A;&#x5927;&#x5BEB;&#x3001;&#x5C0F;&#x5BEB;&#x3001;&#x6578;&#x5B57;&#xFF0C;&#x7B26;&#x865F;&#x56DB;&#x8005;&#x3002;(MSSQL_SA_PASSWORD &#x597D;&#x50CF;&#x4E5F;&#x53EF;&#x4EE5;&#x3002;)  <br>
+</li>
+<li><p>MSSQL_COLLATION: &#x8CC7;&#x6599;&#x5EAB; Server collation&#x3002;</p><p>docker &#x53C3;&#x6578;:</p></li>
+<li><p>--name: &#x6307;&#x5B9A; container &#x540D;&#x7A31;  <br></p></li>
+<li><p>-v: (Volume &#x6280;&#x8853;)&#x5EFA;&#x7ACB;&#x5BE6;&#x9AD4;&#x8CC7;&#x6599;&#x593E;&#x8207; container &#x8CC7;&#x6599;&#x593E;&#x7684;&#x5C0D;&#x61C9;&#x95DC;&#x4FC2;&#x3002;</p></li>
+<li>-p hostPort:containerPort&#x3002;  <br>
+</li>
+<li>-d: &#x80CC;&#x666F;&#x57F7;&#x884C;&#x3002;
+</li></ul>
+</blockquote><p>&#x8A18;&#x5F97;&#x5148;&#x628A;&#x9023;&#x52D5;&#x7684;&#x5BE6;&#x9AD4;&#x8CC7;&#x6599;&#x593E;&#x958B;&#x597D;&#xFF0C;&#x4E26;&#x628A;&#x8A72;&#x8CC7;&#x6599;&#x593E;&#x7684;&#x4F7F;&#x7528;&#x8005;&#x4EE5;&#x53CA;&#x7FA4;&#x7D44;&#x8A2D;&#x5B9A;&#x597D;&#xFF0C;&#x518D;&#x57F7;&#x884C;&#x4E0B;&#x9762;&#x6307;&#x4EE4;&#x3002;</p><pre><code class="lang-{bash}">sudo mkdir mssql
+chmod 775 mssql -R(&#x6216;&#x662F; `chmod 777 mssql -R`)</code></pre>
+<!-- SA_PASSWORD=MSSQL@2020 -->
+
+
+<pre><code class="lang-{bash}">// userid = &apos;sa&apos;
+docker run \
+--name mssql \
+-e &quot;ACCEPT_EULA=Y&quot; \
+-e &quot;SA_PASSWORD=&lt;your_password&gt;&quot; \
+-e &quot;MSSQL_COLLATION=Chinese_Taiwan_Stroke_CI_AS&quot; \
+-v /datamount/mssql:/var/opt/mssql \
+-p 1433:1433 \
+-d mcr.microsoft.com/mssql/server:2019-latest
+
+//&#x4E00;&#x884C;&#x6307;&#x4EE4;
+docker run --name mssql -e &quot;ACCEPT_EULA=Y&quot; -e &quot;SA_PASSWORD=&lt;your_password&gt;&quot; -v /datamount/mssql:/var/opt/mssql -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-latest</code></pre>
+<hr><h2 id="&#x5BC6;&#x78BC;-&#x67E5;&#x770B;&#x3001;&#x8B8A;&#x66F4;">&#x5BC6;&#x78BC;-&#x67E5;&#x770B;&#x3001;&#x8B8A;&#x66F4;</h2><h3 id="&#x9032;&#x5165;-container&#xFF0C;&#x4E26;&#x67E5;&#x770B;-sa-&#x5BC6;&#x78BC;">&#x9032;&#x5165; container&#xFF0C;&#x4E26;&#x67E5;&#x770B; SA &#x5BC6;&#x78BC;</h3><pre><code class="lang-{bash}">docker exec -it mssql bash
+echo $SA_PASSWORD</code></pre>
+<p>--</p><h3 id="&#x8B8A;&#x66F4;&#x5BC6;&#x78BC;">&#x8B8A;&#x66F4;&#x5BC6;&#x78BC;</h3><blockquote><p>-S&#xFF1A;server  <br>
+-U&#xFF1A;user name  <br>
+-P&#xFF1A;password  <br>
+-Q&#xFF1A;query&#xFF0C;&#x57F7;&#x884C; SQL &#x6307;&#x4EE4;&#x5F8C;&#x7D50;&#x675F; sqlcmd&#x3002;</p></blockquote><pre><code class="lang-{bash}">docker exec -it mssql /opt/mssql-tools/bin/sqlcmd \
+  -S localhost -U SA -P &apos;&lt;YourStrong!Passw0rd&gt;&apos; \
+  -Q &apos;ALTER LOGIN SA WITH PASSWORD=&quot;&lt;YourNewStrong!Passw0rd&gt;&quot;&apos;
+
+// &#x5176;&#x5BE6;&#x4E5F;&#x53EF;&#x4EE5;&#x5728; container &#x88E1;&#x9762;&#x767B;&#x5165; SA &#x4E4B;&#x5F8C;&#xFF0C;&#x518D;&#x6539;&#x5BC6;&#x78BC;&#x3002;
+// &#x9000;&#x51FA; MSSQL &#x4F7F;&#x7528; `quit`&#x3002;
+docker exec -it mssql bash
+/opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P &apos;MSSQL@2020&apos;
+
+  &gt; ALTER LOGIN SA WITH PASSWORD=&quot;&lt;YourNewStrong!Passw0rd&gt;&quot;  
+  &gt; quit</code></pre>
+<hr><h2 id="&#x8CC7;&#x6599;&#x5EAB;-&#x5099;&#x4EFD;&#x3001;&#x9084;&#x539F;">&#x8CC7;&#x6599;&#x5EAB;-&#x5099;&#x4EFD;&#x3001;&#x9084;&#x539F;</h2><h3 id="&#x5099;&#x5206;">&#x5099;&#x5206;</h3><pre><code class="lang-{bash}">docker exec -it mssql /opt/mssql-tools/bin/sqlcmd -S localhost -U SA \
+-Q &quot;BACKUP DATABASE &lt;DBname e.g. testDB&gt; TO DISK = N&apos;/var/opt/mssql/data/testdb.bak&apos; WITH NOFORMAT, NOINIT, NAME = &apos;demodb-full&apos;, SKIP, NOREWIND, NOUNLOAD, STATS = 10&quot;</code></pre>
+<h3 id="&#x9084;&#x539F;">&#x9084;&#x539F;</h3><pre><code class="lang-{bash}">docker exec -it mssql /opt/mssql-tools/bin/sqlcmd -S localhost -U SA \
+-Q &quot;RESTORE DATABASE &lt;DBname e.g. testDB&gt; FROM DISK = N&apos;/var/opt/mssql/data/testdb.bak&apos; WITH FILE = 1, NOUNLOAD, REPLACE, STATS = 5&quot;</code></pre>
+<hr><h2 id="collation&#x5B9A;&#x5E8F;">Collation(&#x5B9A;&#x5E8F;)</h2><ul><li><a href="https://docs.microsoft.com/zh-tw/sql/relational-databases/collations/collation-and-unicode-support?view=sql-server-ver15" target="_blank">&#x5B9A;&#x5E8F;&#x8207; Unicode &#x652F;&#x63F4; - SQL Server | Microsoft Docs</a>
+</li></ul>
+<blockquote><p>&#x4E0D;&#x8981;&#x554F;&#x9019;&#x662F;&#x4EC0;&#x9EBC;&#xFF0C;&#x56E0;&#x70BA;&#x6211;&#x4E5F;&#x9084;&#x4E0D;&#x662F;&#x5F88;&#x61C2;XD~  
+&#x7E3D;&#x4E4B;&#x5C31;&#x662F;&#x8CC7;&#x6599;&#x5EAB;&#x95DC;&#x65BC;&#x7DE8;&#x78BC;&#x65B9;&#x9762;&#x7684;&#x8A2D;&#x5B9A;&#x3002;</p></blockquote><p>Collation &#x8981;&#x9078;&#x64C7;&quot;Chinese_Taiwan_Stroke_CI_AS&quot;&#x3002;  
+&#x5B83;&#x9019;&#x500B;&#x4EE3;&#x78BC;&#x6709;&#x7279;&#x5225;&#x7684;&#x610F;&#x601D;&#xFF0C;&#x4F46;&#x6211;&#x4E0D;&#x77E5;&#x9053;&#x662F;&#x751A;&#x9EBC;&gt;&lt;</p><p><img alt="mssql_setting" src="image/mssql_setting.png"></p><p>p.s. &#x6709;&#x4E00;&#x7A2E;&#x662F;&quot;bopomofo&quot;&#xFF0C;&#x4EE3;&#x8868;&#x3105;&#x3106;&#x3107;&#x3108;&#x3002;</p><p>--</p><p>&#x5F8C;&#x4F86;&#x6709;&#x67E5;&#x5230;&#x4E86;&#xFF0C;&#x4F46;&#x6211;&#x9084;&#x662F;&#x770B;&#x4E0D;&#x592A;&#x61C2;&#x3002;</p><p>SQL Server &#x4E2D;&#x7684;&#x5B9A;&#x5E8F;&#x6703;&#x63D0;&#x4F9B;&#x8CC7;&#x6599;&#x7684;&#x6392;&#x5E8F;&#x898F;&#x5247;&#x3001;&#x5927;&#x5C0F;&#x5BEB;&#x548C;&#x5340;&#x5206;&#x8154;&#x8ABF;&#x5B57;&#x5C6C;&#x6027;&#x3002;  
+&#x8207;&#x5B57;&#x5143;&#x8CC7;&#x6599;&#x985E;&#x578B; (&#x4F8B;&#x5982; char &#x548C; varchar) &#x642D;&#x914D;&#x4F7F;&#x7528;&#x7684;&#x5B9A;&#x5E8F;&#x6703;&#x6307;&#x793A;&#x5B57;&#x78BC;&#x9801;&#xFF0C;&#x4EE5;&#x53CA;&#x53EF;&#x91DD;&#x5C0D;&#x8A72;&#x8CC7;&#x6599;&#x985E;&#x578B;&#x8868;&#x793A;&#x7684;&#x5C0D;&#x61C9;&#x5B57;&#x5143;&#x3002;</p><p>&#x5B9A;&#x5E8F;&#x6307;&#x5B9A;&#x4F4D;&#x5143;&#x6A21;&#x5F0F;&#xFF0C;&#x4EE3;&#x8868;&#x8CC7;&#x6599;&#x96C6;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x500B;&#x5B57;&#x5143;&#x3002; &#x5B9A;&#x5E8F;&#x4E5F;&#x53EF;&#x4EE5;&#x6C7A;&#x5B9A;&#x6392;&#x5E8F;&#x548C;&#x6BD4;&#x8F03;&#x8CC7;&#x6599;&#x7684;&#x898F;&#x5247;&#x3002;</p><p>==<strong>&#x7E3D;&#x4E4B;&#x6211;&#x89BA;&#x5F97;&#x5B9A;&#x5E8F;&#x985E;&#x4F3C;&#x65BC;&#x8CC7;&#x6599;&#x5EAB;&#x9818;&#x57DF;&#x7684;&#x7DE8;&#x78BC;&#xFF0C;&#x4F46;&#x4E0D;&#x50C5;&#x50C5;&#x53EA;&#x8655;&#x7406;&#x7DE8;&#x78BC;&#x7684;&#x554F;&#x984C;&#x3002;</strong>==</p><p>&#x4F9D;&#x7167;&#x53C3;&#x8003;&#x9023;&#x7D50;&#xFF0C;Database &#x7684; Collation &#x540D;&#x7A31;&#x6709;&#x4EE5;&#x4E0B;&#x6DB5;&#x7FA9;:</p><ul><li>_CI_AS: &#x4E0D;&#x5340;&#x5206;&#x5927;&#x5C0F;&#x5BEB;&#x3001;&#x5340;&#x5206;&#x8154;&#x8ABF;&#x5B57;&#x3001;&#x4E0D;&#x5340;&#x5206;&#x5047;&#x540D;&#x3001;&#x4E0D;&#x5340;&#x5206;&#x5168;&#x534A;&#x5F62;
+<ul><li>_AS: &#x5340;&#x5206;&#x8154;&#x8ABF;&#x5B57;&#x3002;
+</li>
+<li>_CI: &#x4E0D;&#x5340;&#x5206;&#x5927;&#x5C0F;&#x5BEB;&#x3002;Case Insensitiveve&#x3002;
+</li>
+<li>_CS: &#x5340;&#x5206;&#x5927;&#x5C0F;&#x5BEB;&#x3002;Case Sensitve&#x3002;
+</li></ul>
+</li></ul>
+<p>--</p><p><strong>&#x5B9A;&#x5E8F;&#x5C64;&#x7D1A;:</strong></p><ul><li>&#x4F3A;&#x670D;&#x5668;&#x5C64;&#x7D1A;&#x5B9A;&#x5E8F;&#xFF0C;Server&#x3002;
+</li>
+<li>&#x8CC7;&#x6599;&#x5EAB;&#x5C64;&#x7D1A;&#x5B9A;&#x5E8F;&#xFF0C;Database&#x3002;
+</li>
+<li>&#x8CC7;&#x6599;&#x884C;&#x5C64;&#x7D1A;&#x5B9A;&#x5E8F;&#xFF0C;Table&#x3002;
+</li>
+<li>&#x904B;&#x7B97;&#x5F0F;&#x5C64;&#x7D1A;&#x5B9A;&#x5E8F;&#x3002;
+</li></ul>
+<p><strong>&#x7D50;&#x8AD6;:</strong></p><ul><li><a href="https://docs.microsoft.com/zh-tw/sql/linux/sql-server-linux-configure-environment-variables?view=sql-server-ver15" target="_blank">&#x5728; Linux &#x4E0A;&#x8A2D;&#x5B9A; SQL Server &#x7684;&#x74B0;&#x5883;&#x8B8A;&#x6578; - SQL Server | Microsoft Docs</a>
+</li>
+<li><a href="https://docs.microsoft.com/zh-tw/sql/linux/sql-server-linux-configure-mssql-conf?view=sql-server-ver15" target="_blank">&#x5728; Linux &#x4E0A;&#x8A2D;&#x5B9A; SQL Server &#x8A2D;&#x5B9A; - SQL Server | Microsoft Docs</a>
+</li></ul>
+<blockquote><p>docker &#x8A9E;&#x6CD5;&#x7DB2;&#x8DEF;&#x4E0A;&#x8AAA;&#x55AE;&#x96D9;&#x5F15;&#x865F;&#x6709;&#x5DEE;&#xFF0C;&#x6211;&#x5E38;&#x662F;&#x4E0B;&#x5217;&#x505A;&#x6CD5;&#x90FD;&#x662F;&#x6C92;&#x6709;&#x554F;&#x984C;&#x7684;&#x3002;</p><ul><li>-e &quot;MSSQL_COLLATION=Chinese_Taiwan_Stroke_CI_AS&quot;  
+</li>
+<li>-e &apos;MSSQL_COLLATION=Chinese_Taiwan_Stroke_CI_AS&apos;  
+</li>
+<li>-e MSSQL_COLLATION=&quot;Chinese_Taiwan_Stroke_CI_AS&quot;  
+</li>
+<li><p>-e MSSQL_COLLATION=&apos;Chinese_Taiwan_Stroke_CI_AS&apos;</p><p>&#x81F3;&#x65BC; mssql-conf &#x7684;&#x4F5C;&#x6CD5;&#xFF0C;&#x53EF;&#x80FD;&#x8981;&#x6709;UI&#x4ECB;&#x9762;&#x6703;&#x6BD4;&#x8F03;&#x597D;&#x3002;</p></li></ul>
+</blockquote><p><strong>&#x5617;&#x8A66;&#x7684;&#x505A;&#x6CD5;&#x5982;&#x4E0B;:</strong></p><table>
+<thead>
+<tr><th> &#x4F5C;&#x6CD5; </th>
+<th> &#x6210;&#x529F;/&#x5931;&#x6557; </th>
+<th> &#x5F71;&#x97FF;&#x5C64;&#x7D1A; </th>
+</tr></thead><tbody>
+<tr><td style="text-align:left"> docker -e </td>
+<td style="text-align:left"> SUCCESS </td>
+<td style="text-align:left"> Server &#x2192; Database </td>
+</tr><tr><td style="text-align:left"> SSMS&#x5EFA;&#x7ACB; </td>
+<td style="text-align:left"> FAIL </td>
+<td style="text-align:left"> - </td>
+</tr><tr><td style="text-align:left"> SSMS&#x5EFA;&#x7ACB;+&#x8A2D;&#x5B9A;collation </td>
+<td style="text-align:left"> SUCCESS </td>
+<td style="text-align:left"> Database </td>
+</tr><tr><td style="text-align:left"> create DB </td>
+<td style="text-align:left"> FAIL </td>
+<td style="text-align:left"> - </td>
+</tr><tr><td style="text-align:left"> create DB+collation </td>
+<td style="text-align:left"> SUCCESS </td>
+<td style="text-align:left"> Database </td>
+</tr><tr><td style="text-align:left"> create DB+alter DB+collation </td>
+<td style="text-align:left"> SUCCESS </td>
+<td style="text-align:left"> Database</td>
+</tr></tbody></table>
+
+<p><strong>&#x53EF;&#x4EE5;&#x7528;&#x65BC;&#x6AA2;&#x67E5;&#x7684;SQL:</strong></p><pre><code class="lang-{SQL}">/*&#x6AA2;&#x67E5; server collation */
+/*&#x5169;&#x500B;&#x6307;&#x4EE4;&#x7B49;&#x50F9;*/
+SELECT SERVERPROPERTY(&apos;Collation&apos;);
+SELECT CONVERT(varchar, SERVERPROPERTY(&apos;collation&apos;));</code></pre>
+<pre><code class="lang-{SQL}">/*Check DB collation*/
+SELECT CONVERT (VARCHAR(50), DATABASEPROPERTYEX(&apos;db_name&apos;,&apos;collation&apos;));</code></pre>
+<p>--</p><h3 id="&#x4F3A;&#x670D;&#x5668;&#x5C64;&#x7D1A;&#x5B9A;&#x5E8F;">&#x4F3A;&#x670D;&#x5668;&#x5C64;&#x7D1A;&#x5B9A;&#x5E8F;</h3><p>&#x4F9D;&#x7167;&#x4F5C;&#x696D;&#x7CFB;&#x7D71; (OS) &#x5730;&#x5340;&#x8A2D;&#x5B9A;&#x6C7A;&#x5B9A;&#x7684;&#x9810;&#x8A2D;&#x5B9A;&#x5E8F;&#x6307;&#x5B9A;&#xFF0C;&#x5305;&#x62EC;&#x5176; Windows &#x548C; SQL &#x8A9E;&#x8A00;&#x4EE3;&#x78BC;&#x8B58;&#x5225;&#x78BC; (LCID)&#x3002;  
+&#x800C;&#x4E0B;&#x9762;&#x9019;&#x5169;&#x500B;&#x662F;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#x4E2D;&#x6587;(&#x53F0;&#x7063;)&#x7684;&#x5B9A;&#x5E8F;&#x3002;</p><ul><li>Chinese_Taiwan_Bopomofo_CI_AS
+</li>
+<li>Chinese_Taiwan_Stroke_CI_AS
+</li></ul>
+<p>&#x9810;&#x8A2D;&#x4F3A;&#x670D;&#x5668;&#x5B9A;&#x5E8F;&#x662F;&#x5728; SQL Server &#x8A2D;&#x5B9A;&#x671F;&#x9593;&#x6C7A;&#x5B9A;&#xFF0C;&#x56E0;&#x6B64;&#x6703;&#x6210;&#x70BA;&#x7CFB;&#x7D71;&#x8CC7;&#x6599;&#x5EAB;&#x548C;&#x6240;&#x6709;&#x4F7F;&#x7528;&#x8005;&#x8CC7;&#x6599;&#x5EAB;&#x7684;&#x9810;&#x8A2D;&#x5B9A;&#x5E8F;</p><p>&#x5B9A;&#x5E8F;&#x6307;&#x6D3E;&#x7D66;&quot;&#x4F3A;&#x670D;&#x5668;&quot;&#x5F8C;&#xFF0C;&#x662F;&#x7121;&#x6CD5;&#x4EFB;&#x610F;&#x8B8A;&#x52D5;&#x7684;&#xFF0C;&#x60F3;&#x8B8A;&#x7684;&#x8A71;&#x8981;&#x780D;&#x6389;&#x91CD;&#x7DF4;&#x3002;</p><p><strong>&#x67E5;&#x8A62; SQL Server &#x57F7;&#x884C;&#x500B;&#x9AD4;&#x7684;&#x4F3A;&#x670D;&#x5668;&#x5B9A;&#x5E8F;:</strong></p><pre><code class="lang-{SQL}">SELECT CONVERT(varchar, SERVERPROPERTY(&apos;collation&apos;));</code></pre>
+<p><strong>&#x67E5;&#x8A62;&#x4F3A;&#x670D;&#x5668;&#x7684;&#x6240;&#x6709;&#x53EF;&#x7528;&#x5B9A;&#x5E8F;:</strong></p><pre><code class="lang-{SQL}">SELECT * FROM sys.fn_helpcollations();</code></pre>
+<p>--</p><h3 id="&#x8CC7;&#x6599;&#x5EAB;&#x5C64;&#x7D1A;&#x5B9A;&#x5E8F;">&#x8CC7;&#x6599;&#x5EAB;&#x5C64;&#x7D1A;&#x5B9A;&#x5E8F;</h3><p>&#x7576;&#x5EFA;&#x7ACB;&#x8CC7;&#x6599;&#x5EAB;&#x6642;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>CREATE DATABASE</code> &#x7684; <code>COLLATE</code> &#x5B50;&#x53E5;&#x6216; <code>ALTER DATABASE</code> &#x9673;&#x8FF0;&#x5F0F;&#x4F86;&#x6307;&#x5B9A;&#x9810;&#x8A2D;&#x8CC7;&#x6599;&#x5EAB;&#x5B9A;&#x5E8F;&#x3002;  
+&#x5982;&#x679C;&#x672A;&#x6307;&#x5B9A;&#x5B9A;&#x5E8F;&#xFF0C;&#x5247;&#x6703;&#x5C07;&#x4F3A;&#x670D;&#x5668;&#x5B9A;&#x5E8F;&#x6307;&#x6D3E;&#x7D66;&#x8CC7;&#x6599;&#x5EAB;&#x3002;</p><p>&#x53E6;&#x5916;&#xFF0C;&#x9664;&#x975E;&#x8B8A;&#x66F4;&#x4F3A;&#x670D;&#x5668;&#x7684;&#x5B9A;&#x5E8F;&#xFF0C;&#x5426;&#x5247;&#x7121;&#x6CD5;&#x8B8A;&#x66F4;&#x7CFB;&#x7D71;&#x8CC7;&#x6599;&#x5EAB;&#x7684;&#x5B9A;&#x5E8F;&#x3002;</p><p>&#x8CC7;&#x6599;&#x5EAB;&#x5B9A;&#x5E8F;&#x662F;&#x7528;&#x65BC;&#x8CC7;&#x6599;&#x5EAB;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x4E2D;&#x7E7C;&#x8CC7;&#x6599;&#xFF0C;&#x4E14;&#x662F;&#x8CC7;&#x6599;&#x5EAB;&#x4E2D;&#x6240;&#x4F7F;&#x7528;&#x5168;&#x90E8;&#x5B57;&#x4E32;&#x8CC7;&#x6599;&#x884C;&#x3001;&#x66AB;&#x5B58;&#x7269;&#x4EF6;&#x3001;&#x8B8A;&#x6578;&#x540D;&#x7A31;&#x548C;&#x4EFB;&#x4F55;&#x5176;&#x4ED6;&#x5B57;&#x4E32;&#x7684;&#x9810;&#x8A2D;&#x503C;&#x3002;</p><p><strong>&#x4F7F;&#x7528;&#x985E;&#x4F3C;&#x4E0B;&#x5217; <code>ALTER DATABASE</code> &#x9673;&#x8FF0;&#x5F0F;&#x4F86;&#x8B8A;&#x66F4;&#x4F7F;&#x7528;&#x8005;&#x8CC7;&#x6599;&#x5EAB;&#x7684;&#x5B9A;&#x5E8F;:</strong></p><pre><code class="lang-{SQL}">ALTER DATABASE &lt;db_name&gt; COLLATE &lt;collation_name&gt;;</code></pre>
+<p><strong>&#x64F7;&#x53D6;&#x6307;&#x5B9A;&#x8CC7;&#x6599;&#x5EAB;&#x7684;&#x76EE;&#x524D;&#x5B9A;&#x5E8F;:</strong></p><pre><code class="lang-{SQL}">SELECT CONVERT (VARCHAR(50), DATABASEPROPERTYEX(&apos;database_name&apos;,&apos;collation&apos;));</code></pre>
+<p>--</p><h3 id="&#x8CC7;&#x6599;&#x884C;&#x5C64;&#x7D1A;&#x5B9A;&#x5E8F;">&#x8CC7;&#x6599;&#x884C;&#x5C64;&#x7D1A;&#x5B9A;&#x5E8F;</h3><p>&#x5EFA;&#x7ACB;&#x6216;&#x6539;&#x8B8A;&#x8CC7;&#x6599;&#x8868;&#x6642;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>COLLATE</code> &#x5B50;&#x53E5;&#x4F86;&#x6307;&#x5B9A;&#x6BCF;&#x500B;&#x5B57;&#x5143;&#x5B57;&#x4E32;&#x8CC7;&#x6599;&#x884C;&#x7684;&#x5B9A;&#x5E8F;&#x3002;  
+&#x5982;&#x679C;&#x60A8;&#x6C92;&#x6709;&#x6307;&#x5B9A;&#x5B9A;&#x5E8F;&#xFF0C;&#x5C31;&#x6703;&#x5C07;&#x8CC7;&#x6599;&#x5EAB;&#x7684;&#x9810;&#x8A2D;&#x5B9A;&#x5E8F;&#x6307;&#x6D3E;&#x7D66;&#x8CC7;&#x6599;&#x884C;&#x3002;</p><p><strong>&#x4F7F;&#x7528;&#x985E;&#x4F3C;&#x4E0B;&#x5217; <code>ALTER TABLE</code> &#x9673;&#x8FF0;&#x5F0F;&#x4F86;&#x8B8A;&#x66F4;&#x8CC7;&#x6599;&#x884C;&#x7684;&#x5B9A;&#x5E8F;:</strong></p><pre><code class="lang-{SQL}">ALTER TABLE &lt;db_name&gt; ALTER COLUMN &lt;col_name&gt; NVARCHAR(10) COLLATE &lt;collation_name&gt;;</code></pre>
+<p>--</p><h3 id="&#x904B;&#x7B97;&#x5F0F;&#x5C64;&#x7D1A;&#x5B9A;&#x5E8F;">&#x904B;&#x7B97;&#x5F0F;&#x5C64;&#x7D1A;&#x5B9A;&#x5E8F;</h3><p>&#x904B;&#x7B97;&#x5F0F;&#x5C64;&#x7D1A;&#x5B9A;&#x5E8F;&#x662F;&#x5728;&#x57F7;&#x884C;&#x9673;&#x8FF0;&#x5F0F;&#x6642;&#x8A2D;&#x5B9A;&#x7684;&#xFF0C;&#x800C;&#x4E14;&#x5B83;&#x5011;&#x6703;&#x5F71;&#x97FF;&#x50B3;&#x56DE;&#x7D50;&#x679C;&#x96C6;&#x7684;&#x65B9;&#x5F0F;&#x3002;  
+&#x9019;&#x6A23;&#x53EF;&#x8B93; <code>ORDER BY</code> &#x5C07;&#x7D50;&#x679C;&#x6392;&#x5E8F;&#x70BA;&#x5730;&#x5340;&#x8A2D;&#x5B9A;&#x7279;&#x5B9A;&#x3002;</p><p><strong>&#x8981;&#x57F7;&#x884C;&#x904B;&#x7B97;&#x5F0F;&#x5C64;&#x7D1A;&#x5B9A;&#x5E8F;&#xFF0C;&#x8ACB;&#x4F7F;&#x7528; <code>COLLATE</code> &#x5B50;&#x53E5;:</strong></p><pre><code class="lang-{SQL}">SELECT &lt;col_name&gt; FROM &lt;table_name&gt; ORDER BY &lt;col_name&gt; COLLATE &lt;collation_name&gt;;</code></pre>
+<hr><h2 id="&#x5EFA;&#x7ACB;&#x8CC7;&#x6599;&#x5EAB;">&#x5EFA;&#x7ACB;&#x8CC7;&#x6599;&#x5EAB;</h2><p>&#x53EF;&#x4EE5;&#x5EFA;&#x7ACB;&#x6642;&#x8A2D;&#x5B9A;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5EFA;&#x7ACB;&#x5F8C;&#x66F4;&#x6539;&#x3002;  
+&#x4F46;&#x662F;&#x5EFA;&#x7ACB;&#x5F8C;&#x66F4;&#x6539;&#xFF0C;&#x57FA;&#x672C;&#x4E0A;&#x4E0D;&#x80FD;&#x662F;&#x7CFB;&#x7D71;&#x8CC7;&#x6599;&#x5EAB;&#x3002;(&#x8981;&#x4E5F;&#x53EF;&#x4EE5;&#x5566;~&#x4F46;&#x6703;&#x5F88;&#x8907;&#x96DC;&#x3002;)</p><h3 id="&#x8A2D;&#x5B9A;collation">&#x8A2D;&#x5B9A;Collation</h3><ul><li><a href="https://docs.microsoft.com/zh-tw/sql/t-sql/statements/create-database-transact-sql?view=sql-server-ver15#syntax" target="_blank">CREATE DATABASE (Transact-SQL) - SQL Server | Microsoft Docs</a>
+</li></ul>
+<pre><code class="lang-{SQL}">CREATE DATABASE &lt;database_name&gt;
+COLLATE &lt;collation_name&gt;;
+
+/*Create DB+set collation*/
+CREATE DATABASE code_set_yes
+COLLATE Chinese_Taiwan_Stroke_CI_AS;</code></pre>
+<p>--</p><h3 id="&#x66F4;&#x6539;collation">&#x66F4;&#x6539;collation</h3><pre><code class="lang-{SQL}">/*Alter DB collation*/
+ALTER DATABASE &lt;db_name&gt;
+COLLATE Chinese_Taiwan_Stroke_CI_AS;</code></pre>
+<hr><h2 id="&#x662F;&#x5426;&#x6709;&#x4EBA;&#x5728;&#x9023;&#x63A5;db">&#x662F;&#x5426;&#x6709;&#x4EBA;&#x5728;&#x9023;&#x63A5;DB</h2><p>&#x89C0;&#x770B;DB &#x662F;&#x5426;&#x6709;&#x88AB;&#x9023;&#x7D50;&#x4E2D;&#x3002;</p><pre><code class="lang-{SQL}">IF EXISTS (
+    SELECT request_session_id
+    FROM sys.dm_tran_locks
+    WHERE resource_database_id = DB_ID(&apos;model&apos;)
+    )
+BEGIN
+PRINT &apos;Model Database in use!!&apos;
+
+SELECT *
+FROM sys.dm_exec_sessions
+WHERE session_id IN (
+    SELECT request_session_id
+    FROM sys.dm_tran_locks
+    WHERE resource_database_id = DB_ID(&apos;model&apos;)
+    )
+END
+
+ELSE
+PRINT &apos;Model Database not in used.&apos;</code></pre>
+<hr><h2 id="port">PORT</h2><p>MSSQL &#x5982;&#x679C;&#x4E0D;&#x662F;&#x7528;&#x9810;&#x8A2D;&#x7684;port(1433)&#x505A;&#x9023;&#x7DDA;&#xFF0C;  
+&#x6BD4;&#x5982;&#x4F7F;&#x7528; port 5001&#xFF0C;&#x90A3;&#x9EBC;&#x6B63;&#x78BA;&#x9023;&#x7DDA;&#x65B9;&#x5F0F;&#x5982;&#x4E0B;&#xFF0C;  
+<code>ip,5001</code>&#xFF0C;&#x5B83;&#x5011;&#x5BB6;&#x662F;&#x7528;<code>,</code>&#xFF0C;&#x4E0D;&#x77E5;&#x9053;&#x6709;&#x4EC0;&#x9EBC;&#x6B77;&#x53F2;&#x6545;&#x4E8B;XDD~  
+&#x7E3D;&#x4E4B;&#x8A18;&#x9304;&#x4E00;&#x4E0B;!!</p><hr><h2 id="end">END</h2>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../Docker/Docker_Command.html" class="navigation navigation-prev " aria-label="Previous page: Docker Command">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="PostgreSQL.html" class="navigation navigation-next " aria-label="Next page: PostgreSQL">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"MSSQL","level":"5.1","depth":1,"next":{"title":"PostgreSQL","level":"5.2","depth":1,"path":"Database/PostgreSQL.md","ref":"./Database/PostgreSQL.md","articles":[]},"previous":{"title":"Docker Command","level":"4.6","depth":1,"path":"Docker/Docker_Command.md","ref":"./Docker/Docker_Command.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Database/MSSQL.md","mtime":"2020-08-23T03:08:19.741Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2020-08-08T22:01:02.650Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

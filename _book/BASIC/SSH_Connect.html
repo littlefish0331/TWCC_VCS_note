@@ -1,0 +1,695 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>SSH Connect · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="TWCC-Port_Connect.html" />
+    
+    
+    <link rel="prev" href="Initial_Status.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    README
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">基礎操作 BASIC</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="Initial_Status.html">
+            
+                <a href="Initial_Status.html">
+            
+                    
+                    Initial Status
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.2" data-path="SSH_Connect.html">
+            
+                <a href="SSH_Connect.html">
+            
+                    
+                    SSH Connect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="TWCC-Port_Connect.html">
+            
+                <a href="TWCC-Port_Connect.html">
+            
+                    
+                    TWCC-Port Connect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="Permission.html">
+            
+                <a href="Permission.html">
+            
+                    
+                    Permission
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="Mount_Disk.html">
+            
+                <a href="Mount_Disk.html">
+            
+                    
+                    Mount Disk
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="Env_Variable.html">
+            
+                <a href="Env_Variable.html">
+            
+                    
+                    Environment Variable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="VPN.html">
+            
+                <a href="VPN.html">
+            
+                    
+                    VPN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="bash_command.md">
+            
+                <span>
+            
+                    
+                    Bash Command
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">進階主題</li>
+        
+        
+    
+
+    
+        
+        <li class="header">Docker</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../Docker/Docker_DockerCompose_Install.html">
+            
+                <a href="../Docker/Docker_DockerCompose_Install.html">
+            
+                    
+                    Install Docker and DockerCompose
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../Docker/Learning_from_Others.html">
+            
+                <a href="../Docker/Learning_from_Others.html">
+            
+                    
+                    Learning from Others
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../Docker/DockerHub_resource.md">
+            
+                <span>
+            
+                    
+                    DockerHub
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../Docker/Docker_Official_Tutorial.md">
+            
+                <span>
+            
+                    
+                    Official Tutorial
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../Docker/DockerFile.md">
+            
+                <span>
+            
+                    
+                    DockerFile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../Docker/Docker_Command.html">
+            
+                <a href="../Docker/Docker_Command.html">
+            
+                    
+                    Docker Command
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Database</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../Database/MSSQL.html">
+            
+                <a href="../Database/MSSQL.html">
+            
+                    
+                    MSSQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../Database/PostgreSQL.html">
+            
+                <a href="../Database/PostgreSQL.html">
+            
+                    
+                    PostgreSQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../Database/MariaDB.html">
+            
+                <a href="../Database/MariaDB.html">
+            
+                    
+                    MariaDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../Database/MySQL.html">
+            
+                <a href="../Database/MySQL.html">
+            
+                    
+                    MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../Database/BigObject.html">
+            
+                <a href="../Database/BigObject.html">
+            
+                    
+                    BigObject
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="../Database/ElasticSearch.html">
+            
+                <a href="../Database/ElasticSearch.html">
+            
+                    
+                    ElasticSearch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="../Database_Command.md">
+            
+                <span>
+            
+                    
+                    Database_Command
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Program</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../Program/R_Rstudio.html">
+            
+                <a href="../Program/R_Rstudio.html">
+            
+                    
+                    R and Rstudio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../Program/jupyter_Python_R_Julia.html">
+            
+                <a href="../Program/jupyter_Python_R_Julia.html">
+            
+                    
+                    jupyter:Python、R、Julia
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../Program/datascienceschool.html">
+            
+                <a href="../Program/datascienceschool.html">
+            
+                    
+                    datascienceschool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../Program/Grafana.html">
+            
+                <a href="../Program/Grafana.html">
+            
+                    
+                    Grafana
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">其他 Others</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../Others/Build_Gitbook.html">
+            
+                <a href="../Others/Build_Gitbook.html">
+            
+                    
+                    Build Gitbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../VM_Container_story.md">
+            
+                <span>
+            
+                    
+                    VM_Container_story
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../little_skills.md">
+            
+                <span>
+            
+                    
+                    little_skills
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">END</li>
+        
+        
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >SSH Connect</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="ssh-connect">SSH Connect</h1><p>SSH(Secure Shell) &#x662F;&#x4E00;&#x7A2E;&#x52A0;&#x5BC6;&#x7684;&#x7DB2;&#x8DEF;&#x50B3;&#x8F38;&#x5354;&#x5B9A;&#xFF0C;&#x53EF;&#x5728;&#x4E0D;&#x5B89;&#x5168;&#x7684;&#x7DB2;&#x8DEF;&#x4E2D;&#x70BA;&#x7DB2;&#x8DEF;&#x670D;&#x52D9;&#x63D0;&#x4F9B;&#x5B89;&#x5168;&#x7684;&#x50B3;&#x8F38;&#x74B0;&#x5883;&#x3002;  
+SSH &#x901A;&#x904E;&#x5728;&#x7DB2;&#x8DEF;&#x4E2D;&#x5EFA;&#x7ACB;&#x5B89;&#x5168;&#x96A7;&#x9053;&#x4F86;&#x5BE6;&#x73FE; SSH&#x5BA2;&#x6236;&#x7AEF;&#x8207;&#x4F3A;&#x670D;&#x5668;&#x4E4B;&#x9593;&#x7684;&#x9023;&#x63A5;&#x3002;  
+SSH&#x6700;&#x5E38;&#x898B;&#x7684;&#x7528;&#x9014;&#x662F;&#x9060;&#x7AEF;&#x767B;&#x5165;&#x7CFB;&#x7D71;&#xFF0C;&#x4EBA;&#x5011;&#x901A;&#x5E38;&#x5229;&#x7528;SSH&#x4F86;&#x50B3;&#x8F38;&#x547D;&#x4EE4;&#x884C;&#x4ECB;&#x9762;&#x548C;&#x9060;&#x7AEF;&#x57F7;&#x884C;&#x547D;&#x4EE4;&#x3002;</p><p>&#x672C;&#x7BC0;&#x8981;&#x8AAA;&#x660E;&#x9664;&#x4E86; TWCC-VCS &#x9810;&#x8A2D;&#x4F7F;&#x7528;&#x91D1;&#x9470;&#x767B;&#x5165;&#x7684;&#x65B9;&#x5F0F;&#x4E4B;&#x5916;&#xFF0C;  
+&#x5982;&#x4F55;&#x8A2D;&#x5B9A;&#x7528;&#x50B3;&#x7D71;&#x5E33;&#x5BC6;&#x7684;&#x65B9;&#x5F0F;&#x505A;&#x767B;&#x5165;&#x3002;</p><p>--</p><p><strong>Content:</strong></p><!-- TOC -->
+
+
+<ul><li><a href="#ssh-connect">SSH Connect</a>
+<ul><li><a href="#&#x91D1;&#x9470;&#x6A94;&#x65B9;&#x5F0F;">&#x91D1;&#x9470;&#x6A94;&#x65B9;&#x5F0F;</a>
+</li>
+<li><a href="#&#x5E33;&#x865F;&#x5BC6;&#x78BC;">&#x5E33;&#x865F;&#x5BC6;&#x78BC;</a>
+</li>
+<li><a href="#end">END</a>
+</li></ul>
+</li></ul>
+<h2 id=""><!-- /TOC --></h2><h2 id="&#x91D1;&#x9470;&#x6A94;&#x65B9;&#x5F0F;">&#x91D1;&#x9470;&#x6A94;&#x65B9;&#x5F0F;</h2><p>&#x56E0;&#x70BA;&#x76EE;&#x524D; SSH&#x670D;&#x52D9;&#x9810;&#x8A2D;&#x4F7F;&#x7528;&#x91D1;&#x9470;&#x505A;&#x767B;&#x5165;&#xFF0C;&#x6240;&#x4EE5;.pem/.ppk&#x6A94;&#x7684;&#x767B;&#x5165;&#x65B9;&#x5F0F;&#xFF0C;&#x662F;&#x6C92;&#x554F;&#x984C;&#x7684;&#x3002;  <br></p><ul><li>.ppk &#x53EF;&#x4EE5;&#x7528; PuTTY.exe &#x505A;&#x9023;&#x7DDA;&#x3002;
+</li>
+<li>.pem &#x53EF;&#x4EE5;&#x7528; MobaXterm/cmd &#x505A;&#x9023;&#x7DDA;&#x3002;
+</li></ul>
+<p>&#x9023;&#x7DDA;&#x6642;&#x7684;port&#x70BA;22&#x3002;  <br>
+TWCC-VCS&#x5EFA;&#x7ACB;&#x6642;&#xFF0C;&#x9810;&#x8A2D;&#x7684;&#x4F7F;&#x7528;&#x8005;&#x5E33;&#x865F;&#x96A8;&#x9078;&#x53D6;&#x7684;&#x6620;&#x8C61;&#x6A94;&#x800C;&#x6709;&#x6240;&#x4E0D;&#x540C;&#x3002;ubuntu&#x7CFB;&#x7D71;&#x70BA;ubuntu / centos&#x7CFB;&#x7D71;&#x70BA;centos / windows&#x7CFB;&#x7D71;&#x70BA;administrator&#x3002;</p><p>--</p><p><strong>PuTTY &#x767B;&#x5165;:</strong></p><ul><li><a href="https://officeguide.cc/putty-convert-pem-to-ppk-tutorial/" target="_blank">PuTTYgen &#x5C07; .pem &#x91D1;&#x9470;&#x6A94;&#x6848;&#x8F49;&#x70BA; .ppk &#x683C;&#x5F0F;&#x6559;&#x5B78; - Office &#x6307;&#x5357;</a>
+</li></ul>
+<p>&#x8ACB;&#x5148;&#x7528; PuTTYgen &#x5C07;.pem&#x6A94;&#x8F49;&#x70BA;.ppk&#x6A94;&#x3002;  <br>
+&#x5C07;&#x8F49;&#x63DB;&#x597D;&#x7684;.ppk&#x6A94;&#x6848;&#xFF0C;&#x653E;&#x5230; PuTTY.exe &gt; Connection &gt; SSH &gt; Auth &gt; Private key file for authentication&#x3002;  <br>
+&#x4E26;&#x5728; PuTTY.exe &gt; Session &gt; Host Name (or IP address)&#xFF0C;&#x586B;&#x5165;&#x60F3;&#x9023;&#x7DDA;&#x7684;IP&#x3002;  <br>
+&#x8A2D;&#x5B9A;&#x597D;&#x4E86;&#x4E4B;&#x5F8C;&#xFF0C;&#x6309;&#x4E0B;&#x53F3;&#x4E0B;&#x89D2;&#x7684; Open&#xFF0C;  <br>
+&#x8F38;&#x5165;&#x4F7F;&#x7528;&#x8005;&#x5E33;&#x865F;&#x540D;&#x7A31;(&#x6BD4;&#x5982;:ubuntu&#x7CFB;&#x7D71;&#x5373;&#x70BA;ubuntu)&#xFF0C;&#x5373;&#x53EF;&#x9032;&#x5165;&#x3002;</p><p><strong>MobaXterm &#x767B;&#x5165;&#x793A;&#x610F;&#x5716;:</strong></p><p><img alt="mobaxterm_connect_ubuntu" src="image/mobaxterm_connect_ubuntu.png"></p><hr><h2 id="&#x5E33;&#x865F;&#x5BC6;&#x78BC;">&#x5E33;&#x865F;&#x5BC6;&#x78BC;</h2><p>&#x4F46;&#x662F;&#x6709;&#x4E9B;&#x4EBA;&#x4E0D;&#x7FD2;&#x6163;&#x4F7F;&#x7528;&#x91D1;&#x9470;&#x7684;&#x65B9;&#x5F0F;&#x505A;&#x767B;&#x5165;&#xFF0C;&#x90A3;&#x8981;&#x600E;&#x9EBC;&#x628A; SSH &#x7684;&#x8A2D;&#x5B9A;&#x505A;&#x4FEE;&#x6539;&#x5462;?  <br>
+&#x9996;&#x5148;&#x8981;&#x5148;&#x5EFA;&#x7ACB;&#x5E33;&#x865F;&#x3002;</p><blockquote><p>&#x4E0D;&#x5EFA;&#x7ACB;&#x65B0;&#x5E33;&#x865F;&#x7684;&#x65B9;&#x6CD5;&#x4E5F;&#x6709;&#xFF0C;&#x4F46;&#x662F;&#x6BD4;&#x8F03;&#x8907;&#x96DC;&#x4E5F;&#x9EBB;&#x7169;&#x3002;  
+&#x4E8C;&#x4F86;&#x4E0D;&#x540C;&#x7684;&#x767B;&#x5165;&#x65B9;&#x5F0F;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x5E33;&#x865F;&#x505A;&#x7BA1;&#x7406;&#xFF0C;&#x5728;&#x8CC7;&#x5B89;&#x4E0A;&#x4E5F;&#x6BD4;&#x8F03;&#x5408;&#x7406;&#x3002;</p></blockquote><pre><code class="lang-{bash}">sudo su  --&#x5207;&#x63DB;&#x5230;&#x8D85;&#x7D1A;&#x4F7F;&#x7528;&#x8005;&#x3002;
+adduser &lt;new_username&gt;  --&#x65B0;&#x589E;&#x8981;&#x7528;&#x5BC6;&#x78BC;&#x767B;&#x5165;&#x7684;&#x4F7F;&#x7528;&#x8005;&#x540D;&#x7A31;&#x3002;
+
+  &gt; &#x7CFB;&#x7D71;&#x63A5;&#x4E0B;&#x4F86;&#x5C31;&#x6703;&#x6307;&#x793A;&#x4F60;&#x8981;&#x8F38;&#x5165;&#x4F7F;&#x7528;&#x8005;&#x540D;&#x7A31;&#x3001;&#x5BC6;&#x78BC;&#x3001;fullname...&#x7B49;&#x7B49;&#x3002;  
+  &gt; &#x4F7F;&#x7528;&#x8005;&#x540D;&#x7A31;&#x3001;&#x5BC6;&#x78BC;&#x6700;&#x91CD;&#x8981;&#xFF0C;&#x5176;&#x4ED6;&#x76F4;&#x63A5;&#x6309; Enter &#x5C31;&#x53EF;&#x4EE5;&#x4E86;(&#x6703;&#x4F7F;&#x7528;&#x9810;&#x8A2D;&#x7684;)&#x3002;</code></pre>
+<pre><code class="lang-{bash}">sudo vim /etc/sudoers  --&#x4FEE;&#x6539;&#x6587;&#x4EF6;
+
+  &gt; &#x627E; &#x300C;# User privilege specification&#x300D;&#x7684;&#x5340;&#x584A;
+  &gt; root    ALL=(ALL:ALL) ALL  &lt;--&#x539F;&#x672C;&#x5C31;&#x6709;&#x7684;&#x3002;
+  &gt; &lt;new_username&gt; ALL=(ALL:ALL) ALL  &lt;--&#x65B0;&#x589E;&#x9019;&#x4E00;&#x884C;&#x3002;</code></pre>
+<p>&#x793A;&#x610F;&#x5716;&#x3002;</p><p><img alt="SSH01" src="image/SSH01.jpg"></p><pre><code class="lang-{bash}">sudo vim /etc/ssh/sshd_config  --&#x4FEE;&#x6539; ssh &#x670D;&#x52D9;&#x7684;&#x8A2D;&#x5B9A;&#x3002;
+
+  &gt; &#x5C07; PasswordAuthentication no &#x6539;&#x70BA; yes&#x3002;  &lt;br&gt;
+  &gt; PasswordAuthentication yes</code></pre>
+<p>&#x793A;&#x610F;&#x5716;&#x3002;</p><p><img alt="SSH02" src="image/SSH02.jpg"></p><pre><code class="lang-{bash}">service sshd restart  --&#x91CD;&#x555F;sshd&#x670D;&#x52D9;&#x3002;</code></pre>
+<p>--</p><p>&#x8A2D;&#x5B9A;&#x5B8C;&#x6210;&#x5F8C;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5229;&#x7528; cmd &#x505A;&#x5E33;&#x865F;&#x5BC6;&#x78BC;&#x767B;&#x5165;&#x7684;&#x9023;&#x7DDA;&#x4E86;!!</p><pre><code class="lang-{bash}">ssh -V  --&#x78BA;&#x8A8D;&#x6709;&#x7121; ssh &#x670D;&#x52D9;
+ssh new_username@hostip
+
+  &gt; &#x6309;&#x7167;&#x6307;&#x793A;&#x8F38;&#x5165;&#x5BC6;&#x78BC;&#x3002;</code></pre>
+<p>&#x4E5F;&#x53EF;&#x5229;&#x7528; PuTTY.exe &#x9023;&#x7DDA;&#x3002;</p><pre><code class="lang-{bash}">putty.exe -ssh new_username@hostip -pw password
+&#x6216;&#x662F;
+start putty.exe -ssh new_username@hostip -pw password</code></pre>
+<hr><h2 id="end">END</h2>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Initial_Status.html" class="navigation navigation-prev " aria-label="Previous page: Initial Status">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="TWCC-Port_Connect.html" class="navigation navigation-next " aria-label="Next page: TWCC-Port Connect">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"SSH Connect","level":"2.2","depth":1,"next":{"title":"TWCC-Port Connect","level":"2.3","depth":1,"path":"BASIC/TWCC-Port_Connect.md","ref":"./BASIC/TWCC-Port_Connect.md","articles":[]},"previous":{"title":"Initial Status","level":"2.1","depth":1,"path":"BASIC/Initial_Status.md","ref":"./BASIC/Initial_Status.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"BASIC/SSH_Connect.md","mtime":"2020-08-23T03:08:19.729Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2020-08-08T22:01:02.650Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

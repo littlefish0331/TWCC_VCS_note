@@ -1,0 +1,664 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>Environment Variable · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="VPN.html" />
+    
+    
+    <link rel="prev" href="Mount_Disk.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    README
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">基礎操作 BASIC</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="Initial_Status.html">
+            
+                <a href="Initial_Status.html">
+            
+                    
+                    Initial Status
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="SSH_Connect.html">
+            
+                <a href="SSH_Connect.html">
+            
+                    
+                    SSH Connect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="TWCC-Port_Connect.html">
+            
+                <a href="TWCC-Port_Connect.html">
+            
+                    
+                    TWCC-Port Connect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="Permission.html">
+            
+                <a href="Permission.html">
+            
+                    
+                    Permission
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="Mount_Disk.html">
+            
+                <a href="Mount_Disk.html">
+            
+                    
+                    Mount Disk
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.6" data-path="Env_Variable.html">
+            
+                <a href="Env_Variable.html">
+            
+                    
+                    Environment Variable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="VPN.html">
+            
+                <a href="VPN.html">
+            
+                    
+                    VPN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="bash_command.md">
+            
+                <span>
+            
+                    
+                    Bash Command
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">進階主題</li>
+        
+        
+    
+
+    
+        
+        <li class="header">Docker</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../Docker/Docker_DockerCompose_Install.html">
+            
+                <a href="../Docker/Docker_DockerCompose_Install.html">
+            
+                    
+                    Install Docker and DockerCompose
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../Docker/Learning_from_Others.html">
+            
+                <a href="../Docker/Learning_from_Others.html">
+            
+                    
+                    Learning from Others
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../Docker/DockerHub_resource.md">
+            
+                <span>
+            
+                    
+                    DockerHub
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../Docker/Docker_Official_Tutorial.md">
+            
+                <span>
+            
+                    
+                    Official Tutorial
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../Docker/DockerFile.md">
+            
+                <span>
+            
+                    
+                    DockerFile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../Docker/Docker_Command.html">
+            
+                <a href="../Docker/Docker_Command.html">
+            
+                    
+                    Docker Command
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Database</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../Database/MSSQL.html">
+            
+                <a href="../Database/MSSQL.html">
+            
+                    
+                    MSSQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../Database/PostgreSQL.html">
+            
+                <a href="../Database/PostgreSQL.html">
+            
+                    
+                    PostgreSQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../Database/MariaDB.html">
+            
+                <a href="../Database/MariaDB.html">
+            
+                    
+                    MariaDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../Database/MySQL.html">
+            
+                <a href="../Database/MySQL.html">
+            
+                    
+                    MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../Database/BigObject.html">
+            
+                <a href="../Database/BigObject.html">
+            
+                    
+                    BigObject
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="../Database/ElasticSearch.html">
+            
+                <a href="../Database/ElasticSearch.html">
+            
+                    
+                    ElasticSearch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="../Database_Command.md">
+            
+                <span>
+            
+                    
+                    Database_Command
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Program</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../Program/R_Rstudio.html">
+            
+                <a href="../Program/R_Rstudio.html">
+            
+                    
+                    R and Rstudio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../Program/jupyter_Python_R_Julia.html">
+            
+                <a href="../Program/jupyter_Python_R_Julia.html">
+            
+                    
+                    jupyter:Python、R、Julia
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../Program/datascienceschool.html">
+            
+                <a href="../Program/datascienceschool.html">
+            
+                    
+                    datascienceschool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="../Program/Grafana.html">
+            
+                <a href="../Program/Grafana.html">
+            
+                    
+                    Grafana
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">其他 Others</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../Others/Build_Gitbook.html">
+            
+                <a href="../Others/Build_Gitbook.html">
+            
+                    
+                    Build Gitbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../VM_Container_story.md">
+            
+                <span>
+            
+                    
+                    VM_Container_story
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="../little_skills.md">
+            
+                <span>
+            
+                    
+                    little_skills
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">END</li>
+        
+        
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Environment Variable</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="environment-variable">Environment Variable</h1><p>&#x672C;&#x7BC0;&#x7C21;&#x55AE;&#x8B1B;&#x4E00;&#x4E0B;&#x5982;&#x4F55;&#x6AA2;&#x8996;&#x3001;&#x65B0;&#x589E;&#x74B0;&#x5883;&#x8B8A;&#x6578;&#x3002;</p><p><strong>resources:</strong></p><ul><li><a href="https://stackoverflow.com/questions/34051747/get-environment-variable-from-docker-container/34052766" target="_blank">bash - Get Environment Variable from Docker Container - Stack Overflow</a>
+</li>
+<li><a href="https://linuxize.com/post/how-to-set-and-list-environment-variables-in-linux/" target="_blank">How to Set and List Environment Variables in Linux | Linuxize</a>
+</li>
+<li><a href="https://www.serverlab.ca/tutorials/linux/administration-linux/how-to-set-environment-variables-in-linux/" target="_blank">How to Set Environment Variables in Linux - Serverlab</a>
+</li>
+<li><a href="https://stackoverflow.com/questions/13046624/how-to-permanently-export-a-variable-in-linux" target="_blank">How to permanently export a variable in Linux? - Stack Overflow</a>
+</li></ul>
+<hr><h2 id="&#x6AA2;&#x8996;&#x74B0;&#x5883;&#x8B8A;&#x6578;">&#x6AA2;&#x8996;&#x74B0;&#x5883;&#x8B8A;&#x6578;</h2><pre><code class="lang-{bash}">env
+printenv
+
+// &#x8981;&#x770B;&#x54EA;&#x4E00;&#x500B;&#x74B0;&#x5883;&#x8B8A;&#x6578;&#x3002;
+// env &lt;environment_variable_name&gt;
+env PATH</code></pre>
+<h2 id="&#x65B0;&#x589E;&#x74B0;&#x5883;&#x8B8A;&#x6578;">&#x65B0;&#x589E;&#x74B0;&#x5883;&#x8B8A;&#x6578;</h2><p>only for this time.</p><pre><code class="lang-{bash}">// export &lt;env_variable&gt;=&lt;env_value&gt;
+export testenv=littlefish
+env</code></pre>
+<p>permanently</p><p>&#x898B;&#x53C3;&#x8003;&#x9023;&#x7D50;&#x3002;  
+&#x5927;&#x6982;&#x5C31;&#x662F;&#x76F4;&#x63A5;&#x53BB;&#x6587;&#x4EF6;&#x65B0;&#x589E; $HOME/.bashrc&#x3001;/etc/environment (more globally)&#x3002;</p><hr><h2 id="end">END</h2>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Mount_Disk.html" class="navigation navigation-prev " aria-label="Previous page: Mount Disk">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="VPN.html" class="navigation navigation-next " aria-label="Next page: VPN">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Environment Variable","level":"2.6","depth":1,"next":{"title":"VPN","level":"2.7","depth":1,"path":"BASIC/VPN.md","ref":"./BASIC/VPN.md","articles":[]},"previous":{"title":"Mount Disk","level":"2.5","depth":1,"path":"BASIC/Mount_Disk.md","ref":"./BASIC/Mount_Disk.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"BASIC/Env_Variable.md","mtime":"2020-08-23T03:08:19.729Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2020-08-08T22:01:02.650Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
