@@ -116,6 +116,25 @@ ls -al  <-- 和ll功能相同
 file <filename>
 ```
 
+--
+
+### 歷史資訊清除
+
+```{bash}
+history -c
+history -w
+exit
+history
+```
+
+--
+
+### 重開機
+
+```{bash}
+sudo reboot
+```
+
 ---
 
 ## Permission
