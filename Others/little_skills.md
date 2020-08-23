@@ -1,5 +1,7 @@
 # little skills
 
+紀錄一些偶然之間學到的小技巧。
+
 - 瀏覽器的 header，可以用`chrome://version/`做觀看。
 
 --

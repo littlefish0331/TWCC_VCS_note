@@ -1,23 +1,42 @@
 # README
 
-<!-- X副對員工這麼壞= =，那公司的產品我還不用爆!  <br>
-把資源用到大爆炸的那一種XDD~   -->
+<!-- X副對員工這麼壞= =，那公司的產品我還不用爆! -->
+<!-- 把資源用到大爆炸的那一種XDD~ -->
 
-記得 VM 剛啟動的時候，建議最好 `sudo reboot` 一下，之前的經驗是有一些檔案好像還處於 lock 狀態。  <br>
-跟著目錄(content)慢慢學習，大概可以一步步學習使用 TWCC 的資源。  <br>
-docker 的部分就十分建議看官方的 tutorial!!
+<!-- 目前規劃將此比較作為第12屆-IT邦幫忙鐵人賽。 -->
+<!-- 主軸是教學使用台灣的超級電腦-台灣衫二號TWCC，其底下的虛擬運算資源。 -->
+<!-- 次要是學習 Docker 操作，架設自己的雲算環境與服務。 -->
 
-**密碼不怕看，因為 port 我有鎖國網的網域!!**
+這是我利用國網中心的資源 - 台灣衫二號，所學習VCS的過程。  
+一方面是善用中心的資源，二來是希望以使用者的角度，記錄學習的過程，或許未來有機會教導其他中心同仁做使用，讓中心資源利用最大化。
 
+> 小知識補充:  
+>  
+> - 國網中心全名為「財團法人國家實驗研究院國家高速網路與計算中心(National Center for High-performance Computing, NCHC)」  
+> - 台灣衫二號是一台超級電腦。國網中心利用此硬體資源，結合廣達、台灣大、華碩等三大國內企業共同組隊建造了AI雲端平台 TWCC(Taiwan Computing Cloud Computing，臺灣AI雲)。  
+> - VCS 是其中一個叫虛擬運算的服務(Virtual Computing Service)。
+
+--
+
+**本手冊中的密碼不怕看，因為 port 我有鎖國網的網域!!**
+
+所以基本上要要使用中心的網路才可以連線。
+
+> VPN連線使用:  
+>  
 > 用VPN連回中心之後，有鎖網域的port依舊不能使用，  <br>
 > 後來問過 THomas，是因為新竹的 VPN 似乎不允許這樣操作。
+
+--
+
+**Content:**
 
 <!-- TOC -->
 
 - [README](#readme)
-    - [gitbook設定](#gitbook設定)
-    - [專案目標](#專案目標)
-    - [END](#end)
+  - [gitbook設定](#gitbook設定)
+  - [專案目標](#專案目標)
+  - [END](#end)
 
 <!-- /TOC -->
 
@@ -25,35 +44,28 @@ docker 的部分就十分建議看官方的 tutorial!!
 
 ## gitbook設定
 
-抓取專案請用 `https://github.com/littlefish0331/TWCC_VCS_note.git`
+想自行重製本手冊內容，可以到我的 Github - [littlefish0331/TWCC_VCS_note](https://github.com/littlefish0331/TWCC_VCS_note)，直接做下載的動作。  
+下面列出一些可能會遇到的問題，可參考做一些修正。
 
-> 舊的 repository。  <br>
-> 抓取專案請用 `git clone https://github.com/littlefish0331/TWCC_tutorial.git --branch share_note`。--branch 可以用 -b。
+> 舊版的 repository - [littlefish0331/TWCC_tutorial_old](https://github.com/littlefish0331/TWCC_tutorial_old)。  <br>
+> 抓取專案請用 `git clone https://github.com/littlefish0331/TWCC_tutorial_old.git --branch share_note`。--branch 可以用 -b。
 
-基本上除非專案很大，不然不必為了 gitbook 而特別一個分支，將其他不必要文件刪除。  <br>
-這樣太耗費工夫，因為基本上專案應該就是以文件為主的專案。
-
-如果真的專案很大，文件說明只是其中一小項，  <br>
-那在針對文件資料夾的部分做一個 git repository 的版本管理就好。  <br>
-類似外層一個 repository，內部還有自己的 repositroy。
+--
 
 **結尾設定(end-of-line marker):**
 
-- [How do I create a new line without creating a new paragraph? - GitBook Help Center · GitBook (Legacy)](https://legacy.gitbook.com/book/gitbookio/help/discussions/40)
-- [regex - sed beginner: changing all occurrences in a folder - Stack Overflow](https://stackoverflow.com/questions/905144/sed-beginner-changing-all-occurrences-in-a-folder)
-
-恩..這問題比較複雜，但是簡單來說就是必須在每個檔案的後面加上 <br>。  <br>
-p.s.這和 git config --local core.autocrlf 的設定無關。如果不小心變更到，就到 .git/config 檔案修改就行了。(--local or --golobal or --system)
+因為 Gitbook 和 Markdown 在換行語法上的不一致，  
+所以再用 Gitbook 發布前，請執行下列的程式，對檔案虛幻行的結尾做的修正。
 
 ```{bash}
-// 在該資料夾目錄下，輸入下列指令完成。
+// 在該資料夾目錄下，輸入下列指令。
 // 建議是在 wsl(Unix) 環境下執行，但 cmd or powershell 也可以。
 // 下面兩個指令等價。
 sed --in-place 's/  \r$/  <br>\r/g' *.md
 sed -i 's/  \r$/  <br>\r/g' *.md
 
-// 保留原始數據，並多加上放檔案名稱.orimd
-sed -i.orimd 's/  \r$/  <br>\r/g' *.md
+// 保留原始數據，並在原始檔案後加上副檔名.ori
+sed -i.ori 's/  \r$/  <br>\r/g' *.md
 ```
 
 ```{bash}
@@ -61,55 +73,80 @@ sed -i.orimd 's/  \r$/  <br>\r/g' *.md
 find ./ -type f -name '*.md' | xargs sed -i 's/  \r$/  <br>\r/g'
 ```
 
-**上傳設定:**
-
-- [2019-01-06 Github 上傳錯誤， master (push declined due to email privacy restrictions - 簡書](https://www.jianshu.com/p/ae80af8f65e5)
+**Github上傳設定:**
 
 要先去自己 Github 帳號的 E-mail settings，  <br>
 把「Block command line pushes that expose my email」這個選項取消掉!!
 
 ![github_email_setting_command_line](./image/github_email_setting_command_line.jpg)
 
-或是如參考資料提供的方法，去 E-mail settings > Keep my email addresses private，  <br>
+或是去 E-mail settings > Keep my email addresses private，  <br>
 使用 Github 所提供的 Email。
+
+**Github換行(CR/LF)設定:**
+
+關鍵字: git config --local core.autocrlf
 
 ---
 
 ## 專案目標
 
-學習如何在VM上架設各種服務、應用程式、網路設定，  <br>
-以及如何讓不同服務之間溝通。最後打包成果與個體快照:
+學習如何在VM上架設各種服務、應用程式、網路設定等等，以及如何讓不同服務之間做溝通。  
+到最後打包成果與個體快照，以下是我的 .md檔資料夾結構。
 
-- Docker
-  - run images
-  - Dockerfile - docker compose - .yml
+- Docker、Docker-Compose、Dockerfile
 - VM
-- program
-  - python
-  - R, Rstudio
-  - JS、CSS、HTML
-  - jupyter notebook
-  - Julia
-  - Grafana
-- DB
-  - Mysql
-  - BigObject
-  - SQL Server
-  - MariaDB
-  - Postgres
-- API Server
-  - Plumber
-  - Flask
-- Git
-  - Gitbook
-  - Gitlab
-- FTP
-  - FTP Client
-  - FTP Server
-- Web Service
-  - Shiny
+- program: python, R, Rstudio, JS、CSS、HTML, jupyter notebook, Julia, Grafana
+- DB: Mysql, BigObject, SQL Server, MariaDB, Postgres, ElasticSearch
+- FTP Client, FTP Server
+- Git, Gitlab
 - VPN
-- Jenkins
+- API Server: Plumber, Flask
+- Web Service: Gitbook, Shiny, Jenkins
+
+---
+
+## 目錄
+
+跟著目錄慢慢學習，大概可以一步步學習使用 TWCC 的資源。  <br>
+Linux, docker 比較深入的部分，就十分建議看官方的 tutorial!!
+
+- BASIC
+  - Initial Status: VCS 剛啟動時的相關設定。
+    - 內容: bash_history, apt 看安裝的套件, df 看磁碟狀況。
+  - SSH Connect: SSH 連線設定。
+  - TWCC-Port_Setting: Port 設定。
+  - Permission: 資料權限、擁有者、群組設定。
+  - Mount Disk: 掛載外部硬碟。
+  - Environment Varialble: 檢視與新增環境變數。
+  - VPN: VCS 中使用 VPN 連線特定網域。
+  - Bash Command: BASIC 資料夾指令集大成。
+
+- 進階
+  - Docker
+    - Install Docker and DockerCompose: 從過去專案中，像強者學習的Docker指令紀錄。
+    - Learning from Others: 從過去專案中，像強者學習的Docker指令紀錄。
+    - DockerHub: DockerHub 上使用過的 image。 
+    - Official Tutorial: Docker 官方的教學手冊。
+    - Dockerfile: 如何撰寫 Dockerfile。
+    - Docker Command: Docker 資料夾指令集大成。
+  - Database(基本上就是 Docker 的延伸整理)
+    - MSSQL
+    - PostgreSQL
+    - MariaDB
+    - MySQL
+    - BigObject
+    - ElasticSearch
+    - Database_Command: Database 資料夾指令集大成。
+  - Program(基本上就是 Docker 的延伸整理)
+    - R+Rstudio(+python2+python3)
+    - jupyter:Python、R、Julia
+    - datascienceschool/rpython
+    - Grafana
+- Others
+  - Build Gitbook
+  - VM and Container story
+  - little skills
 
 ---
 
