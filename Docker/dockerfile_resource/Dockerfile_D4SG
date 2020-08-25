@@ -1,0 +1,21 @@
+FROM rocker/tidyverse:latest
+
+RUN echo tdsodbc freetds/addtoodbc boolean true | debconf-set-selections \
+  && apt-get update -qq \
+  && apt-get -y --no-install-recommends install \
+  libjq-dev \
+  apt-utils \
+  unixodbc \
+  unixodbc-dev \
+  libudunits2-dev \
+  libgdal-dev \
+  tdsodbc \
+  curl \
+  && install2.r --error \
+     RCurl \
+     qualV \
+     googleway \
+     sf \
+     odbc \
+  && wget https://cran.r-project.org/src/contrib/Archive/Nippon/Nippon_0.7.tar.gz \
+  && R CMD INSTALL Nippon_0.7.tar.gz 

@@ -125,11 +125,11 @@ Linux, docker 比較深入的部分，就十分建議看官方的 tutorial!!
 - 進階
   - Docker
     - Install Docker and DockerCompose: 從過去專案中，像強者學習的Docker指令紀錄。
+    - Docker Command: 常見的 Docker command。
     - Learning from Others: 從過去專案中，像強者學習的Docker指令紀錄。
     - DockerHub: DockerHub 上使用過的 image。 
     - Official Tutorial: Docker 官方的教學手冊。
     - Dockerfile: 如何撰寫 Dockerfile。
-    - Docker Command: Docker 資料夾指令集大成。
   - Database(基本上就是 Docker 的延伸整理)
     - MSSQL
     - PostgreSQL
@@ -143,6 +143,7 @@ Linux, docker 比較深入的部分，就十分建議看官方的 tutorial!!
     - jupyter:Python、R、Julia
     - datascienceschool/rpython
     - Grafana
+    - Jenkins
 - Others
   - Build Gitbook
   - VM and Container story
