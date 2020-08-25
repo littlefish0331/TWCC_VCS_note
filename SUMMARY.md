@@ -23,7 +23,7 @@
 
 - [Install Docker and DockerCompose](./Docker/Docker_DockerCompose_Install.md)
 - [Learning from Others](./Docker/Learning_from_Others.md)
-- [DockerHub](./Docker/DockerHub_resource.md)
+- [DockerHub Resource](./Docker/DockerHub_Resource.md)
 - [Official Tutorial](./Docker/Docker_Official_Tutorial.md)
 - [DockerFile](./Docker/DockerFile.md)
 - [Docker Command](./Docker/Docker_Command.md)
@@ -44,6 +44,10 @@
 - [jupyter:Python、R、Julia](./Program/jupyter_Python_R_Julia.md)
 - [datascienceschool](./Program/datascienceschool.md)
 - [Grafana](./Program/Grafana.md)
+
+### CICD
+
+- [Jenkins](./CICD/Jenkins.md)
 
 ---
 

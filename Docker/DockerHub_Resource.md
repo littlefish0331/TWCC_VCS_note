@@ -1,4 +1,4 @@
-# DockerHub resource
+# DockerHub Resource
 
 記錄我從 DockerHub 上面使用過的 image，同時也記錄自己使用的一些心得和誤區。  <br>
 
@@ -884,7 +884,7 @@ cd /usr/share/grafana/
 
 ## Others
 
-### jenkins
+### Jenkins
 
 **refernce:**
 
@@ -1015,6 +1015,8 @@ docker exec -it jenkins-blueocean-dind bash
   > docker version
   > cat /var/jenkins_home/secrets/initialAdminPassword
 ```
+
+
 
 ---
 

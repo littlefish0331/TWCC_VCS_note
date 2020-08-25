@@ -143,6 +143,8 @@ Linux, docker 比較深入的部分，就十分建議看官方的 tutorial!!
     - jupyter:Python、R、Julia
     - datascienceschool/rpython
     - Grafana
+  - CICD
+    - Jenkins
 - Others
   - Build Gitbook
   - VM and Container story
