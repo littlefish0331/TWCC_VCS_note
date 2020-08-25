@@ -222,3 +222,44 @@ docker-compose version
 ---
 
 ## END
+
+不過我覺得 如果你看一下 MSSQL 那個 container
+你下這個
+docker inspect <CONTAINER ID>
+
+我們從 R 這裏
+ip 改你看到的這個應該也可以
+
+可能就不用開自己
+
+
+
+
+`sudo usermod -a -G docker <username>`: 設定 user 可以執行 Docker。好像下一次登入才會生效。(亦可寫成`sudo usermod -aG docker ubuntu`)。將目前使用者加到docker群組。  <br>
+`sudo service docker start`: 啟動docker服務。有其他方法，比如用systemctl啟動docker，詳見 `tutroial - others > phoenixnap website > 在 ubuntu 上安裝 Docker`。
+
+docker pull
+docker run
+docker ps
+docker exec
+docker stop
+docker start
+docker stats
+
+- docker start $(docker ps -a -q): [Command for restarting all running docker containers? - Stack Overflow](https://stackoverflow.com/questions/38221463/command-for-restarting-all-running-docker-containers)
+
+
+---------------------
+docker network ls
+
+systemctl -a | grep docker
+
+named volume
+	docker volume create
+	docker volume ls
+Host Volume
+
+資訊架構(IA, Information Architecture)
+人工AI
+
+

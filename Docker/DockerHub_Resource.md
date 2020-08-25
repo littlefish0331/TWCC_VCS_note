@@ -35,7 +35,6 @@
     - [R+Python+Julia+jupyter notebook](#rpythonjuliajupyter-notebook)
     - [datascienceschool/rpython](#datascienceschoolrpython)
     - [Grafana](#grafana)
-  - [Others](#others)
     - [jenkins](#jenkins)
   - [END](#end)
 
@@ -880,9 +879,7 @@ cd /usr/share/grafana/
 預設登入的帳密是 admin/admin。  <br>
 第一次登入之後會要求更改 admin 的密碼，可以按 skip。
 
----
-
-## Others
+--
 
 ### Jenkins
 

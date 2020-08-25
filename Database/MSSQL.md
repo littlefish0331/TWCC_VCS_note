@@ -357,3 +357,20 @@ MSSQL 如果不是用預設的port(1433)做連線，  <br>
 ---
 
 ## END
+
+補充參數。https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-configure-environment-variables?view=sql-server-ver15
+
+odbc::odbcListDrivers()
+library(odbc)
+con <- dbConnect(odbc::odbc(), 
+                 Driver = "FreeTDS",
+                 Server = "103.124.74.106",
+                 UID = "sa",
+                 PWD = "MSSQL@2020", Port = 1433)
+dbDisconnect(conn = con)
+
+con <- dbConnect(odbc::odbc(), 
+                 Driver = "FreeTDS",
+                 Server = "172.17.0.2",
+                 UID = "sa",
+                 PWD = "MSSQL@2020", Port = 1433)
