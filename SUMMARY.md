@@ -13,7 +13,9 @@
 - [Mount Disk](./BASIC/Mount_Disk.md)
 - [Environment Variable](./BASIC/Env_Variable.md)
 - [VPN](./BASIC/VPN.md)
-- [Bash Command](./BASIC/bash_command.md)
+- [Linux Tools](./BASIC/Linux_Tools.md)
+- [Linux Tools Cases](./BASIC/Linux_Tools_Cases.md)
+- [Basic Note](./BASIC/Basic_Note.md)
 
 ---
 
@@ -22,11 +24,13 @@
 ### Docker
 
 - [Install Docker and DockerCompose](./Docker/Docker_DockerCompose_Install.md)
-- [Docker Command](./Docker/Docker_Command.md)
+- [Docker Command](./Docker/Docker_Command.md): N。
 - [Learning from Others](./Docker/Learning_from_Others.md)
 - [DockerHub Resource](./Docker/DockerHub_Resource.md)
-- [Official Tutorial](./Docker/Docker_Official_Tutorial.md)
-- [DockerFile](./Docker/DockerFile.md)
+- [Official Tutorial](./Docker/Official_Tutorial.md): N。
+- [DockerFile](./Docker/DockerFile.md): N。
+- [Docker Network](./Docker/Docker_Network.md): N。
+- [Docker Note](./Docker/Docker_Note.md): N。
 
 ### Database
 
@@ -36,7 +40,7 @@
 - [MySQL](./Database/MySQL.md)
 - [BigObject](./Database/BigObject.md)
 - [ElasticSearch](./Database/ElasticSearch.md)
-- [Database_Command](./Database_Command.md)
+- [Database Note](./Database/Database_Note.md)
 
 ### Program
 
@@ -44,7 +48,6 @@
 - [jupyter:Python、R、Julia](./Program/jupyter_Python_R_Julia.md)
 - [datascienceschool](./Program/datascienceschool.md)
 - [Grafana](./Program/Grafana.md)
-- [Jenkins](./Program/Jenkins.md)
 
 ### CICD
 

@@ -112,24 +112,27 @@ find ./ -type f -name '*.md' | xargs sed -i 's/  \r$/  <br>\r/g'
 Linux, docker 比較深入的部分，就十分建議看官方的 tutorial!!
 
 - BASIC
-  - Initial Status: VCS 剛啟動時的相關設定。
-    - 內容: bash_history, apt 看安裝的套件, df 看磁碟狀況。
+  - Initial Status: VCS 剛啟動時的相關設定。(包含 bash_history, apt 看安裝的套件, df 看磁碟狀況。)
   - SSH Connect: SSH 連線設定。
   - TWCC-Port_Setting: Port 設定。
   - Permission: 資料權限、擁有者、群組設定。
   - Mount Disk: 掛載外部硬碟。
   - Environment Varialble: 檢視與新增環境變數。
   - VPN: VCS 中使用 VPN 連線特定網域。
-  - Bash Command: BASIC 資料夾指令集大成。
+  - Linux Tools: 好用的 linux 指令使用手冊。
+  - Linux Tools Cases: linux tools 的綜合實作案例情境(較複雜的cases)。
+  - BASIC Note: BASIC 資料夾指令集大成。
 
 - 進階
   - Docker
-    - Install Docker and DockerCompose: 從過去專案中，像強者學習的Docker指令紀錄。
-    - Docker Command: 常見的 Docker command。
+    - Install Docker and DockerCompose: 從過去專案中，向強者學習的Docker指令紀錄。
+    - Docker Command: 常見的 Docker command，包含 docker-compose 指令。
     - Learning from Others: 從過去專案中，像強者學習的Docker指令紀錄。
-    - DockerHub: DockerHub 上使用過的 image。 
+    - DockerHub Resource: DockerHub 上使用過的 image。
     - Official Tutorial: Docker 官方的教學手冊。
     - Dockerfile: 如何撰寫 Dockerfile。
+    - Docker Network: 從過去專案中，學習的 Docker Network 設定。
+    - Docker Note: Docker 資料夾指令集大成。
   - Database(基本上就是 Docker 的延伸整理)
     - MSSQL
     - PostgreSQL
@@ -137,10 +140,10 @@ Linux, docker 比較深入的部分，就十分建議看官方的 tutorial!!
     - MySQL
     - BigObject
     - ElasticSearch
-    - Database_Command: Database 資料夾指令集大成。
+    - Database Note: Database 資料夾指令集大成。
   - Program(基本上就是 Docker 的延伸整理)
     - R+Rstudio(+python2+python3)
-    - jupyter:Python、R、Julia
+    - jupyter:Python、R、Julia。同一個 dockerHub 來源被我合併在一起。
     - datascienceschool/rpython
     - Grafana
   - CICD

@@ -1,9 +1,8 @@
-# Bash Command
+# Basic Note
 
 紀錄 BASIC 資料夾中，所以做過的操作，大部分是 bash command 的指令。  <br>
 有點類似屬於我的 cheatsheet，為了簡潔，所以會把原有小節就有的 reference 都先去除。
 
-> - 有些比較小的指令，不足以成為一個小節的，我會直接塞在這邊XD~  <br>
 > - 從小節複製過來的內容，基本上只會做刪減，沒有新增。
 
 --

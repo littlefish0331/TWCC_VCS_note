@@ -117,4 +117,58 @@ UUID="67370358-c856-468b-b4d9-452bb3741ec3"     /datamount  ext4    defaults    
 
 ---
 
+## Mount Disk 更改
+
+**情境:**
+
+比如說今天發現掛的硬碟其實太大了，所以想重新掛小一點的，從 200GB 換成 80GB。  
+那步驟要怎麼完成呢?
+
+**步驟:**
+
+- (如果有 container 運行中) docker stop all container。
+- (建議) 先做備份，將所有資料複製到 backup_littlefish/。
+- unmount old-disk and remove it on TWCC。
+- apply New Disk and format it。
+- remove mount-folder and create a new one。
+- mount New Disk to mount-folder。
+- set fstable and reboot。
+- copy all data from backup_littlefish/ to mount-folder/。
+- docker start all container。
+
+### Disk 變換步驟指令
+
+```{bash}
+// (如果有 container 運行中) docker stop all container。
+docker stop $(docker ps -a -q)
+
+// (建議) 先做備份，將所有資料複製到 backup_littlefish/。
+// -R: copy directories recursively
+// -v: explain what is being done
+// -u: copy only when the SOURCE file is newer than the destination file or when the destination file is missing
+// -p:  preserve the specified attributes (default:mode,ownership,timestamps)
+mkdir backup_littlefish/
+cp -Rup datamount/. backup_littlefish/
+cp -Rup backup_littlefish/. datamount/
+// unmount Old Disk。
+
+
+
+
+- unmount old-disk and remove it on TWCC。
+- apply New Disk and format it。
+- remove mount-folder and create a new one。
+- mount New Disk to mount-folder。
+- set fstable and reboot。
+- copy all data from backup_littlefish/ to mount-folder/。
+- docker start all container。
+
+```
+
+
+
+
+
+---
+
 ## END

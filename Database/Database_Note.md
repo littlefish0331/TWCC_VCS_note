@@ -1,4 +1,4 @@
-# Database Command
+# Database Note
 
 把對 Database 的操作指令做一個彙總整理。
 
