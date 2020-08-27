@@ -200,12 +200,38 @@
             
         </li>
     
-        <li class="chapter " data-level="2.8" data-path="bash_command.md">
+        <li class="chapter " data-level="2.8" data-path="Linux_Tools.html">
             
-                <span>
+                <a href="Linux_Tools.html">
             
                     
-                    Bash Command
+                    Linux Tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="Linux_Tools_Cases.html">
+            
+                <a href="Linux_Tools_Cases.html">
+            
+                    
+                    Linux Tools Cases
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="Basic_Note.html">
+            
+                <a href="Basic_Note.html">
+            
+                    
+                    Basic Note
             
                 </a>
             
@@ -240,7 +266,20 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2" data-path="../Docker/Learning_from_Others.html">
+        <li class="chapter " data-level="4.2" data-path="../Docker/Docker_Command.html">
+            
+                <a href="../Docker/Docker_Command.html">
+            
+                    
+                    Docker Command
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../Docker/Learning_from_Others.html">
             
                 <a href="../Docker/Learning_from_Others.html">
             
@@ -253,12 +292,12 @@
             
         </li>
     
-        <li class="chapter " data-level="4.3" data-path="../Docker/DockerHub_resource.md">
+        <li class="chapter " data-level="4.4" data-path="../Docker/DockerHub_Resource.html">
             
-                <span>
+                <a href="../Docker/DockerHub_Resource.html">
             
                     
-                    DockerHub
+                    DockerHub Resource
             
                 </a>
             
@@ -266,9 +305,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.4" data-path="../Docker/Docker_Official_Tutorial.md">
+        <li class="chapter " data-level="4.5" data-path="../Docker/Official_Tutorial.html">
             
-                <span>
+                <a href="../Docker/Official_Tutorial.html">
             
                     
                     Official Tutorial
@@ -279,7 +318,7 @@
             
         </li>
     
-        <li class="chapter " data-level="4.5" data-path="../Docker/DockerFile.md">
+        <li class="chapter " data-level="4.6" data-path="../Docker/DockerFile.md">
             
                 <span>
             
@@ -292,12 +331,25 @@
             
         </li>
     
-        <li class="chapter " data-level="4.6" data-path="../Docker/Docker_Command.html">
+        <li class="chapter " data-level="4.7" data-path="../Docker/Docker_Network.html">
             
-                <a href="../Docker/Docker_Command.html">
+                <a href="../Docker/Docker_Network.html">
             
                     
-                    Docker Command
+                    Docker Network
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="../Docker/Docker_Note.html">
+            
+                <a href="../Docker/Docker_Note.html">
+            
+                    
+                    Docker Note
             
                 </a>
             
@@ -390,12 +442,12 @@
             
         </li>
     
-        <li class="chapter " data-level="5.7" data-path="../Database_Command.md">
+        <li class="chapter " data-level="5.7" data-path="../Database/Database_Note.html">
             
-                <span>
+                <a href="../Database/Database_Note.html">
             
                     
-                    Database_Command
+                    Database Note
             
                 </a>
             
@@ -465,11 +517,31 @@
 
     
         
+        <li class="header">CICD</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../CICD/Jenkins.html">
+            
+                <a href="../CICD/Jenkins.html">
+            
+                    
+                    Jenkins
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
         <li class="header">其他 Others</li>
         
         
     
-        <li class="chapter " data-level="7.1" data-path="../Others/Build_Gitbook.html">
+        <li class="chapter " data-level="8.1" data-path="../Others/Build_Gitbook.html">
             
                 <a href="../Others/Build_Gitbook.html">
             
@@ -482,7 +554,7 @@
             
         </li>
     
-        <li class="chapter " data-level="7.2" data-path="../VM_Container_story.md">
+        <li class="chapter " data-level="8.2" data-path="../VM_Container_story.md">
             
                 <span>
             
@@ -495,7 +567,7 @@
             
         </li>
     
-        <li class="chapter " data-level="7.3" data-path="../little_skills.md">
+        <li class="chapter " data-level="8.3" data-path="../little_skills.md">
             
                 <span>
             
@@ -688,10 +760,7 @@ cat .bash_history</code></pre>
 23  sudo systemctl start rc-local.service
 24  sudo systemctl status rc-local.service
 25  reboot</code></pre>
-<hr><h2 id="apt">apt</h2><p><strong>list:</strong></p><p>&#x5217;&#x51FA;&#x6240;&#x6709;&#x7684;&#x5957;&#x4EF6;&#x3002;  <br>
-list packages based on package names</p><pre><code class="lang-{bash}">apt list  //&#x5217;&#x51FA;&#x6240;&#x6709;&#x53EF;&#x5B89;&#x88DD;&#x7684;&#x5957;&#x4EF6;&#x3002;
-apt list --installed  //&#x5217;&#x51FA;&#x6240;&#x6709;&#x5B89;&#x88DD;&#x7684;&#x5957;&#x4EF6;&#x3002;</code></pre>
-<p>&#x9748;&#x6D3B;&#x904B;&#x7528;&#x3002;</p><pre><code class="lang-{bash}">// &#x5217;&#x51FA;&#x53EF;&#x5B89;&#x88DD;&#x7684;&#x5957;&#x4EF6;&#xFF0C;&#x5171; 67371 &#x500B;&#x3002;
+<hr><h2 id="apt">apt</h2><pre><code class="lang-{bash}">// &#x5217;&#x51FA;&#x53EF;&#x5B89;&#x88DD;&#x7684;&#x5957;&#x4EF6;&#xFF0C;&#x5171; 67371 &#x500B;&#x3002;
 apt list
 apt list | wc -l
 
@@ -702,14 +771,9 @@ apt list --installed | wc -l
 apt list | grep ^docker</code></pre>
 <p>&#x4E00;&#x958B;&#x59CB;&#x5B89;&#x88DD;&#x7684;&#x5957;&#x4EF6;&#x6709; 516 &#x500B;&#x3002;  <br>
 &#x5176;&#x4E2D;&#x4E26;&#x6C92;&#x6709; docker&#x3002;  <br>
-&#x6BD4;&#x8F03;&#x91CD;&#x9EDE;&#x6709;&#x7684;&#x662F; vim, zsh, python3.6, perl, openssl, ntp, nano, gzip, git, ftp, gcc-8-base, dpkg, fdisk, curl, apt&#x3002;</p><ul><li><a href="https://foreachsam.github.io/book-util-apt/book/content/command/apt/apt-list/" target="_blank">apt list - apt &#x4F7F;&#x7528;&#x7B46;&#x8A18;</a>
-</li>
-<li><a href="https://askubuntu.com/questions/17823/how-to-list-all-installed-packages" target="_blank">apt - How to list all installed packages - Ask Ubuntu</a>
-</li></ul>
-<pre><code class="lang-{bash}">//&#x5217;&#x51FA;&#x53EF;&#x5B89;&#x88DD;&#x7684;&#x5957;&#x4EF6;&#xFF0C;&#x5171; 67371 &#x500B;&#x3002;
+&#x6BD4;&#x8F03;&#x91CD;&#x9EDE;&#x6709;&#x7684;&#x662F; vim, zsh, python3.6, perl, openssl, ntp, nano, gzip, git, ftp, gcc-8-base, dpkg, fdisk, curl, apt&#x3002;</p><pre><code class="lang-{bash}">//&#x5217;&#x51FA;&#x53EF;&#x5B89;&#x88DD;&#x7684;&#x5957;&#x4EF6;&#xFF0C;&#x5171; 67371 &#x500B;&#x3002;
 apt list
 apt list | wc -l</code></pre>
-<p><strong>&#x66F4;&#x65B0;:</strong></p><pre><code class="lang-{bash}">apt-get update</code></pre>
 <p><strong>&#x5B89;&#x88DD; vim:</strong></p><pre><code class="lang-{bash}">// &#x4E00;&#x5B9A;&#x8981;&#x5148;&#x66F4;&#x65B0; apt-get &#x9019;&#x500B;&#x5DE5;&#x5177;&#xFF0C;&#x4E0D;&#x7136;&#x5F8C;&#x9762;&#x5176;&#x5BE6;&#x6703;&#x51FA;&#x554F;&#x984C;&#x3002;
 apt-get update
 
@@ -769,7 +833,7 @@ tmpfs           1.6G     0  1.6G   0% /run/user/1000</code></pre>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Initial Status","level":"2.1","depth":1,"next":{"title":"SSH Connect","level":"2.2","depth":1,"path":"BASIC/SSH_Connect.md","ref":"./BASIC/SSH_Connect.md","articles":[]},"previous":{"title":"README","level":"1.1","depth":1,"path":"README.md","ref":"./README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"BASIC/Initial_Status.md","mtime":"2020-08-25T01:36:53.034Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2020-08-26T14:05:26.624Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Initial Status","level":"2.1","depth":1,"next":{"title":"SSH Connect","level":"2.2","depth":1,"path":"BASIC/SSH_Connect.md","ref":"./BASIC/SSH_Connect.md","articles":[]},"previous":{"title":"README","level":"1.1","depth":1,"path":"README.md","ref":"./README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"BASIC/Initial_Status.md","mtime":"2020-08-27T01:58:54.110Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2020-08-26T14:05:26.624Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
