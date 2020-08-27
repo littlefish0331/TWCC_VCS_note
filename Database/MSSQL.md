@@ -39,6 +39,8 @@
 - [KingKong Bruce記事: 一次就愛上MS SQL Server for Linux](https://blog.kkbruce.net/2017/12/ms-sql-server-for-linux.html#.XylSRCgzaUk)
 - [在 Docker 下建立並使用 MSSQL Server for Linux | Titangene Blog](https://titangene.github.io/article/docker-mssql-server-for-linux.html)
 
+---
+
 ## 啟動 container
 
 > 環境參數:  <br>
@@ -357,3 +359,20 @@ MSSQL 如果不是用預設的port(1433)做連線，  <br>
 ---
 
 ## END
+
+補充參數。https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-configure-environment-variables?view=sql-server-ver15
+
+odbc::odbcListDrivers()
+library(odbc)
+con <- dbConnect(odbc::odbc(), 
+                 Driver = "FreeTDS",
+                 Server = "103.124.74.106",
+                 UID = "sa",
+                 PWD = "MSSQL@2020", Port = 1433)
+dbDisconnect(conn = con)
+
+con <- dbConnect(odbc::odbc(), 
+                 Driver = "FreeTDS",
+                 Server = "172.17.0.2",
+                 UID = "sa",
+                 PWD = "MSSQL@2020", Port = 1433)

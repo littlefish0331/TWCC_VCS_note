@@ -59,10 +59,22 @@ docker.io/library/centos:latest
 
 ## Container
 
-### D4SG x GCAA - SQL SERVER
+### D4SG x GCAA - SQL SERVER and R_Rstudio
+
+**reference:**
 
 - [Microsoft SQL Server - Docker Hub](https://hub.docker.com/_/microsoft-mssql-server)
-- ACCEPT_EULA confirms your acceptance of the End-User Licensing Agreement.
+- -e ACCEPT_EULA: confirms your acceptance of the End-User Licensing Agreement.
+
+**啟動 container:**
+
+記得先把連動的資料夾設定好。
+
+```{bash}
+docker network ls
+docker network create --subnet=172.18.0.0/16 mssql_network
+docker network ls
+```
 
 <!-- SA_PASSWORD=MSSQL@2020 -->
 
@@ -74,10 +86,15 @@ docker run \
 -e "MSSQL_COLLATION=Chinese_Taiwan_Stroke_CI_AS" \
 -v /datamount/mssql:/var/opt/mssql \
 -p 1433:1433 \
+--network mssql_network \
+--ip 172.18.0.2 \
 -d mcr.microsoft.com/mssql/server:2019-latest
 
 // 一行指令。
-docker run --name mssql -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=<your_password>" -e "MSSQL_COLLATION=Chinese_Taiwan_Stroke_CI_AS" -v /datamount/mssql:/var/opt/mssql -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-latest
+docker run --name mssql -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=<your_password>" -e "MSSQL_COLLATION=Chinese_Taiwan_Stroke_CI_AS" -v /datamount/mssql:/var/opt/mssql -p 1433:1433 --network mssql_network --ip 172.18.0.2 -d mcr.microsoft.com/mssql/server:2019-latest
+
+// 檢查內網的IP
+docker inspect <container_ID>
 ```
 
 --

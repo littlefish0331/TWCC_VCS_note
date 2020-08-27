@@ -1,4 +1,4 @@
-# DockerHub resource
+# DockerHub Resource
 
 記錄我從 DockerHub 上面使用過的 image，同時也記錄自己使用的一些心得和誤區。  <br>
 
@@ -8,8 +8,9 @@
 
 <!-- TOC -->
 
-- [DockerHub resource](#dockerhub-resource)
+- [DockerHub Resource](#dockerhub-resource)
   - [alpine 版本](#alpine-版本)
+  - [DockerHub login](#dockerhub-login)
   - [OS system](#os-system)
     - [ubuntu](#ubuntu)
     - [centos](#centos)
@@ -21,11 +22,7 @@
     - [MSSQL: SQL SERVER](#mssql-sql-server)
     - [PostgreSQL](#postgresql)
     - [mariadb](#mariadb)
-      - [mariadb編碼](#mariadb編碼)
     - [MySQL](#mysql)
-      - [密碼無法登入的問題](#密碼無法登入的問題)
-      - [建立新用戶](#建立新用戶)
-      - [mysql編碼](#mysql編碼)
     - [BigObject](#bigobject)
     - [ElasticSearch](#elasticsearch)
   - [Program](#program)
@@ -35,8 +32,9 @@
     - [R+Python+Julia+jupyter notebook](#rpythonjuliajupyter-notebook)
     - [datascienceschool/rpython](#datascienceschoolrpython)
     - [Grafana](#grafana)
-  - [Others](#others)
-    - [jenkins](#jenkins)
+  - [CICD](#cicd)
+    - [Jenkins-only](#jenkins)
+    - [Jenkins](#jenkins)
   - [END](#end)
 
 <!-- /TOC -->
@@ -882,9 +880,9 @@ cd /usr/share/grafana/
 
 ---
 
-## Others
+## CICD
 
-### jenkins
+### Jenkins
 
 **refernce:**
 
@@ -916,15 +914,15 @@ Jenkins是一款Java開發的跨平台持續集成和持續發布的開源項目
 - 可擴展：自定義插件。
 - 分佈式：支持 Master-Slave。
 
-Jenkins已經作為各大公司進行CI/CD的首選工具。  <br>
-Jenkins UI從2006年-2016年，幾乎沒有變化。
+Jenkins 已經作為各大公司進行CI/CD的首選工具。  <br>
+Jenkins UI 從2006年-2016年，幾乎沒有變化。
 
-為了適應 Jenkins Pipeline 和 Freestyle jobs任務，Jenkins 推出了 BlueOcean UI，  <br>
+為了適應 Jenkins Pipeline 和 Freestyle jobs 任務，Jenkins 推出了 BlueOcean UI，  <br>
 其目的就是讓程序員執行任務時，降低工作流程的複雜度和提升工作流程的清晰度，它具有如下特徵:
 
-- 清晰的可視化，對CI/CD pipelines, 可以快速直觀的觀察項目pipeline狀態。
-- pipeline可編輯(開發中)，可視化編輯pipeline，現在只能通過配置中Pipeline的Pipeline script編輯。
-- pipeline精確度，通過UI直接介入pipeline的中間問題。
+- 清晰的可視化: 對 CI/CD pipelines, 可以快速直觀的觀察項目 pipeline 狀態。
+- pipeline 可編輯(仍在開發中): 可視化編輯 pipeline，現在只能通過配置中Pipeline的Pipeline script編輯。
+- pipeline 精確度: 通過UI直接介入pipeline的中間問題。
 - 集成代碼分支和pull請求。
 
 **啟動 container:**
@@ -934,7 +932,7 @@ Jenkins UI從2006年-2016年，幾乎沒有變化。
 - jenkins/jenkins
 - jenkinsci/blueocean
 
-**啟動 jenkins/jenkins image:**
+#### jenkins/jenkins image
 
 記得連動的資料夾，權限要先打開。  <br>
 如果一開始 Getting Started，有安裝 plugins 失敗，之後會可以再按 Retry，  <br>
@@ -952,22 +950,29 @@ docker run \
 -p 8082:8080 \
 -p 50000:50000 \
 -d jenkins/jenkins:lts
+```
 
+**login:**
+
+```{bash}
 // 進入 container 觀看密碼。
+// 預設帳號為 admin。
 docker exec -it jenkins-only bash
 
   > cat /var/jenkins_home/secrets/initialAdminPassword
 ```
 
+**安裝 Blue Ocean:**
+
 管理 Jenkins > 管理外掛程式 > 可用的，filter:blue ocean > 勾選 Blue Ocean。
 
-**啟動 jenkinsci/blueocean image:**
+#### jenkinsci/blueocean image
 
-(此為官方教學文件指示，更多解釋請看官方文件)。  <br>
-為了讓容器裡也可以操作 docker 鏡像，又不想污染宿主機上的 docker 鏡像，要使用 docker in docker(dind) 的方案。
+(此段操作參考官方教學文件，更多詳細解釋請到官方網站觀看)。  <br>
+為了讓容器裡也可以操作 docker 鏡像，又不想污染宿主機上的 docker 鏡像，那就要使用 docker in docker(dind) 的方案。  
+也就是啟動一個有 docker server and client 的 container，那之後就可以透過此 container，來操作 docker。  
 
 記得連動的資料夾，權限要先打開。  <br>
-之後透過此 container，就可以連結 localhost 的 Docker Server。
 
 ```{bash}
 // 建立 Jenkins 網路
@@ -994,7 +999,7 @@ docker run \
 ```
 
 安裝 jenkinsci/blueocean。  <br>
-env 那三行，讓我們可以順利接到 localhost 的 Docker Server。
+env 那三行，讓我們可以順利接到 container 的 Docker。
 
 ```{bash}
 docker run \
@@ -1008,8 +1013,13 @@ docker run \
 --publish 8083:8080 \
 --publish 50001:50000 \
 -d jenkinsci/blueocean
+```
 
-// 進入 container 觀看密碼和docker version
+**login 與 docker version:**
+
+```{bash}
+// 進入 container 觀看密碼和 docker version。
+// 預設帳號為 admin。
 docker exec -it jenkins-blueocean-dind bash
 
   > docker version

@@ -172,18 +172,6 @@ cat .bash_history
 
 ## apt
 
-**list:**
-
-列出所有的套件。  <br>
-list packages based on package names
-
-```{bash}
-apt list  //列出所有可安裝的套件。
-apt list --installed  //列出所有安裝的套件。
-```
-
-靈活運用。
-
 ```{bash}
 // 列出可安裝的套件，共 67371 個。
 apt list
@@ -200,19 +188,10 @@ apt list | grep ^docker
 其中並沒有 docker。  <br>
 比較重點有的是 vim, zsh, python3.6, perl, openssl, ntp, nano, gzip, git, ftp, gcc-8-base, dpkg, fdisk, curl, apt。
 
-- [apt list - apt 使用筆記](https://foreachsam.github.io/book-util-apt/book/content/command/apt/apt-list/)
-- [apt - How to list all installed packages - Ask Ubuntu](https://askubuntu.com/questions/17823/how-to-list-all-installed-packages)
-
 ```{bash}
 //列出可安裝的套件，共 67371 個。
 apt list
 apt list | wc -l
-```
-
-**更新:**
-
-```{bash}
-apt-get update
 ```
 
 **安裝 vim:**

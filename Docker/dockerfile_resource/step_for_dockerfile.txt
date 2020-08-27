@@ -1,0 +1,10 @@
+------ #1 move to Dockerfile directory ------ 
+cd /Users/sun/Desktop/d4sg_2020/
+
+------ #2 Build docker image ------ 
+#--docker pull rocker/rstudio:latest
+docker build -t d4sg . --no-cache
+
+
+------ #3 Run docker container  ------ 
+docker run -d -p 38787:8787 --name d4sg_gcaa -e USER='d4sggcaa' -e PASSWORD='D4SGgcaa@2020' -e ROOT=TRUE -v /datamount/d4sg_2020/volum:/home/d4sggcaa/ d4sg:latest
