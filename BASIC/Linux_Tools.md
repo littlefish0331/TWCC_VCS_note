@@ -6,6 +6,8 @@
 
 所以本節就是將使用過的 linux 小指令，做一個收集與整理。
 
+p.s. 主題式的指令學習，另外建立 .md 檔。
+
 --
 
 **收集指令如下:**
@@ -52,10 +54,149 @@ man <linux tool>
 
 ---
 
+## others
+
+- `whoami`: 顯示使用者名稱。  <br>
+- `hostname`: 顯示主機名稱。  <br>
+- `ifconfig`: 查詢、設定網路卡與 IP 網域等相關參數。觀察所有的網路介面。用來獲取網路介面配置資訊並對此進行修改。
+
+--
+
+### su 最高權限者
+
+-i, --login: run login shell as the target user; a command may also be specified
+
+```{bash}
+//下面兩個效果相同。
+sudo su
+sudo -i
+```
+
+--
+
+### Linux 系統支援語系
+
+- Linux 系統預設支援的語系資料：這與 /etc/locale.conf 有關。
+- 終端介面 (bash) 的語系： 與 LANG, LC_ALL 這幾個變數有關。
+
+--
+
+### 顯示目錄下-檔案-編碼-結尾換行符號
+
+```{bash}
+ls
+ll
+ls -al  <-- 和ll功能相同
+
+  > 可以在後面加路徑，比如 ll /mnt/e/
+```
+
+顯示該檔案的編碼與結尾換行符號類型。
+
+```{bash}
+file <filename>
+```
+
+--
+
+### 歷史資訊清除
+
+```{bash}
+history -c
+history -w
+exit
+history
+```
+
+--
+
+### 重開機
+
+```{bash}
+sudo reboot
+```
+
+---
+
+## View History
+
+- ubuntu 帳號下的指令紀錄放在 /home/ubuntu/.bash_history 中。
+- echo $HISTFILE，可以得到上面的路徑。操作歷史紀錄，儲存的檔案位置。(操作歷史紀錄檔)(.bash_history)。
+- echo $HISTFILESIZE，操作歷史紀錄檔，最多儲存幾筆。
+- echo $HISTSIZE，history 最多列出幾筆(在記憶體中存放的筆數)。
+
+更多設定與操作請參考: [XYZ的筆記本: Linux Bash 刪除 history 指令操作歷史紀錄](https://xyz.cinc.biz/2017/08/linux-bash-history-clear.html)
+
+### window
+
+關於 windows 的 cmd 歷史紀錄，  <br>
+請按 F7，或是指令 `doskey /history`。
+
+---
+
 ## ll, ls -al
 
 List information about the FILEs (the current directory by default).  
 列出目前目錄下的檔案以及資料夾之訊息。
+
+---
+
+## apt
+
+**reference:**
+
+- [apt list - apt 使用筆記](https://foreachsam.github.io/book-util-apt/book/content/command/apt/apt-list/)
+- [apt - How to list all installed packages - Ask Ubuntu](https://askubuntu.com/questions/17823/how-to-list-all-installed-packages)
+
+--
+
+### apt 參數: list
+
+**list:**
+
+列出所有的套件。  <br>
+list packages based on package names
+
+```{bash}
+apt list  //列出所有可安裝的套件。
+apt list --installed  //列出所有安裝的套件。
+```
+
+### apt 使用情境
+
+```{bash}
+// 列出可安裝的套件。
+apt list
+apt list | wc -l
+
+// 列出有安裝的套件，並計算個數。
+apt list --installed | wc -l
+
+// 列出 dcoker 開頭的套件。
+apt list | grep ^docker
+```
+
+```{bash}
+// 列出可安裝的套件。
+apt list
+apt list | wc -l
+```
+
+**更新:**
+
+```{bash}
+apt-get update
+```
+
+**安裝 vim:**
+
+```{bash}
+// 一定要先更新 apt-get 這個工具，不然後面其實會出問題。
+apt-get update
+
+// 安裝
+apt-get install vim
+```
 
 ---
 
@@ -256,21 +397,26 @@ cp 的指令可簡單可複雜，在 windows PC 上操作"複製"的動作可能
 - 來源檔是否為特殊的檔案，例如 FIFO, socket 等? 短時間內沒有實際案例，所以先不討論。
 - 來源檔是否為目錄? 目錄的話要多一個參數 -r。
 
-總結來說，cp 可以做到複製目錄、檔案，以及複製後更新名稱。
+總結來說，cp 可以做到複製目錄、檔案，以及複製順便更新名稱。  
+本小節只會 cover 最簡單的使用情境。
 
 Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
 
 ==**cp --help 有簡述的指令說明。man cp 則可以看到更多的解釋**==
 
+如果來源檔有兩個以上，則最後一個目的檔一定要是『目錄』才行!!  
+另外，不同身份者執行這個指令會有不同的結果產生，尤其是那個 -p 的選項， 對於不同身份來說，差異則非常的大!!  
+在預設的條件中， cp 的來源檔與目的檔的權限是不同的，目的檔的擁有者通常會是指令操作者本身。
+
 --
 
 **reference:**
 
-[Day 14 Linux 複製目錄、檔案或更名cp相關指令 - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天](https://ithelp.ithome.com.tw/articles/10159879)
+- [Day 14 Linux 複製目錄、檔案或更名cp相關指令 - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天](https://ithelp.ithome.com.tw/articles/10159879)
 
 --
 
-### cp常見參數
+### cp 常見參數
 
 - -b, like --backup but does not accept an argument
 - -f, --force, if an existing destination file cannot be opened, remove it and try again (this optionis ignored when the -n option is also used)
@@ -278,23 +424,16 @@ Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
 - -R, -r, --recursive, copy directories recursively
 - -n, --no-clobber, do not overwrite an existing file (overrides a previous -i option)
 - -u, --update, copy only when the SOURCE file is newer than the destination file or when the destination file is missing
+- -p, same as --preserve=mode,ownership,timestamps --preserve[=ATTR_LIST] preserve the specified attributes (default:mode,ownership,timestamps), if possible additional attributes: context, links, xattr, all.
 
 **來點中文翻譯:**
 
 - -f 複製時檔案或目錄名稱一樣時，直接覆蓋不會警告。為強制(force)的意思，若目標檔案已經存在且無法開啟，則移除後再嘗試一次。
 - -i 複製時檔案或目錄名稱一致時，會提出警告。若目標檔(destination)已經存在時，在覆蓋時會先詢問動作的進行(常用)，
-- -r, -R 遞迴持續複製，用於目錄的複製行為。複製時包含目錄及目錄下的檔案。
+- -R, -r 遞迴持續複製，用於目錄的複製行為。複製時包含目錄及目錄下的檔案。
 - -p 連同檔案的屬性(權限、用戶、時間)一起複製過去，而非使用預設屬性(備份常用)。
-- -s 複製成為符號連結檔 (symbolic link)，亦即『捷徑』檔案。
-- -a 相當於 -dr --preserve=all 的意思，至於 dr 請參考下列說明；(常用)
-- -l 進行硬式連結(hard link)的連結檔建立，而非複製檔案本身。
-- -d 若來源檔為連結檔的屬性(link file)，則複製連結檔屬性而非檔案本身；
 - -u destination 比 source 舊才更新 destination，或 destination 不存在的情況下才複製。
 - --preserve=all 除了 -p 的權限相關參數外，還加入 SELinux 的屬性, links, xattr 等也複製了。
-
-最後需要注意的，如果來源檔有兩個以上，則最後一個目的檔一定要是『目錄』才行!!  
-另外，不同身份者執行這個指令會有不同的結果產生，尤其是那個-a, -p的選項， 對於不同身份來說，差異則非常的大!!  
-在預設的條件中， cp 的來源檔與目的檔的權限是不同的，目的檔的擁有者通常會是指令操作者本身。
 
 --
 
@@ -318,14 +457,17 @@ cp folderA/fileA1.txt folderA/fileA2.txt folderB/
 
 (2) 複製目錄(包含下面所有的檔案)
 
+如果目的地的資料夾不存在就是複製，如果目的地資料夾存在就是整個放到目錄下。
 母目錄皆一起複製。  
 **如果是複製多個來源，則要先建立好資料夾。**
 
 ```{bash}
-cp -vr folderA/ folderC/
-// 'folderA/' -> 'folderC/'
-// 'folderA/fileA2.txt' -> 'folderC/fileA2.txt'
-// 'folderA/fileA1.txt' -> 'folderC/fileA1.txt'
+cp -vr folderA folderC
+// 'folderA' -> 'folderC'
+
+mkdir folderC/
+cp -vr folderA folderC
+// 'folderA' -> 'folderC/folderA'
 
 mkdir folderC/
 cp -vR folderA/ folderB/ folderC/
@@ -339,6 +481,8 @@ cp -vR folderA/ folderB/ folderC/
 母目錄不複製。
 
 ```{bash}
+cp -vR folderA/. folderC/
+
 mkdir folderC/
 cp -vR folderA/. folderB/. folderC/
 // 'folderA/./fileA2.txt' -> 'folderC/./fileA2.txt'
@@ -356,7 +500,6 @@ cp -vr folderA/*.txt folderC/
 ```
 
 ```{bash}
-rm -r folderC/
 mkdir folderC/
 cp -vrp folderA/. folderC/
 // 'folderA/./fileA2.txt' -> 'folderC/./fileA2.txt'
@@ -378,6 +521,13 @@ ll
 
 重新命名資料或是資料夾。
 
+--
+
+**reference:**
+
+- [Linux Script：mv, rename 單次及批次修改檔案名稱 @ 符碼記憶](https://www.ewdna.com/2012/04/linux-scriptmv-rename.html)
+- [[Linux] 使用 mv、rename 來替檔案重新命名 - Clay-Technology World](https://clay-atlas.com/blog/2020/04/27/linux-cn-note-use-mv-rename-instruction/)
+
 **安裝:**
 
 ```{bash}
@@ -392,7 +542,7 @@ apt install rename
 exit
 ```
 
-該指令專職進行多個檔名的同時更名，並非針對單一檔名變更，與mv不同。請man rename。
+該指令專職進行多個檔名的同時更名，並非針對單一檔名變更，與 mv 不同。請man rename。
 
 --
 
@@ -409,28 +559,30 @@ exit
 
 **中文翻譯:**
 
--v, -verbose, Verbose: print names of files successfully renamed.
--n, -nono, No action: print names of files to be renamed, but don't rename.
--f, -force, Over write: allow existing files to be over-written.
--h, -help, Help: print SYNOPSIS and OPTIONS.
--m, -man, Manual: print manual page.
--V, -version, Version: show version number.
--e, Expression: code to act on files name. May be repeated to build up code (like "perl -e"). If no -e, the first argument is used as code.
--E, Statement: code to act on files name, as -e but terminated by ';'.
+-v: 顯示執行成功 rename 的檔案。
+-n: 顯示要被 rename 的檔案，但是還不執行。
+-f: 強制 rename，原本存在的檔案會被複寫。
+-h: 和 rename --help 一樣。
+-m: 和 man rename 一樣。
+-V: 顯示 rename 模組的版本。
+-e: rename 的程式碼。
+-E: rename 的程式碼，但結尾會有;。
 
 --
 
 ### rename 使用情境
 
-(1) 
+用於大量批次改名。
 
+(1) 改名
 
+```{bash}
+rename -n 's/A/B/g' *
 
-
-
-
-
-
+// 不可以用雙引號。
+// 最後面的 g 可以不加，但斜線`/`要保留。
+rename -n 's/A/B/g' *.txt
+```
 
 ---
 
@@ -536,9 +688,41 @@ tree
 
 ## exec
 
+## blkid
+
+## lsblk
+
+## fdisk
+
 ## df
 
+磁碟使用的初始狀況、可以看容量
+
+--
+
+**refernce:**
+
 - [Day 15 ubuntu 查詢硬碟使用量df指令 - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天](https://ithelp.ithome.com.tw/articles/10160087)
+
+---
+
+## df 使用情境
+
+-h, --human-readable  print sizes in powers of 1024 (e.g., 1023M)
+
+```{bash}
+df -h
+
+Filesystem      Size  Used Avail Use% Mounted on
+udev            7.9G     0  7.9G   0% /dev
+tmpfs           1.6G  740K  1.6G   1% /run
+/dev/vda1        97G  3.1G   94G   4% /
+tmpfs           7.9G     0  7.9G   0% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+tmpfs           7.9G     0  7.9G   0% /sys/fs/cgroup
+/dev/vda15      105M  3.6M  101M   4% /boot/efi
+tmpfs           1.6G     0  1.6G   0% /run/user/1000
+```
 
 ## rsync
 

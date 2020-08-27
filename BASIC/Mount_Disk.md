@@ -19,6 +19,9 @@
 - [Mount Disk](#mount-disk)
   - [硬碟-使用狀況、掛載列表、格式化、掛載、卸除、開啟自動掛載](#硬碟-使用狀況掛載列表格式化掛載卸除開啟自動掛載)
   - [分割硬碟](#分割硬碟)
+  - [Mount Disk 更改](#mount-disk-更改)
+    - [Disk 變換步驟指令](#disk-變換步驟指令)
+  - [指定掛載的編碼](#指定掛載的編碼)
   - [END](#end)
 
 <!-- /TOC -->
@@ -76,9 +79,18 @@ df -h
 
 **卸除磁碟:**
 
+可以通過設備名卸除，或是通過掛載點卸除。
+
+- umount
+  - -v, --verbose           say what is being done
+
 ```{bash}
-umount ext4 /dev/vdb
-umount ext4 /datamount  //這兩個都可以。
+// 通過設備名卸除
+umount -v /dev/vdb
+
+// 通過掛載點卸除
+umount -v /datamount
+
 df -h
 ```
 
@@ -139,35 +151,62 @@ UUID="67370358-c856-468b-b4d9-452bb3741ec3"     /datamount  ext4    defaults    
 ### Disk 變換步驟指令
 
 ```{bash}
+// 全部在 root 使用者下進行。
+sudo su
+
 // (如果有 container 運行中) docker stop all container。
 docker stop $(docker ps -a -q)
 
 // (建議) 先做備份，將所有資料複製到 backup_littlefish/。
 // -R: copy directories recursively
-// -v: explain what is being done
 // -u: copy only when the SOURCE file is newer than the destination file or when the destination file is missing
 // -p:  preserve the specified attributes (default:mode,ownership,timestamps)
+// -v: explain what is being done
 mkdir backup_littlefish/
 cp -Rup datamount/. backup_littlefish/
+
+// unmount old-disk and remove it on TWCC。
+df -h  // 也可以用 `fdisk  -l`，來得知磁碟路徑。
+umount -v /dev/vdb  // `umount -v /datamount` 作用相同。
+
+// apply New Disk and format it。
+mkfs -t ext4 /dev/vdb
+
+// remove mount-folder and create a new one。
+rm -r datamount/
+mkdir datamount
+
+// mount New Disk to mount-folder。
+// 有時候掛載完 df -h 沒有出現，這我也不知道為什麼，但是設定開機掛載再 reboot 之後應該要可以成功。
+mount -t ext4 /dev/vdb /datamount
+df -h
+
+// set fstable and reboot。
+blkid
+vi /etc/fstab
+
+// copy all data from backup_littlefish/ to mount-folder/。
 cp -Rup backup_littlefish/. datamount/
-// unmount Old Disk。
 
+// docker start all container。
+docker start $(docker ps -a -q)
 
-
-
-- unmount old-disk and remove it on TWCC。
-- apply New Disk and format it。
-- remove mount-folder and create a new one。
-- mount New Disk to mount-folder。
-- set fstable and reboot。
-- copy all data from backup_littlefish/ to mount-folder/。
-- docker start all container。
-
+// check
+docker ps -a
 ```
 
+---
 
+## 指定掛載的編碼
 
+假設有一個 USB 隨身碟裝置 /dev/sdb，如何將其掛載到 /datamount，且設定其字元編碼方式為 big5？
 
+```{bash}
+mount -o iocharset=big5 /dev/sdb /datamount
+
+// 如果要設定編碼為 utf8
+mount -o iocharset=utf8 /dev/sdb /datamount
+```
 
 ---
 

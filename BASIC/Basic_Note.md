@@ -31,111 +31,6 @@
 
 ---
 
-## apt
-
-**list:**
-
-列出所有的套件。  <br>
-list packages based on package names.
-
-```{bash}
-// 列出可安裝的套件，共 67371 個。
-apt list
-apt list | wc -l
-
-// 列出有安裝的套件，並計算個數，共 516 個。
-apt list --installed | wc -l
-
-// 列出 dcoker 開頭的套件。
-apt list | grep ^docker
-```
-
---
-
-**更新:**
-
-```{bash}
-apt-get update
-```
-
---
-
-**安裝vim:**
-
-```{bash}
-// 一定要先更新 apt-get 這個工具，不然後面其實會出問題。
-apt-get update
-
-// 安裝
-apt-get install vim
-```
-
----
-
-## Others
-
-- `whoami`: 顯示使用者名稱。  <br>
-- `hostname`: 顯示主機名稱。  <br>
-- `ifconfig`: 查詢、設定網路卡與 IP 網域等相關參數。觀察所有的網路介面。用來獲取網路介面配置資訊並對此進行修改。
-
---
-
-### su 最高權限者
-
--i, --login: run login shell as the target user; a command may also be specified
-
-```{bash}
-//下面兩個效果相同。
-sudo su
-sudo -i
-```
-
---
-
-### Linux 系統支援語系
-
-- Linux 系統預設支援的語系資料：這與 /etc/locale.conf 有關。
-- 終端介面 (bash) 的語系： 與 LANG, LC_ALL 這幾個變數有關。
-
---
-
-### 顯示目錄下-檔案-編碼-結尾換行符號
-
-```{bash}
-ls
-ll
-ls -al  <-- 和ll功能相同
-
-  > 可以在後面加路徑，比如 ll /mnt/e/
-```
-
-顯示該檔案的編碼與結尾換行符號類型。
-
-```{bash}
-file <filename>
-```
-
---
-
-### 歷史資訊清除
-
-```{bash}
-history -c
-history -w
-exit
-history
-```
-
---
-
-### 重開機
-
-```{bash}
-sudo reboot
-```
-
----
-
 ## Permission
 
 **檔案:**
@@ -219,9 +114,18 @@ df -h
 
 **卸除磁碟:**
 
+可以通過設備名卸除，或是通過掛載點卸除。
+
+- umount
+  - -v, --verbose           say what is being done
+
 ```{bash}
-umount ext4 /dev/vdb
-umount ext4 /datamount  //這兩個都可以。
+// 通過設備名卸除
+umount -v /dev/vdb
+
+// 通過掛載點卸除
+umount -v /datamount
+
 df -h
 ```
 
@@ -310,11 +214,11 @@ start putty.exe -ssh new_username@hostip -pw password
 
 如果要限制IP連線，可如下設定。以下舉例。
 
-- 111.222.333.444/32: 表示限制只能IP為 111.222.333.444。  <br>
-- 111.222.333.444/24: 表示限制IP可為以下網域 111.222.333.0。  <br>
-- 111.222.333.444/16: 表示限制IP可為以下網域 111.222.0.0。  <br>
-- 111.222.333.444/8: 表示限制IP可為以下網域 111.0.0.0。  <br>
-- 111.222.333.444/0: 表示限制IP可為以下網域 0.0.0.0。其實就是大家都可以連進來。  <br>
+- 111.222.333.444/32: 表示限制只能IP為 111.222.333.444。
+- 111.222.333.444/24: 表示限制IP可為以下網域 111.222.333.0。
+- 111.222.333.444/16: 表示限制IP可為以下網域 111.222.0.0。
+- 111.222.333.444/8: 表示限制IP可為以下網域 111.0.0.0。
+- 111.222.333.444/0: 表示限制IP可為以下網域 0.0.0.0。其實就是大家都可以連進來。
 - 0.0.0.0/0: 表示大家都可以連進來。(效果同上)
 
 通常全開我們都會笑稱是在網路上裸奔，是很危險的，因為現在網路上有很多掃 ip 攻擊。
@@ -503,6 +407,23 @@ sudo su
 pkill openfortivpn
 exit
 ```
+
+---
+
+## Linux Tools
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ---
 
