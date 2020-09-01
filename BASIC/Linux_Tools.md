@@ -732,3 +732,181 @@ tmpfs           1.6G     0  1.6G   0% /run/user/1000
 ---
 
 ## END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# README
+
+Unix 指令，或是精準一點說 bash 指令學習。
+
+- 情境描述
+- 目標
+- 方法
+
+## tr
+
+**tr 可以想程式 sed 的精簡版。**
+所以要作難一點的操作，可以學習指令 sed。
+
+下面簡單介紹了幾個情境，  
+還有很多的功用，比如:
+
+- 刪除空行，tr -d '\n'，也可以用tr -s '[\012]'
+- 所有英文以外的字元(補集)，轉換為空白，tr -c '[a-z][A-Z]' ' ' < filename > filename2.txt
+- 所有英文，轉換為空白，且連續的英文只會有一個空白，tr -s '[a-z][A-Z]' '[ *]' < filename > filename2.txt
+- 所有英文以外的字元(補集)，轉換為換行，並排除所有換行，tr -c '[a-z][A-Z]' '\n' < filename | tr -d '\n' > filename2.txt
+- 所有英文以外的字元(補集)，轉換為換行，並排除多餘的換行，tr -c '[a-z][A-Z]' '\n' < filename | tr -s '\n' > filename2.txt。可簡寫為tr -cs '[a-z][A-Z]' '\n' < filename > filename2.txt
+
+操作補充:  
+輸入資料除了用指令 < filename之外，  
+也可以在一開始 cat filename | tr ...，  
+直接用 filename是不行的，那樣只會開啟資料而已。
+
+### 情境01
+
+- 情境描述: 因為 windows系統的換行符號為\r\n，但是unix系統的換行符號為\n
+- 目標: 利用bash指令，將文字檔中的\r\n轉換為\n，並另存新檔
+- 方法: tr -d '\r' < CRLF.txt > LF.txt
+
+處理完之後，可以用 cat 指令稍微看一下兩個檔案。  
+
+- cat CRLF.txt
+- cat LF.txt
+
+並用指令 diff 發現兩個檔案確實有差異。
+
+- diff CRLF.txt LF.txt
+
+如果在 Unix 系統下，可再用指令 file 觀看兩個檔案的類型。
+
+- file CRLF.txt，CRLF.txt: ASCII text, with CRLF line terminators
+- file LF.txt，LF.txt: ASCII text
+
+### 情境02
+
+- 情境描述: 英文大小寫轉換的轉換
+- 目標: 利用bash指令，將文字檔中的[A-Z]轉換為[a-z]，並另存新檔
+- 方法: tr '[A-Z]' '[a-z]' < LETTERS.txt > LETTERS_letters.txt
+
+注意，因為檔案名稱不分大小寫，  
+所以如果用指令 < LETTERS.txt > letters.txt，  
+最後結果會是空白。
+
+另外這方法中文字也行，  
+tr '你' '我' < duplicate.txt > duplicate2.txt
+
+### 情境03
+
+- 情境描述: 壓縮重複出現的字元，squeeze-repeats。
+- 目標: 利用bash指令，將文字檔中的[A-Z]轉換為[a-z]，並另存新檔
+- 方法: tr -s '[A-Z]' '[a-z]' < duplicate.txt > duplicate2.txt
+
+注意，功用是壓縮重複出現的字元，  
+所謂重複出現是連續重複出現，和一般所講的 duplicate 有點差異，使用上要小心。
+
+## cls、clear
+
+- windows: 使用指令 cls，清空畫面
+- unix: 使用指令 clear，清空畫面。或是利用快捷鍵 Ctrl+L
+
+## copy
+
+### 情境01
+
+- 情境描述: 複製檔案
+- 目標: 利用bash指令，將檔案作複製，除了移動到想要的資料夾下之外，也可以另外取名。
+- 方法: copy filename1 filename2
+
+> copy copy1.txt copy2.txt
+
+## shift+echo+arg
+
+- 情境描述: 輸入指令變成參數。
+- 目標: 利用bash指令，傳送輸入值到參數，如何依序拉出、跳過、指定、全部印出。
+- 方法: 下面三種方法存成一個test.bat，各自輸入 test.bat A B C D E，試試看
+
+> set arg1=%1
+> set arg2=%2
+> echo /first_arg %arg1% /second_arg %arg2% all_args %*
+>
+> echo %1
+> echo %1
+> echo %1
+> echo %*
+>
+> echo %1
+> shift
+> echo %1
+> shift
+> echo %1
+> echo %*
+>
+
+## xcopy
+
+[Xcopy - Copy files and folders - Windows CMD - SS64.com](https://ss64.com/nt/xcopy.html)
+
+- 情境描述: 複製檔案。複製資料夾。複製資料夾結構。
+- 目標: 利用bash指令，複製整個資料夾，或是複製資料夾結構
+- 方法: 將下面的指令跑過一遍，即可初步理解。
+
+> ::預設複製資料夾下的第一層檔案  
+> xcopy dir dir_copy  
+>
+> ::複製資料夾結構  
+> xcopy dir dir_copy /T /E
+
+## netstat
+
+尋找使用中的port。  
+也可以去 C:\Windows\System32\drivers\etc\services 觀看有使用的port
+
+```{batch}
+netstat -ano | findstr 0.0:80
+// 得到 TCP    0.0.0.0:80             0.0.0.0:0              LISTENING       3364
+
+tasklist | findstr 3364
+// httpd.exe                     3364 Services                   0     17,324 K
+```
+
+**reference:**
+
+- [Windows下用cmd命令netstat查看系統端口(PORT)使用情況和刪除對應程式 @ Johnson峰的部落格 :: 痞客邦 ::](https://johnson560.pixnet.net/blog/post/344056561-windows%E4%B8%8B%E7%94%A8cmd%E5%91%BD%E4%BB%A4netstat%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%B5%B1%E7%AB%AF%E5%8F%A3%28port%29%E4%BD%BF%E7%94%A8)
+- [[問題排除] 80PORT被佔用? 如何查出佔用PORT的方法 @ 小笨蛋的工作日誌 :: 隨意窩 Xuite日誌](https://blog.xuite.net/yamalin/blog/15087550-%5B%E5%95%8F%E9%A1%8C%E6%8E%92%E9%99%A4%5D+80PORT%E8%A2%AB%E4%BD%94%E7%94%A8%3F+%E5%A6%82%E4%BD%95%E6%9F%A5%E5%87%BA%E4%BD%94%E7%94%A8PORT%E7%9A%84%E6%96%B9%E6%B3%95)
+- [【系】如何查詢哪個程式佔用了指定Port @ 卡達+噗寶=阿噗噗 :: 隨意窩 Xuite日誌](https://blog.xuite.net/cadmus.lin/yo/43386562-%E3%80%90%E7%B3%BB%E3%80%91%E5%A6%82%E4%BD%95%E6%9F%A5%E8%A9%A2%E5%93%AA%E5%80%8B%E7%A8%8B%E5%BC%8F%E4%BD%94%E7%94%A8%E4%BA%86%E6%8C%87%E5%AE%9APort)
+
+## split
+
+```{batch}
+// -l: 一些參數設定，包含行數、容量等等。
+// -d:是指說檔案名稱的後面要用數字做編號。
+// --additional-suffix=.csv: 指定檔案類型。
+split -l 9000000 ../bus/bus.csv ../bus/split9000k/split_res -d --additional-suffix=.csv
+```
+
+## lscpu
+
+顯示電腦硬體資訊。
+
+## lsb_release -a
+
+顯示作業系統版本與相關的硬體資訊。
+
+## df -h
+
+可以看到硬體資訊以及資源使用量。
