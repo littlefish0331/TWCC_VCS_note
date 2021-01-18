@@ -6,6 +6,8 @@
 
 ## docker
 
+- docker search <keyword>: 可以找到哪個 image 是官方提供的。
+
 - docker version: docker 的 version。  <br>
 
 - docker run: Run a command in a new container
