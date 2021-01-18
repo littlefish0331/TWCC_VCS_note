@@ -1044,7 +1044,110 @@ tmpfs           1.6G     0  1.6G   0% /run/user/1000</code></pre>
 </li>
 <li><a href="https://www.webservertalk.com/copy-directory-folder-linux-cmd" target="_blank">How to Copy Directory/Folder in Linux via Command Line!</a>
 </li></ul>
-<hr><h2 id="end">END</h2>
+<hr><h2 id="end">END</h2><h1 id="readme">README</h1><p>Unix &#x6307;&#x4EE4;&#xFF0C;&#x6216;&#x662F;&#x7CBE;&#x6E96;&#x4E00;&#x9EDE;&#x8AAA; bash &#x6307;&#x4EE4;&#x5B78;&#x7FD2;&#x3002;</p><ul><li>&#x60C5;&#x5883;&#x63CF;&#x8FF0;
+</li>
+<li>&#x76EE;&#x6A19;
+</li>
+<li>&#x65B9;&#x6CD5;
+</li></ul>
+<h2 id="tr">tr</h2><p><strong>tr &#x53EF;&#x4EE5;&#x60F3;&#x7A0B;&#x5F0F; sed &#x7684;&#x7CBE;&#x7C21;&#x7248;&#x3002;</strong>
+&#x6240;&#x4EE5;&#x8981;&#x4F5C;&#x96E3;&#x4E00;&#x9EDE;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x53EF;&#x4EE5;&#x5B78;&#x7FD2;&#x6307;&#x4EE4; sed&#x3002;</p><p>&#x4E0B;&#x9762;&#x7C21;&#x55AE;&#x4ECB;&#x7D39;&#x4E86;&#x5E7E;&#x500B;&#x60C5;&#x5883;&#xFF0C;  
+&#x9084;&#x6709;&#x5F88;&#x591A;&#x7684;&#x529F;&#x7528;&#xFF0C;&#x6BD4;&#x5982;:</p><ul><li>&#x522A;&#x9664;&#x7A7A;&#x884C;&#xFF0C;tr -d &apos;\n&apos;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;tr -s &apos;[\012]&apos;
+</li>
+<li>&#x6240;&#x6709;&#x82F1;&#x6587;&#x4EE5;&#x5916;&#x7684;&#x5B57;&#x5143;(&#x88DC;&#x96C6;)&#xFF0C;&#x8F49;&#x63DB;&#x70BA;&#x7A7A;&#x767D;&#xFF0C;tr -c &apos;[a-z][A-Z]&apos; &apos; &apos; &lt; filename &gt; filename2.txt
+</li>
+<li>&#x6240;&#x6709;&#x82F1;&#x6587;&#xFF0C;&#x8F49;&#x63DB;&#x70BA;&#x7A7A;&#x767D;&#xFF0C;&#x4E14;&#x9023;&#x7E8C;&#x7684;&#x82F1;&#x6587;&#x53EA;&#x6703;&#x6709;&#x4E00;&#x500B;&#x7A7A;&#x767D;&#xFF0C;tr -s &apos;[a-z][A-Z]&apos; &apos;[ *]&apos; &lt; filename &gt; filename2.txt
+</li>
+<li>&#x6240;&#x6709;&#x82F1;&#x6587;&#x4EE5;&#x5916;&#x7684;&#x5B57;&#x5143;(&#x88DC;&#x96C6;)&#xFF0C;&#x8F49;&#x63DB;&#x70BA;&#x63DB;&#x884C;&#xFF0C;&#x4E26;&#x6392;&#x9664;&#x6240;&#x6709;&#x63DB;&#x884C;&#xFF0C;tr -c &apos;[a-z][A-Z]&apos; &apos;\n&apos; &lt; filename | tr -d &apos;\n&apos; &gt; filename2.txt
+</li>
+<li>&#x6240;&#x6709;&#x82F1;&#x6587;&#x4EE5;&#x5916;&#x7684;&#x5B57;&#x5143;(&#x88DC;&#x96C6;)&#xFF0C;&#x8F49;&#x63DB;&#x70BA;&#x63DB;&#x884C;&#xFF0C;&#x4E26;&#x6392;&#x9664;&#x591A;&#x9918;&#x7684;&#x63DB;&#x884C;&#xFF0C;tr -c &apos;[a-z][A-Z]&apos; &apos;\n&apos; &lt; filename | tr -s &apos;\n&apos; &gt; filename2.txt&#x3002;&#x53EF;&#x7C21;&#x5BEB;&#x70BA;tr -cs &apos;[a-z][A-Z]&apos; &apos;\n&apos; &lt; filename &gt; filename2.txt
+</li></ul>
+<p>&#x64CD;&#x4F5C;&#x88DC;&#x5145;:  
+&#x8F38;&#x5165;&#x8CC7;&#x6599;&#x9664;&#x4E86;&#x7528;&#x6307;&#x4EE4; &lt; filename&#x4E4B;&#x5916;&#xFF0C;  
+&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x4E00;&#x958B;&#x59CB; cat filename | tr ...&#xFF0C;  
+&#x76F4;&#x63A5;&#x7528; filename&#x662F;&#x4E0D;&#x884C;&#x7684;&#xFF0C;&#x90A3;&#x6A23;&#x53EA;&#x6703;&#x958B;&#x555F;&#x8CC7;&#x6599;&#x800C;&#x5DF2;&#x3002;</p><h3 id="&#x60C5;&#x5883;01">&#x60C5;&#x5883;01</h3><ul><li>&#x60C5;&#x5883;&#x63CF;&#x8FF0;: &#x56E0;&#x70BA; windows&#x7CFB;&#x7D71;&#x7684;&#x63DB;&#x884C;&#x7B26;&#x865F;&#x70BA;\r\n&#xFF0C;&#x4F46;&#x662F;unix&#x7CFB;&#x7D71;&#x7684;&#x63DB;&#x884C;&#x7B26;&#x865F;&#x70BA;\n
+</li>
+<li>&#x76EE;&#x6A19;: &#x5229;&#x7528;bash&#x6307;&#x4EE4;&#xFF0C;&#x5C07;&#x6587;&#x5B57;&#x6A94;&#x4E2D;&#x7684;\r\n&#x8F49;&#x63DB;&#x70BA;\n&#xFF0C;&#x4E26;&#x53E6;&#x5B58;&#x65B0;&#x6A94;
+</li>
+<li>&#x65B9;&#x6CD5;: tr -d &apos;\r&apos; &lt; CRLF.txt &gt; LF.txt
+</li></ul>
+<p>&#x8655;&#x7406;&#x5B8C;&#x4E4B;&#x5F8C;&#xFF0C;&#x53EF;&#x4EE5;&#x7528; cat &#x6307;&#x4EE4;&#x7A0D;&#x5FAE;&#x770B;&#x4E00;&#x4E0B;&#x5169;&#x500B;&#x6A94;&#x6848;&#x3002;</p><ul><li>cat CRLF.txt
+</li>
+<li>cat LF.txt
+</li></ul>
+<p>&#x4E26;&#x7528;&#x6307;&#x4EE4; diff &#x767C;&#x73FE;&#x5169;&#x500B;&#x6A94;&#x6848;&#x78BA;&#x5BE6;&#x6709;&#x5DEE;&#x7570;&#x3002;</p><ul><li>diff CRLF.txt LF.txt
+</li></ul>
+<p>&#x5982;&#x679C;&#x5728; Unix &#x7CFB;&#x7D71;&#x4E0B;&#xFF0C;&#x53EF;&#x518D;&#x7528;&#x6307;&#x4EE4; file &#x89C0;&#x770B;&#x5169;&#x500B;&#x6A94;&#x6848;&#x7684;&#x985E;&#x578B;&#x3002;</p><ul><li>file CRLF.txt&#xFF0C;CRLF.txt: ASCII text, with CRLF line terminators
+</li>
+<li>file LF.txt&#xFF0C;LF.txt: ASCII text
+</li></ul>
+<h3 id="&#x60C5;&#x5883;02">&#x60C5;&#x5883;02</h3><ul><li>&#x60C5;&#x5883;&#x63CF;&#x8FF0;: &#x82F1;&#x6587;&#x5927;&#x5C0F;&#x5BEB;&#x8F49;&#x63DB;&#x7684;&#x8F49;&#x63DB;
+</li>
+<li>&#x76EE;&#x6A19;: &#x5229;&#x7528;bash&#x6307;&#x4EE4;&#xFF0C;&#x5C07;&#x6587;&#x5B57;&#x6A94;&#x4E2D;&#x7684;[A-Z]&#x8F49;&#x63DB;&#x70BA;[a-z]&#xFF0C;&#x4E26;&#x53E6;&#x5B58;&#x65B0;&#x6A94;
+</li>
+<li>&#x65B9;&#x6CD5;: tr &apos;[A-Z]&apos; &apos;[a-z]&apos; &lt; LETTERS.txt &gt; LETTERS_letters.txt
+</li></ul>
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x56E0;&#x70BA;&#x6A94;&#x6848;&#x540D;&#x7A31;&#x4E0D;&#x5206;&#x5927;&#x5C0F;&#x5BEB;&#xFF0C;  
+&#x6240;&#x4EE5;&#x5982;&#x679C;&#x7528;&#x6307;&#x4EE4; &lt; LETTERS.txt &gt; letters.txt&#xFF0C;  
+&#x6700;&#x5F8C;&#x7D50;&#x679C;&#x6703;&#x662F;&#x7A7A;&#x767D;&#x3002;</p><p>&#x53E6;&#x5916;&#x9019;&#x65B9;&#x6CD5;&#x4E2D;&#x6587;&#x5B57;&#x4E5F;&#x884C;&#xFF0C;  
+tr &apos;&#x4F60;&apos; &apos;&#x6211;&apos; &lt; duplicate.txt &gt; duplicate2.txt</p><h3 id="&#x60C5;&#x5883;03">&#x60C5;&#x5883;03</h3><ul><li>&#x60C5;&#x5883;&#x63CF;&#x8FF0;: &#x58D3;&#x7E2E;&#x91CD;&#x8907;&#x51FA;&#x73FE;&#x7684;&#x5B57;&#x5143;&#xFF0C;squeeze-repeats&#x3002;
+</li>
+<li>&#x76EE;&#x6A19;: &#x5229;&#x7528;bash&#x6307;&#x4EE4;&#xFF0C;&#x5C07;&#x6587;&#x5B57;&#x6A94;&#x4E2D;&#x7684;[A-Z]&#x8F49;&#x63DB;&#x70BA;[a-z]&#xFF0C;&#x4E26;&#x53E6;&#x5B58;&#x65B0;&#x6A94;
+</li>
+<li>&#x65B9;&#x6CD5;: tr -s &apos;[A-Z]&apos; &apos;[a-z]&apos; &lt; duplicate.txt &gt; duplicate2.txt
+</li></ul>
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x529F;&#x7528;&#x662F;&#x58D3;&#x7E2E;&#x91CD;&#x8907;&#x51FA;&#x73FE;&#x7684;&#x5B57;&#x5143;&#xFF0C;  
+&#x6240;&#x8B02;&#x91CD;&#x8907;&#x51FA;&#x73FE;&#x662F;&#x9023;&#x7E8C;&#x91CD;&#x8907;&#x51FA;&#x73FE;&#xFF0C;&#x548C;&#x4E00;&#x822C;&#x6240;&#x8B1B;&#x7684; duplicate &#x6709;&#x9EDE;&#x5DEE;&#x7570;&#xFF0C;&#x4F7F;&#x7528;&#x4E0A;&#x8981;&#x5C0F;&#x5FC3;&#x3002;</p><h2 id="cls&#x3001;clear">cls&#x3001;clear</h2><ul><li>windows: &#x4F7F;&#x7528;&#x6307;&#x4EE4; cls&#xFF0C;&#x6E05;&#x7A7A;&#x756B;&#x9762;
+</li>
+<li>unix: &#x4F7F;&#x7528;&#x6307;&#x4EE4; clear&#xFF0C;&#x6E05;&#x7A7A;&#x756B;&#x9762;&#x3002;&#x6216;&#x662F;&#x5229;&#x7528;&#x5FEB;&#x6377;&#x9375; Ctrl+L
+</li></ul>
+<h2 id="copy">copy</h2><h3 id="&#x60C5;&#x5883;01">&#x60C5;&#x5883;01</h3><ul><li>&#x60C5;&#x5883;&#x63CF;&#x8FF0;: &#x8907;&#x88FD;&#x6A94;&#x6848;
+</li>
+<li>&#x76EE;&#x6A19;: &#x5229;&#x7528;bash&#x6307;&#x4EE4;&#xFF0C;&#x5C07;&#x6A94;&#x6848;&#x4F5C;&#x8907;&#x88FD;&#xFF0C;&#x9664;&#x4E86;&#x79FB;&#x52D5;&#x5230;&#x60F3;&#x8981;&#x7684;&#x8CC7;&#x6599;&#x593E;&#x4E0B;&#x4E4B;&#x5916;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x53E6;&#x5916;&#x53D6;&#x540D;&#x3002;
+</li>
+<li>&#x65B9;&#x6CD5;: copy filename1 filename2
+</li></ul>
+<blockquote><p>copy copy1.txt copy2.txt</p></blockquote><h2 id="shiftechoarg">shift+echo+arg</h2><ul><li>&#x60C5;&#x5883;&#x63CF;&#x8FF0;: &#x8F38;&#x5165;&#x6307;&#x4EE4;&#x8B8A;&#x6210;&#x53C3;&#x6578;&#x3002;
+</li>
+<li>&#x76EE;&#x6A19;: &#x5229;&#x7528;bash&#x6307;&#x4EE4;&#xFF0C;&#x50B3;&#x9001;&#x8F38;&#x5165;&#x503C;&#x5230;&#x53C3;&#x6578;&#xFF0C;&#x5982;&#x4F55;&#x4F9D;&#x5E8F;&#x62C9;&#x51FA;&#x3001;&#x8DF3;&#x904E;&#x3001;&#x6307;&#x5B9A;&#x3001;&#x5168;&#x90E8;&#x5370;&#x51FA;&#x3002;
+</li>
+<li>&#x65B9;&#x6CD5;: &#x4E0B;&#x9762;&#x4E09;&#x7A2E;&#x65B9;&#x6CD5;&#x5B58;&#x6210;&#x4E00;&#x500B;test.bat&#xFF0C;&#x5404;&#x81EA;&#x8F38;&#x5165; test.bat A B C D E&#xFF0C;&#x8A66;&#x8A66;&#x770B;
+</li></ul>
+<blockquote><p>set arg1=%1
+set arg2=%2
+echo /first_arg %arg1% /second_arg %arg2% all_args %*</p><p>echo %1
+echo %1
+echo %1
+echo %*</p><p>echo %1
+shift
+echo %1
+shift
+echo %1
+echo %*</p></blockquote><h2 id="xcopy">xcopy</h2><p><a href="https://ss64.com/nt/xcopy.html" target="_blank">Xcopy - Copy files and folders - Windows CMD - SS64.com</a></p><ul><li>&#x60C5;&#x5883;&#x63CF;&#x8FF0;: &#x8907;&#x88FD;&#x6A94;&#x6848;&#x3002;&#x8907;&#x88FD;&#x8CC7;&#x6599;&#x593E;&#x3002;&#x8907;&#x88FD;&#x8CC7;&#x6599;&#x593E;&#x7D50;&#x69CB;&#x3002;
+</li>
+<li>&#x76EE;&#x6A19;: &#x5229;&#x7528;bash&#x6307;&#x4EE4;&#xFF0C;&#x8907;&#x88FD;&#x6574;&#x500B;&#x8CC7;&#x6599;&#x593E;&#xFF0C;&#x6216;&#x662F;&#x8907;&#x88FD;&#x8CC7;&#x6599;&#x593E;&#x7D50;&#x69CB;
+</li>
+<li>&#x65B9;&#x6CD5;: &#x5C07;&#x4E0B;&#x9762;&#x7684;&#x6307;&#x4EE4;&#x8DD1;&#x904E;&#x4E00;&#x904D;&#xFF0C;&#x5373;&#x53EF;&#x521D;&#x6B65;&#x7406;&#x89E3;&#x3002;
+</li></ul>
+<blockquote><p>::&#x9810;&#x8A2D;&#x8907;&#x88FD;&#x8CC7;&#x6599;&#x593E;&#x4E0B;&#x7684;&#x7B2C;&#x4E00;&#x5C64;&#x6A94;&#x6848;  
+xcopy dir dir_copy</p><p>::&#x8907;&#x88FD;&#x8CC7;&#x6599;&#x593E;&#x7D50;&#x69CB;  
+xcopy dir dir_copy /T /E</p></blockquote><h2 id="netstat">netstat</h2><p>&#x5C0B;&#x627E;&#x4F7F;&#x7528;&#x4E2D;&#x7684;port&#x3002;  
+&#x4E5F;&#x53EF;&#x4EE5;&#x53BB; C:\Windows\System32\drivers\etc\services &#x89C0;&#x770B;&#x6709;&#x4F7F;&#x7528;&#x7684;port</p><pre><code class="lang-{batch}">netstat -ano | findstr 0.0:80
+// &#x5F97;&#x5230; TCP    0.0.0.0:80             0.0.0.0:0              LISTENING       3364
+
+tasklist | findstr 3364
+// httpd.exe                     3364 Services                   0     17,324 K</code></pre>
+<p><strong>reference:</strong></p><ul><li><a href="https://johnson560.pixnet.net/blog/post/344056561-windows%E4%B8%8B%E7%94%A8cmd%E5%91%BD%E4%BB%A4netstat%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%B5%B1%E7%AB%AF%E5%8F%A3%28port%29%E4%BD%BF%E7%94%A8" target="_blank">Windows&#x4E0B;&#x7528;cmd&#x547D;&#x4EE4;netstat&#x67E5;&#x770B;&#x7CFB;&#x7D71;&#x7AEF;&#x53E3;(PORT)&#x4F7F;&#x7528;&#x60C5;&#x6CC1;&#x548C;&#x522A;&#x9664;&#x5C0D;&#x61C9;&#x7A0B;&#x5F0F; @ Johnson&#x5CF0;&#x7684;&#x90E8;&#x843D;&#x683C; :: &#x75DE;&#x5BA2;&#x90A6; ::</a>
+</li>
+<li><a href="https://blog.xuite.net/yamalin/blog/15087550-%5B%E5%95%8F%E9%A1%8C%E6%8E%92%E9%99%A4%5D+80PORT%E8%A2%AB%E4%BD%94%E7%94%A8%3F+%E5%A6%82%E4%BD%95%E6%9F%A5%E5%87%BA%E4%BD%94%E7%94%A8PORT%E7%9A%84%E6%96%B9%E6%B3%95" target="_blank">[&#x554F;&#x984C;&#x6392;&#x9664;] 80PORT&#x88AB;&#x4F54;&#x7528;? &#x5982;&#x4F55;&#x67E5;&#x51FA;&#x4F54;&#x7528;PORT&#x7684;&#x65B9;&#x6CD5; @ &#x5C0F;&#x7B28;&#x86CB;&#x7684;&#x5DE5;&#x4F5C;&#x65E5;&#x8A8C; :: &#x96A8;&#x610F;&#x7AA9; Xuite&#x65E5;&#x8A8C;</a>
+</li>
+<li><a href="https://blog.xuite.net/cadmus.lin/yo/43386562-%E3%80%90%E7%B3%BB%E3%80%91%E5%A6%82%E4%BD%95%E6%9F%A5%E8%A9%A2%E5%93%AA%E5%80%8B%E7%A8%8B%E5%BC%8F%E4%BD%94%E7%94%A8%E4%BA%86%E6%8C%87%E5%AE%9APort" target="_blank">&#x3010;&#x7CFB;&#x3011;&#x5982;&#x4F55;&#x67E5;&#x8A62;&#x54EA;&#x500B;&#x7A0B;&#x5F0F;&#x4F54;&#x7528;&#x4E86;&#x6307;&#x5B9A;Port @ &#x5361;&#x9054;+&#x5657;&#x5BF6;=&#x963F;&#x5657;&#x5657; :: &#x96A8;&#x610F;&#x7AA9; Xuite&#x65E5;&#x8A8C;</a>
+</li></ul>
+<h2 id="split">split</h2><pre><code class="lang-{batch}">// -l: &#x4E00;&#x4E9B;&#x53C3;&#x6578;&#x8A2D;&#x5B9A;&#xFF0C;&#x5305;&#x542B;&#x884C;&#x6578;&#x3001;&#x5BB9;&#x91CF;&#x7B49;&#x7B49;&#x3002;
+// -d:&#x662F;&#x6307;&#x8AAA;&#x6A94;&#x6848;&#x540D;&#x7A31;&#x7684;&#x5F8C;&#x9762;&#x8981;&#x7528;&#x6578;&#x5B57;&#x505A;&#x7DE8;&#x865F;&#x3002;
+// --additional-suffix=.csv: &#x6307;&#x5B9A;&#x6A94;&#x6848;&#x985E;&#x578B;&#x3002;
+split -l 9000000 ../bus/bus.csv ../bus/split9000k/split_res -d --additional-suffix=.csv</code></pre>
+<h2 id="lscpu">lscpu</h2><p>&#x986F;&#x793A;&#x96FB;&#x8166;&#x786C;&#x9AD4;&#x8CC7;&#x8A0A;&#x3002;</p><h2 id="lsbrelease--a">lsb_release -a</h2><p>&#x986F;&#x793A;&#x4F5C;&#x696D;&#x7CFB;&#x7D71;&#x7248;&#x672C;&#x8207;&#x76F8;&#x95DC;&#x7684;&#x786C;&#x9AD4;&#x8CC7;&#x8A0A;&#x3002;</p><h2 id="df--h">df -h</h2><p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x786C;&#x9AD4;&#x8CC7;&#x8A0A;&#x4EE5;&#x53CA;&#x8CC7;&#x6E90;&#x4F7F;&#x7528;&#x91CF;&#x3002;</p>
                                 
                                 </section>
                             
@@ -1087,7 +1190,7 @@ tmpfs           1.6G     0  1.6G   0% /run/user/1000</code></pre>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Linux Tools","level":"2.8","depth":1,"next":{"title":"Linux Tools Cases","level":"2.9","depth":1,"path":"BASIC/Linux_Tools_Cases.md","ref":"./BASIC/Linux_Tools_Cases.md","articles":[]},"previous":{"title":"VPN","level":"2.7","depth":1,"path":"BASIC/VPN.md","ref":"./BASIC/VPN.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"BASIC/Linux_Tools.md","mtime":"2020-08-27T01:58:54.106Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2020-08-26T14:05:26.624Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Linux Tools","level":"2.8","depth":1,"next":{"title":"Linux Tools Cases","level":"2.9","depth":1,"path":"BASIC/Linux_Tools_Cases.md","ref":"./BASIC/Linux_Tools_Cases.md","articles":[]},"previous":{"title":"VPN","level":"2.7","depth":1,"path":"BASIC/VPN.md","ref":"./BASIC/VPN.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"BASIC/Linux_Tools.md","mtime":"2020-11-26T06:03:03.759Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2020-11-26T06:03:50.344Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
